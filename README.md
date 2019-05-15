@@ -1,0 +1,2 @@
+# Private-Clinic-Management
+Polyclinic Đại Tín is a medical clinic specializing in diseases: ear, nose, throat. Drugs are provided from domestic and foreign drug companies. Patients are usually children, middle-aged people, and elderly people. There are departments: Financial Planning Department, medicine room, ear department, nose and throat department, etc. Therefore, it is necessary to have a system to help manage the clinic more easily.
