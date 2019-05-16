@@ -63,6 +63,30 @@
     <Compile Include="firmBanThuoc.Designer.cs">
       <DependentUpon>firmBanThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmBaoCaoNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoNgay.Designer.cs">
+      <DependentUpon>firmBaoCaoNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Ngay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Ngay.Designer.cs">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Ngay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Thang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Thang.Designer.cs">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Thang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBaoCaoThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoThang.Designer.cs">
+      <DependentUpon>firmBaoCaoThang.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmBenh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +205,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="firmBanThuoc.resx">
       <DependentUpon>firmBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBaoCaoNgay.resx">
+      <DependentUpon>firmBaoCaoNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBaoCaoSuDungThuoc_Ngay.resx">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Ngay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBaoCaoSuDungThuoc_Thang.resx">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Thang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBaoCaoThang.resx">
+      <DependentUpon>firmBaoCaoThang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmBenh.resx">
       <DependentUpon>firmBenh.cs</DependentUpon>
