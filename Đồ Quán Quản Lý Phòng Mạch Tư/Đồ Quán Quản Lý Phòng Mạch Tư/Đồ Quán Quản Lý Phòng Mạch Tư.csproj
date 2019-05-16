@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="firmBanThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBanThuoc.Designer.cs">
+      <DependentUpon>firmBanThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,24 @@
     <Compile Include="firmGUI.Designer.cs">
       <DependentUpon>firmGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmHoaDon.Designer.cs">
+      <DependentUpon>firmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmLapDanhSachKhamBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmLapDanhSachKhamBenh.Designer.cs">
+      <DependentUpon>firmLapDanhSachKhamBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmLapDonThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmLapDonThuoc.Designer.cs">
+      <DependentUpon>firmLapDonThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmLichSuDN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +123,12 @@
     <Compile Include="firmNhanVien.Designer.cs">
       <DependentUpon>firmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmPhieuKham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmPhieuKham.Designer.cs">
+      <DependentUpon>firmPhieuKham.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmQuyenHan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +143,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="firmBanThuoc.resx">
+      <DependentUpon>firmBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="firmBenhNhan.resx">
       <DependentUpon>firmBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +158,15 @@
     <EmbeddedResource Include="firmGUI.resx">
       <DependentUpon>firmGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="firmHoaDon.resx">
+      <DependentUpon>firmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmLapDanhSachKhamBenh.resx">
+      <DependentUpon>firmLapDanhSachKhamBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmLapDonThuoc.resx">
+      <DependentUpon>firmLapDonThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="firmLichSuDN.resx">
       <DependentUpon>firmLichSuDN.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="firmNhanVien.resx">
       <DependentUpon>firmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmPhieuKham.resx">
+      <DependentUpon>firmPhieuKham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmQuyenHan.resx">
       <DependentUpon>firmQuyenHan.cs</DependentUpon>

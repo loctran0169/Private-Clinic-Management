@@ -89,5 +89,40 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             fm.MdiParent = this;
             fm.Show();
         }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            firmLapDanhSachKhamBenh fm = new firmLapDanhSachKhamBenh();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            firmPhieuKham fm = new firmPhieuKham();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            firmLapDonThuoc fm = new firmLapDonThuoc();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            firmHoaDon fm = new firmHoaDon();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            firmBanThuoc fm = new firmBanThuoc();
+            fm.MdiParent = this;
+            fm.Show();
+        }
     }
 }
