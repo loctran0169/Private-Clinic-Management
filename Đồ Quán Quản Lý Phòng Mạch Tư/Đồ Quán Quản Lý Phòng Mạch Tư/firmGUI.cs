@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class firmGUI : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public firmGUI()
         {
             InitializeComponent();
         }
