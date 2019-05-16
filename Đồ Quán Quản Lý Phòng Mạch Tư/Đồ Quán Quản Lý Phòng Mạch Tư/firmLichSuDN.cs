@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
-    public partial class Form2 : Form
+    public partial class firmLichSuDN : Form
     {
-        public Form2()
+        public firmLichSuDN()
         {
             InitializeComponent();
         }

@@ -15,10 +15,31 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         {
             InitializeComponent();
         }
-
-        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private Form kiemtraform(Type ftype)
         {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == ftype)
+                {
+                    return f;
+                }
+            }
+            return null;
+        }
 
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmLichSuDN));
+            if (frm == null)
+            {
+                firmLichSuDN forms = new firmLichSuDN();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
         }
     }
 }
