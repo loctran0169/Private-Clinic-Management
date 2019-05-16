@@ -41,5 +41,25 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 frm.Activate();
             }
         }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form fm = new firmDoiMatKhau();
+            fm.ShowDialog();
+        }
+
+        private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            firmThongTinNV fm = new firmThongTinNV();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            firmNguoiDung fm = new firmNguoiDung();
+            fm.MdiParent = this;
+            fm.Show();
+        }
     }
 }
