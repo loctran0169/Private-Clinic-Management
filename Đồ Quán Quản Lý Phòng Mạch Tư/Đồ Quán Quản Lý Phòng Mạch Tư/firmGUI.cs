@@ -44,12 +44,14 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmDoiMatKhau));
             Form fm = new firmDoiMatKhau();
             fm.ShowDialog();
         }
 
         private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmThongTinNV));
             firmThongTinNV fm = new firmThongTinNV();
             fm.MdiParent = this;
             fm.Show();
@@ -57,6 +59,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmNguoiDung));
             firmNguoiDung fm = new firmNguoiDung();
             fm.MdiParent = this;
             fm.Show();
@@ -64,6 +67,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmQuyenHan));
             firmQuyenHan fm = new firmQuyenHan();
             fm.MdiParent = this;
             fm.Show();
@@ -71,6 +75,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmNhanVien));
             firmNhanVien fm = new firmNhanVien();
             fm.MdiParent = this;
             fm.Show();
@@ -78,6 +83,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmBenhNhan));
             firmBenhNhan fm = new firmBenhNhan();
             fm.MdiParent = this;
             fm.Show();
@@ -85,6 +91,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmDanhSachKhamBenh));
             firmDanhSachKhamBenh fm = new firmDanhSachKhamBenh();
             fm.MdiParent = this;
             fm.Show();
@@ -92,6 +99,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmLapDanhSachKhamBenh));
             firmLapDanhSachKhamBenh fm = new firmLapDanhSachKhamBenh();
             fm.MdiParent = this;
             fm.Show();
@@ -99,6 +107,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmPhieuKham));
             firmPhieuKham fm = new firmPhieuKham();
             fm.MdiParent = this;
             fm.Show();
@@ -106,6 +115,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmLapDonThuoc));
             firmLapDonThuoc fm = new firmLapDonThuoc();
             fm.MdiParent = this;
             fm.Show();
@@ -113,6 +123,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmHoaDon));
             firmHoaDon fm = new firmHoaDon();
             fm.MdiParent = this;
             fm.Show();
@@ -120,7 +131,61 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = kiemtraform(typeof(firmBanThuoc));
             firmBanThuoc fm = new firmBanThuoc();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmThamSo));
+            firmThamSo fm = new firmThamSo();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmThuoc));
+            firmThuoc fm = new firmThuoc();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmDonVi));
+            firmDonVi fm = new firmDonVi();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmCachDung));
+            firmCachDung fm = new firmCachDung();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmBenh));
+            firmBenh fm = new firmBenh();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmCaLam));
+            firmCaLam fm = new firmCaLam();
             fm.MdiParent = this;
             fm.Show();
         }

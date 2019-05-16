@@ -63,11 +63,29 @@
     <Compile Include="firmBanThuoc.Designer.cs">
       <DependentUpon>firmBanThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBenh.Designer.cs">
+      <DependentUpon>firmBenh.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="firmBenhNhan.Designer.cs">
       <DependentUpon>firmBenhNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmCachDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmCachDung.Designer.cs">
+      <DependentUpon>firmCachDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmCaLam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmCaLam.Designer.cs">
+      <DependentUpon>firmCaLam.cs</DependentUpon>
     </Compile>
     <Compile Include="firmDanhSachKhamBenh.cs">
       <SubType>Form</SubType>
@@ -80,6 +98,12 @@
     </Compile>
     <Compile Include="firmDoiMatKhau.Designer.cs">
       <DependentUpon>firmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmDonVi.Designer.cs">
+      <DependentUpon>firmDonVi.cs</DependentUpon>
     </Compile>
     <Compile Include="firmGUI.cs">
       <SubType>Form</SubType>
@@ -135,25 +159,49 @@
     <Compile Include="firmQuyenHan.Designer.cs">
       <DependentUpon>firmQuyenHan.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmThamSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmThamSo.Designer.cs">
+      <DependentUpon>firmThamSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmThongTinNV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="firmThongTinNV.Designer.cs">
       <DependentUpon>firmThongTinNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmThuoc.Designer.cs">
+      <DependentUpon>firmThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="firmBanThuoc.resx">
       <DependentUpon>firmBanThuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="firmBenh.resx">
+      <DependentUpon>firmBenh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="firmBenhNhan.resx">
       <DependentUpon>firmBenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmCachDung.resx">
+      <DependentUpon>firmCachDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmCaLam.resx">
+      <DependentUpon>firmCaLam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmDanhSachKhamBenh.resx">
       <DependentUpon>firmDanhSachKhamBenh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmDoiMatKhau.resx">
       <DependentUpon>firmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmDonVi.resx">
+      <DependentUpon>firmDonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmGUI.resx">
       <DependentUpon>firmGUI.cs</DependentUpon>
@@ -182,8 +230,14 @@
     <EmbeddedResource Include="firmQuyenHan.resx">
       <DependentUpon>firmQuyenHan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="firmThamSo.resx">
+      <DependentUpon>firmThamSo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="firmThongTinNV.resx">
       <DependentUpon>firmThongTinNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmThuoc.resx">
+      <DependentUpon>firmThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
