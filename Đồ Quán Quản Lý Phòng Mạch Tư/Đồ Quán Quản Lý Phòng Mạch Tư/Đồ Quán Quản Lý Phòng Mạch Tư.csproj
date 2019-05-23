@@ -284,6 +284,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -295,6 +296,105 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dang xuat.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\báo cáo sử dụng thuốc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\báo cáo theo ngày.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\báo cáo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bệnh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cách dùng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\đăng xuất.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\danh mục.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\danh sách khám bệnh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\đơn vị.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giới thiệu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hệ thống.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hóa đơn thuốc].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hóa đơn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kết thúc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khôi phục.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lập đơn thuốc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lịch làm việc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\người dùng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhóm sản xuất.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phần mềm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phiếu khám.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quản lí bệnh nhân.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quản lí nhân viên phòng khám.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quản li.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sao lưu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tham số.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thay đổi mật khẩu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thông tin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thuốc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vai trò và quyền hạn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noname.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

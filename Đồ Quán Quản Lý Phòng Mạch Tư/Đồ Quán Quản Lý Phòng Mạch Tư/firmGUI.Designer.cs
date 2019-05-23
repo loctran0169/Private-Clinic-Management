@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(firmGUI));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -134,6 +133,7 @@
             // 
             this.barButtonItem1.Caption = "Bệnh Nhân";
             this.barButtonItem1.Id = 6;
+            this.barButtonItem1.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.quản_lí_bệnh_nhân;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
@@ -142,7 +142,7 @@
             // 
             this.barButtonItem2.Caption = "Nhật Ký Hệ Thống";
             this.barButtonItem2.Id = 7;
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.ImageOptions.LargeImage = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.noname;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
@@ -151,6 +151,7 @@
             // 
             this.barButtonItem4.Caption = "Tham Số";
             this.barButtonItem4.Id = 9;
+            this.barButtonItem4.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.tham_số;
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
@@ -160,6 +161,7 @@
             this.barButtonItem5.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             this.barButtonItem5.Caption = "Đơn Vị Tính";
             this.barButtonItem5.Id = 10;
+            this.barButtonItem5.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.đơn_vị;
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem5.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
@@ -169,6 +171,7 @@
             // 
             this.barButtonItem6.Caption = "Loại Bệnh";
             this.barButtonItem6.Id = 11;
+            this.barButtonItem6.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.bệnh;
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
@@ -177,6 +180,7 @@
             // 
             this.barButtonItem7.Caption = "Lập Danh Sách Khám Bệnh";
             this.barButtonItem7.Id = 12;
+            this.barButtonItem7.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.danh_sách_khám_bệnh;
             this.barButtonItem7.Name = "barButtonItem7";
             this.barButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
@@ -185,6 +189,7 @@
             // 
             this.barButtonItem8.Caption = "Thuốc";
             this.barButtonItem8.Id = 13;
+            this.barButtonItem8.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.thuốc;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
@@ -193,6 +198,7 @@
             // 
             this.barButtonItem11.Caption = "Vai Trò Quyền Hạn";
             this.barButtonItem11.Id = 16;
+            this.barButtonItem11.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.vai_trò_và_quyền_hạn;
             this.barButtonItem11.Name = "barButtonItem11";
             this.barButtonItem11.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
@@ -201,6 +207,7 @@
             // 
             this.barButtonItem12.Caption = "Đăng Xuất";
             this.barButtonItem12.Id = 17;
+            this.barButtonItem12.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.đăng_xuất;
             this.barButtonItem12.Name = "barButtonItem12";
             this.barButtonItem12.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -208,6 +215,7 @@
             // 
             this.barButtonItem9.Caption = "Đổi Mật Khẩu";
             this.barButtonItem9.Id = 18;
+            this.barButtonItem9.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.thay_đổi_mật_khẩu;
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem9.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
@@ -217,6 +225,7 @@
             // 
             this.barButtonItem10.Caption = "Nhân Viên";
             this.barButtonItem10.Id = 19;
+            this.barButtonItem10.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.quản_lí_nhân_viên_phòng_khám;
             this.barButtonItem10.Name = "barButtonItem10";
             this.barButtonItem10.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
@@ -225,6 +234,7 @@
             // 
             this.barButtonItem13.Caption = "Người Dùng";
             this.barButtonItem13.Id = 20;
+            this.barButtonItem13.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.người_dùng;
             this.barButtonItem13.Name = "barButtonItem13";
             this.barButtonItem13.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem13.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem13_ItemClick);
@@ -233,7 +243,7 @@
             // 
             this.barButtonItem14.Caption = "Theo Ngày";
             this.barButtonItem14.Id = 21;
-            this.barButtonItem14.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
+            this.barButtonItem14.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.phiếu_khám;
             this.barButtonItem14.Name = "barButtonItem14";
             this.barButtonItem14.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
@@ -242,6 +252,7 @@
             // 
             this.barButtonItem15.Caption = "Theo Tháng";
             this.barButtonItem15.Id = 22;
+            this.barButtonItem15.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.phiếu_khám;
             this.barButtonItem15.Name = "barButtonItem15";
             this.barButtonItem15.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick);
@@ -250,6 +261,7 @@
             // 
             this.barButtonItem16.Caption = "Theo Ngày";
             this.barButtonItem16.Id = 24;
+            this.barButtonItem16.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.báo_cáo_theo_ngày;
             this.barButtonItem16.Name = "barButtonItem16";
             this.barButtonItem16.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem16_ItemClick);
@@ -258,6 +270,7 @@
             // 
             this.barButtonItem17.Caption = "Theo Tháng";
             this.barButtonItem17.Id = 25;
+            this.barButtonItem17.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.báo_cáo_theo_ngày;
             this.barButtonItem17.Name = "barButtonItem17";
             this.barButtonItem17.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem17_ItemClick);
@@ -266,6 +279,7 @@
             // 
             this.barButtonItem18.Caption = "Lập Phiếu Khám Bệnh";
             this.barButtonItem18.Id = 26;
+            this.barButtonItem18.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.phiếu_khám;
             this.barButtonItem18.Name = "barButtonItem18";
             this.barButtonItem18.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
@@ -274,6 +288,7 @@
             // 
             this.barButtonItem19.Caption = "Lập Đơn Thuốc";
             this.barButtonItem19.Id = 27;
+            this.barButtonItem19.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.lập_đơn_thuốc;
             this.barButtonItem19.Name = "barButtonItem19";
             this.barButtonItem19.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem19.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem19_ItemClick);
@@ -282,6 +297,7 @@
             // 
             this.barButtonItem20.Caption = "Ca Làm";
             this.barButtonItem20.Id = 28;
+            this.barButtonItem20.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.lịch_làm_việc;
             this.barButtonItem20.Name = "barButtonItem20";
             this.barButtonItem20.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem20_ItemClick);
@@ -291,6 +307,7 @@
             this.barButtonItem21.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             this.barButtonItem21.Caption = "Lập Hóa Đơn";
             this.barButtonItem21.Id = 29;
+            this.barButtonItem21.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.hóa_đơn;
             this.barButtonItem21.Name = "barButtonItem21";
             this.barButtonItem21.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem21_ItemClick);
@@ -299,6 +316,7 @@
             // 
             this.barButtonItem22.Caption = "Bán Thuốc";
             this.barButtonItem22.Id = 30;
+            this.barButtonItem22.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.báo_cáo_sử_dụng_thuốc;
             this.barButtonItem22.Name = "barButtonItem22";
             this.barButtonItem22.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem22.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem22_ItemClick);
@@ -307,6 +325,7 @@
             // 
             this.barButtonItem23.Caption = "Cách Dùng";
             this.barButtonItem23.Id = 31;
+            this.barButtonItem23.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.cách_dùng;
             this.barButtonItem23.Name = "barButtonItem23";
             this.barButtonItem23.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem23_ItemClick);
@@ -315,6 +334,7 @@
             // 
             this.barButtonItem24.Caption = "Danh Sách Khám Bệnh";
             this.barButtonItem24.Id = 32;
+            this.barButtonItem24.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.danh_sách_khám_bệnh;
             this.barButtonItem24.Name = "barButtonItem24";
             this.barButtonItem24.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem24.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem24_ItemClick);
@@ -323,6 +343,7 @@
             // 
             this.barButtonItem25.Caption = "Nhóm Sản Xuất";
             this.barButtonItem25.Id = 33;
+            this.barButtonItem25.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.nhóm_sản_xuất;
             this.barButtonItem25.Name = "barButtonItem25";
             this.barButtonItem25.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -330,6 +351,7 @@
             // 
             this.barButtonItem26.Caption = "Phần Mềm";
             this.barButtonItem26.Id = 34;
+            this.barButtonItem26.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.thông_tin;
             this.barButtonItem26.Name = "barButtonItem26";
             this.barButtonItem26.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -337,6 +359,7 @@
             // 
             this.barButtonItem3.Caption = "Kết Thúc";
             this.barButtonItem3.Id = 35;
+            this.barButtonItem3.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.kết_thúc;
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -344,6 +367,7 @@
             // 
             this.barButtonItem27.Caption = "Thông Tin";
             this.barButtonItem27.Id = 36;
+            this.barButtonItem27.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.thông_tin;
             this.barButtonItem27.Name = "barButtonItem27";
             this.barButtonItem27.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem27.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem27_ItemClick);
@@ -352,6 +376,7 @@
             // 
             this.barButtonItem28.Caption = "Sao Lưu";
             this.barButtonItem28.Id = 37;
+            this.barButtonItem28.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.sao_lưu;
             this.barButtonItem28.Name = "barButtonItem28";
             this.barButtonItem28.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem28.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem28_ItemClick);
@@ -360,6 +385,7 @@
             // 
             this.barButtonItem29.Caption = "Khôi Phục";
             this.barButtonItem29.Id = 38;
+            this.barButtonItem29.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.khôi_phục;
             this.barButtonItem29.Name = "barButtonItem29";
             this.barButtonItem29.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -460,6 +486,7 @@
             // 
             // ribbonPageGroup9
             // 
+            this.ribbonPageGroup9.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.bệnh;
             this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             // 
