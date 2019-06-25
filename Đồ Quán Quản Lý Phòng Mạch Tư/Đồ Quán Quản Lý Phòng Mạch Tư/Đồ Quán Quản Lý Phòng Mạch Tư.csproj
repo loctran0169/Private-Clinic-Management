@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4A05274-11E3-491B-8C6B-D9DA5FB46C6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư</RootNamespace>
+    <AssemblyName>Đồ Quán Quản Lý Phòng Mạch Tư</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v18.1" />
+    <Reference Include="DevExpress.Data.v18.1" />
+    <Reference Include="DevExpress.Dialogs.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1" />
+    <Reference Include="DevExpress.Sparkline.v18.1.Core" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1" />
+    <Reference Include="DevExpress.Printing.v18.1.Core" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="firmBanThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBanThuoc.Designer.cs">
+      <DependentUpon>firmBanThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBaoCaoNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoNgay.Designer.cs">
+      <DependentUpon>firmBaoCaoNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Ngay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Ngay.Designer.cs">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Ngay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Thang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Thang.Designer.cs">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Thang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBaoCaoThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoThang.Designer.cs">
+      <DependentUpon>firmBaoCaoThang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBenh.Designer.cs">
+      <DependentUpon>firmBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBenhNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBenhNhan.Designer.cs">
+      <DependentUpon>firmBenhNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmCachDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmCachDung.Designer.cs">
+      <DependentUpon>firmCachDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmCaLam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmCaLam.Designer.cs">
+      <DependentUpon>firmCaLam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmDanhSachKhamBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmDanhSachKhamBenh.Designer.cs">
+      <DependentUpon>firmDanhSachKhamBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmDoiMatKhau.Designer.cs">
+      <DependentUpon>firmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmDonVi.Designer.cs">
+      <DependentUpon>firmDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmGUI.Designer.cs">
+      <DependentUpon>firmGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmHoaDon.Designer.cs">
+      <DependentUpon>firmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmLapDanhSachKhamBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmLapDanhSachKhamBenh.Designer.cs">
+      <DependentUpon>firmLapDanhSachKhamBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmLapDonThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmLapDonThuoc.Designer.cs">
+      <DependentUpon>firmLapDonThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmLichSuDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmLichSuDN.Designer.cs">
+      <DependentUpon>firmLichSuDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmNguoiDung.Designer.cs">
+      <DependentUpon>firmNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmNhanVien.Designer.cs">
+      <DependentUpon>firmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmPhieuKham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmPhieuKham.Designer.cs">
+      <DependentUpon>firmPhieuKham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmQuyenHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmQuyenHan.Designer.cs">
+      <DependentUpon>firmQuyenHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmThamSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmThamSo.Designer.cs">
+      <DependentUpon>firmThamSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmThongTinNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmThongTinNV.Designer.cs">
+      <DependentUpon>firmThongTinNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmThuoc.Designer.cs">
+      <DependentUpon>firmThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="firmBanThuoc.resx">
+      <DependentUpon>firmBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBaoCaoNgay.resx">
+      <DependentUpon>firmBaoCaoNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBaoCaoSuDungThuoc_Ngay.resx">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Ngay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBaoCaoSuDungThuoc_Thang.resx">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Thang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBaoCaoThang.resx">
+      <DependentUpon>firmBaoCaoThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBenh.resx">
+      <DependentUpon>firmBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBenhNhan.resx">
+      <DependentUpon>firmBenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmCachDung.resx">
+      <DependentUpon>firmCachDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmCaLam.resx">
+      <DependentUpon>firmCaLam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmDanhSachKhamBenh.resx">
+      <DependentUpon>firmDanhSachKhamBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmDoiMatKhau.resx">
+      <DependentUpon>firmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmDonVi.resx">
+      <DependentUpon>firmDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmGUI.resx">
+      <DependentUpon>firmGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmHoaDon.resx">
+      <DependentUpon>firmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmLapDanhSachKhamBenh.resx">
+      <DependentUpon>firmLapDanhSachKhamBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmLapDonThuoc.resx">
+      <DependentUpon>firmLapDonThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmLichSuDN.resx">
+      <DependentUpon>firmLichSuDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmNguoiDung.resx">
+      <DependentUpon>firmNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmNhanVien.resx">
+      <DependentUpon>firmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmPhieuKham.resx">
+      <DependentUpon>firmPhieuKham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmQuyenHan.resx">
+      <DependentUpon>firmQuyenHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmThamSo.resx">
+      <DependentUpon>firmThamSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmThongTinNV.resx">
+      <DependentUpon>firmThongTinNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmThuoc.resx">
+      <DependentUpon>firmThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dang xuat.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\báo cáo sử dụng thuốc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\báo cáo theo ngày.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\báo cáo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bệnh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cách dùng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\đăng xuất.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\danh mục.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\danh sách khám bệnh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\đơn vị.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giới thiệu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hệ thống.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hóa đơn thuốc].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hóa đơn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kết thúc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khôi phục.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lập đơn thuốc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lịch làm việc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\người dùng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhóm sản xuất.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phần mềm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phiếu khám.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quản lí bệnh nhân.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quản lí nhân viên phòng khám.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quản li.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sao lưu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tham số.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thay đổi mật khẩu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thông tin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thuốc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vai trò và quyền hạn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noname.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLPKBUS\QLPKBUS.csproj">
+      <Project>{f5bc49f0-da27-41bb-b156-c4f6aaa640b7}</Project>
+      <Name>QLPKBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLPKDAL\QLPKDAL.csproj">
+      <Project>{73316b9d-0511-4018-880c-ed1aa6bfdcfc}</Project>
+      <Name>QLPKDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLPKDTO\QLPKDTO.csproj">
+      <Project>{b90e5174-45dd-4abd-8e19-1933c1ddbd40}</Project>
+      <Name>QLPKDTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
