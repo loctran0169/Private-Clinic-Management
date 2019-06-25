@@ -396,6 +396,20 @@
   <ItemGroup>
     <None Include="Resources\noname.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLPKBUS\QLPKBUS.csproj">
+      <Project>{f5bc49f0-da27-41bb-b156-c4f6aaa640b7}</Project>
+      <Name>QLPKBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLPKDAL\QLPKDAL.csproj">
+      <Project>{73316b9d-0511-4018-880c-ed1aa6bfdcfc}</Project>
+      <Name>QLPKDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLPKDTO\QLPKDTO.csproj">
+      <Project>{b90e5174-45dd-4abd-8e19-1933c1ddbd40}</Project>
+      <Name>QLPKDTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

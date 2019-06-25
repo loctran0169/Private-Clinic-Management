@@ -40,11 +40,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dtp_ngaysinh = new System.Windows.Forms.DateTimePicker();
+            this.tb_hoten = new System.Windows.Forms.TextBox();
+            this.tb_mabn = new System.Windows.Forms.TextBox();
+            this.tb_diachi = new System.Windows.Forms.TextBox();
+            this.tb_sdt = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -142,17 +142,18 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtp_ngaysinh);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.tb_hoten);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.tb_mabn);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tb_diachi);
+            this.groupBox1.Controls.Add(this.tb_sdt);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.label6);
@@ -169,40 +170,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Bệnh Nhân";
             // 
-            // dateTimePicker1
+            // dtp_ngaysinh
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 75);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(172, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.dtp_ngaysinh.Location = new System.Drawing.Point(123, 75);
+            this.dtp_ngaysinh.Name = "dtp_ngaysinh";
+            this.dtp_ngaysinh.Size = new System.Drawing.Size(172, 20);
+            this.dtp_ngaysinh.TabIndex = 12;
             // 
-            // textBox4
+            // tb_hoten
             // 
-            this.textBox4.Location = new System.Drawing.Point(123, 49);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 20);
-            this.textBox4.TabIndex = 11;
+            this.tb_hoten.Location = new System.Drawing.Point(123, 49);
+            this.tb_hoten.Name = "tb_hoten";
+            this.tb_hoten.Size = new System.Drawing.Size(172, 20);
+            this.tb_hoten.TabIndex = 11;
             // 
-            // textBox3
+            // tb_mabn
             // 
-            this.textBox3.Location = new System.Drawing.Point(123, 20);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 20);
-            this.textBox3.TabIndex = 10;
+            this.tb_mabn.Location = new System.Drawing.Point(123, 20);
+            this.tb_mabn.Name = "tb_mabn";
+            this.tb_mabn.Size = new System.Drawing.Size(172, 20);
+            this.tb_mabn.TabIndex = 10;
             // 
-            // textBox2
+            // tb_diachi
             // 
-            this.textBox2.Location = new System.Drawing.Point(531, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 20);
-            this.textBox2.TabIndex = 9;
+            this.tb_diachi.Location = new System.Drawing.Point(531, 78);
+            this.tb_diachi.Name = "tb_diachi";
+            this.tb_diachi.Size = new System.Drawing.Size(196, 20);
+            this.tb_diachi.TabIndex = 9;
             // 
-            // textBox1
+            // tb_sdt
             // 
-            this.textBox1.Location = new System.Drawing.Point(531, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 20);
-            this.textBox1.TabIndex = 8;
+            this.tb_sdt.Location = new System.Drawing.Point(531, 49);
+            this.tb_sdt.Name = "tb_sdt";
+            this.tb_sdt.Size = new System.Drawing.Size(196, 20);
+            this.tb_sdt.TabIndex = 8;
             // 
             // radioButton2
             // 
@@ -214,6 +215,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Nữ";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -225,6 +227,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Nam";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label6
             // 
@@ -311,11 +314,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dtp_ngaysinh;
+        private System.Windows.Forms.TextBox tb_hoten;
+        private System.Windows.Forms.TextBox tb_mabn;
+        private System.Windows.Forms.TextBox tb_diachi;
+        private System.Windows.Forms.TextBox tb_sdt;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label6;
