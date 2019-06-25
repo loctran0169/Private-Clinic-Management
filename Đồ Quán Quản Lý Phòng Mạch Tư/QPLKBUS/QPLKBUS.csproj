@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B90E5174-45DD-4ABD-8E19-1933C1DDBD40}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QLPKDTO</RootNamespace>
-    <AssemblyName>QLPKDTO</AssemblyName>
+    <ProjectGuid>{54171A89-5EC1-4B25-B881-E304E3268B4C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>QPLKBUS</RootNamespace>
+    <AssemblyName>QPLKBUS</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,10 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BenhDTO.cs" />
-    <Compile Include="BenhNhanDTO.cs" />
-    <Compile Include="PhieuKhamDTO.cs" />
+    <Compile Include="BenhNhanBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLPKATO\QLPKDAL.csproj">
+      <Project>{e50439de-436b-4b8c-b397-1d112440eb88}</Project>
+      <Name>QLPKDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLPKDTO\QLPKDTO.csproj">
+      <Project>{773a2bd8-acbf-46ab-a6bb-d51f7e376c00}</Project>
+      <Name>QLPKDTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
