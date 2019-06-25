@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLPKDTO
 {
-    class BenhDTO
+    public class BenhDTO
     {
         private string MaLB;
         private string TenLoaiBenh;
