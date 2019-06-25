@@ -32,6 +32,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             bn.DiaChi1 = tb_diachi.Text;
             if(bn==null)
                 MessageBox.Show("ss");
+            bnbus = new BenhNhanBUS();
             bool kq = bnbus.them(bn);
             if (kq == false)
                 MessageBox.Show("Thêm bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu");

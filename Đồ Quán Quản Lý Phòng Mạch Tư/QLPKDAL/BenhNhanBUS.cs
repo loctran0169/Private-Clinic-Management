@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace QLPKDAL
 {
@@ -25,17 +26,16 @@ namespace QLPKDAL
             string query = string.Empty;
             query += "INSERT INTO BENHNHAN VALUES (";
             query += "'" + bn.MaBN1 + "',N'" + bn.HoTen1 + "','" + bn.NgaySinh1 + "',N'" + bn.GioiTinh1 + "',N'" + bn.DiaChi1 + "'";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
                     try
                     {
-                        con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
                         con.Dispose();
@@ -54,10 +54,10 @@ namespace QLPKDAL
         {
             string query = string.Empty;
             query += "UPDATE BENHNHAN SET mabn = @mabn, HoTen = @hoten, ngaysinh = @ngaysinh, gioitinh = @gioitinh,diachi = @diachi WHERE mabn = @mabn";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -88,10 +88,10 @@ namespace QLPKDAL
         {
             string query = string.Empty;
             query += "DELETE FROM BenhNhan WHERE mabn = @mabn";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -122,10 +122,10 @@ namespace QLPKDAL
 
             List<BenhNhanDTO> listBenhNhan = new List<BenhNhanDTO>();
 
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -134,7 +134,7 @@ namespace QLPKDAL
                     try
                     {
                         con.Open();
-                        SqlDataReader reader = null;
+                        MySqlDataReader reader = null;
                         reader = cmd.ExecuteReader();
                         if (reader.HasRows == true)
                         {
@@ -173,10 +173,10 @@ namespace QLPKDAL
 
             List<BenhNhanDTO> listBenhNhan = new List<BenhNhanDTO>();
 
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -185,7 +185,7 @@ namespace QLPKDAL
                     try
                     {
                         con.Open();
-                        SqlDataReader reader = null;
+                        MySqlDataReader reader = null;
                         reader = cmd.ExecuteReader();
                         if (reader.HasRows == true)
                         {

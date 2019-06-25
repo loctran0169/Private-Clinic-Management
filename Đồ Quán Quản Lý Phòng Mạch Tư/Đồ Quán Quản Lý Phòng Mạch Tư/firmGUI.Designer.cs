@@ -553,6 +553,7 @@
             this.Name = "firmGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Quản lý phòng mạch tư";
+            this.Load += new System.EventHandler(this.firmGUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
