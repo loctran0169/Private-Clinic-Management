@@ -10,10 +10,10 @@ namespace QLPKBUS
 {
     public class HoaDonBUS
     {
-        private HoaDonDAL hd;
-        public List<HoaDonDTO> select()
-        {
-            return hd.select();
-        }
+        //private HoaDonDAL hd;
+        //public List<HoaDonDTO> select()
+        //{
+        //    return hd.select();
+        //}
     }
 }

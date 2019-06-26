@@ -45,6 +45,7 @@
     <Compile Include="BenhNhanBUS.cs" />
     <Compile Include="HoaDonDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThamSoDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLPKDTO\QLPKDTO.csproj">

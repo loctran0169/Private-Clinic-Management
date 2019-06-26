@@ -81,6 +81,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(152, 20);
             this.textBox1.TabIndex = 15;
+            this.textBox1.Text = "0";
             // 
             // button2
             // 
@@ -90,6 +91,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -99,6 +101,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Sửa";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -165,6 +168,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "firmThamSo";
             this.Text = "Tham Số";
+            this.Load += new System.EventHandler(this.firmThamSo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
