@@ -48,6 +48,8 @@
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="PhieuKhamDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuyenHanDAL.cs" />
+    <Compile Include="UserDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLPKDTO\QLPKDTO.csproj">
