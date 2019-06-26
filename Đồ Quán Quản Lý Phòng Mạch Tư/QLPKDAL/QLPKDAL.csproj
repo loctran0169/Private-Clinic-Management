@@ -45,10 +45,12 @@
   <ItemGroup>
     <Compile Include="BenhDAL.cs" />
     <Compile Include="BenhNhanDAL.cs" />
+    <Compile Include="DonViTinhDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="PhieuKhamDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuyenHanDAL.cs" />
+    <Compile Include="ThuocDAL.cs" />
     <Compile Include="UserDAL.cs" />
   </ItemGroup>
   <ItemGroup>
