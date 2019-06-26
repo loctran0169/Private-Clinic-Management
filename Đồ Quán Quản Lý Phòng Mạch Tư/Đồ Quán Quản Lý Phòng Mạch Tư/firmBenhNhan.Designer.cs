@@ -172,6 +172,7 @@
             // 
             // dtp_ngaysinh
             // 
+            this.dtp_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_ngaysinh.Location = new System.Drawing.Point(123, 75);
             this.dtp_ngaysinh.Name = "dtp_ngaysinh";
             this.dtp_ngaysinh.Size = new System.Drawing.Size(172, 20);

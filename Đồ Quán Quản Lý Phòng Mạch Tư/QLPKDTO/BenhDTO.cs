@@ -8,10 +8,10 @@ namespace QLPKDTO
 {
     public class BenhDTO
     {
-        private string MaLB;
+        private int MaLB;
         private string TenLoaiBenh;
 
-        public string MaLB1 { get => MaLB; set => MaLB = value; }
+        public int MaLB1 { get => MaLB; set => MaLB = value; }
         public string TenLoaiBenh1 { get => TenLoaiBenh; set => TenLoaiBenh = value; }
     }
 }

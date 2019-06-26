@@ -19,15 +19,15 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         public firmBenhNhan()
         {
             InitializeComponent();
+            dtp_ngaysinh.CustomFormat = "yyyy-MM-dd";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             BenhNhanDTO bn = new BenhNhanDTO();
             bn.MaBN1 = tb_mabn.Text;
             bn.HoTen1 = tb_hoten.Text;
-            bn.NgaySinh1 = (DateTime)dtp_ngaysinh.Value;
+            bn.NgaySinh1 = ((DateTime)dtp_ngaysinh.Value);
             bn.GioiTinh1 = sex;
             bn.DiaChi1 = tb_diachi.Text;
             if(bn==null)

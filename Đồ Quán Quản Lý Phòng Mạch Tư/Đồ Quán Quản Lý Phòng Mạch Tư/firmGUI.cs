@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -227,18 +228,12 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void firmGUI_Load(object sender, EventArgs e)
         {
-            //string connString = "SERVER=mysql-1325-0.cloudclusters.net;PORT=10001;DATABASE=QLKP;UID=loctran0169;PASSWORD=angel1999;Charset = utf8";
-            //try
-            //{
-            //    MySqlConnection conn = new MySqlConnection();
-            //    conn.ConnectionString = connString;
-            //    conn.Open();
-            //    MessageBox.Show("Connected");
-            //}
-            //catch (MySql.Data.MySqlClient.MySqlException ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

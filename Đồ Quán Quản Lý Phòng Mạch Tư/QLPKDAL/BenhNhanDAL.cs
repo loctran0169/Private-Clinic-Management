@@ -23,10 +23,10 @@ namespace QLPKDAL
 
         public bool them(BenhNhanDTO bn)
         {
+
             string query = string.Empty;
-            query += "INSERT INTO BENHNHAN VALUES (";
-            query += "'" + bn.MaBN1 + "',N'" + bn.HoTen1 + "','" + bn.NgaySinh1 + "',N'" + bn.GioiTinh1 + "',N'" + bn.DiaChi1 + "'";
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            query += "INSERT INTO BENHNHAN(hoten,ngaysinh,gioitinh,diachi) VALUES (@hoten,@ngaysinh,@gioitinh,@diachi)";
+            using (MySqlConnection con = new MySqlConnection(connectionString))
             {
 
                 using (MySqlCommand cmd = new MySqlCommand())
@@ -34,8 +34,13 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@hoten", bn.HoTen1);
+                    cmd.Parameters.AddWithValue("@ngaysinh", bn.NgaySinh1);
+                    cmd.Parameters.AddWithValue("@gioitinh", bn.GioiTinh1);
+                    cmd.Parameters.AddWithValue("@diachi", bn.DiaChi1);
                     try
                     {
+                        con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
                         con.Dispose();
@@ -87,7 +92,7 @@ namespace QLPKDAL
         public bool xoa(BenhNhanDTO bn)
         {
             string query = string.Empty;
-            query += "DELETE FROM BenhNhan WHERE mabn = @mabn";
+            query += "DELETE FROM BENHNHAN WHERE mabn = @mabn";
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
@@ -118,7 +123,7 @@ namespace QLPKDAL
         {
             string query = string.Empty;
             query += "SELECT * ";
-            query += "FROM BenhNhan";
+            query += "FROM BENHNHAN";
 
             List<BenhNhanDTO> listBenhNhan = new List<BenhNhanDTO>();
 
@@ -142,7 +147,7 @@ namespace QLPKDAL
                             {
                                 BenhNhanDTO bn = new BenhNhanDTO();
                                 bn.MaBN1 = reader["MaBN"].ToString();
-                                bn.NgaySinh1 = (DateTime)reader["NgaySinh"];
+                                bn.NgaySinh1 = ((DateTime)reader["NgaySinh"]).Date;
                                 bn.GioiTinh1 = reader["GioiTinh"].ToString();
                                 bn.DiaChi1 = reader["DiaChi"].ToString();
                                 bn.HoTen1 = reader["SDT"].ToString();
@@ -167,7 +172,7 @@ namespace QLPKDAL
         {
             string query = string.Empty;
             query += " SELECT *";
-            query += " FROM BenhNhan";
+            query += " FROM BENHNHAN";
             query += " WHERE (mabn LIKE CONCAT('%',@sKeyword,'%'))";
             query += " OR (Hoten LIKE CONCAT('%',@sKeyword,'%'))";
 
@@ -193,7 +198,7 @@ namespace QLPKDAL
                             {
                                 BenhNhanDTO bn = new BenhNhanDTO();
                                 bn.MaBN1 = reader["MaBN"].ToString();
-                                bn.NgaySinh1 = (DateTime)reader["NgaySinh"];
+                                bn.NgaySinh1 = ((DateTime)reader["NgaySinh"]).Date;
                                 bn.GioiTinh1 = reader["GioiTinh"].ToString();
                                 bn.DiaChi1 = reader["DiaChi"].ToString();
                                 bn.HoTen1 = reader["SDT"].ToString();
