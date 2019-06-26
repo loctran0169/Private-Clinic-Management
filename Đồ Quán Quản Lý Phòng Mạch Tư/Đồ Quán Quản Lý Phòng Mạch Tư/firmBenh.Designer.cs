@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tb_malb = new System.Windows.Forms.TextBox();
+            this.tb_tenloaibenh = new System.Windows.Forms.TextBox();
+            this.tb_trieuchung = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +49,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tb_malb);
+            this.panel1.Controls.Add(this.tb_tenloaibenh);
+            this.panel1.Controls.Add(this.tb_trieuchung);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
@@ -63,26 +63,35 @@
             this.panel1.Size = new System.Drawing.Size(800, 142);
             this.panel1.TabIndex = 1;
             // 
-            // textBox3
+            // button3
             // 
-            this.textBox3.Location = new System.Drawing.Point(185, 30);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 20);
-            this.textBox3.TabIndex = 17;
+            this.button3.Location = new System.Drawing.Point(455, 70);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 32);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Thêm";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // tb_malb
             // 
-            this.textBox2.Location = new System.Drawing.Point(455, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(248, 20);
-            this.textBox2.TabIndex = 16;
+            this.tb_malb.Location = new System.Drawing.Point(185, 30);
+            this.tb_malb.Name = "tb_malb";
+            this.tb_malb.Size = new System.Drawing.Size(152, 20);
+            this.tb_malb.TabIndex = 17;
             // 
-            // textBox1
+            // tb_tenloaibenh
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 15;
+            this.tb_tenloaibenh.Location = new System.Drawing.Point(455, 30);
+            this.tb_tenloaibenh.Name = "tb_tenloaibenh";
+            this.tb_tenloaibenh.Size = new System.Drawing.Size(248, 20);
+            this.tb_tenloaibenh.TabIndex = 16;
+            // 
+            // tb_trieuchung
+            // 
+            this.tb_trieuchung.Location = new System.Drawing.Point(185, 70);
+            this.tb_trieuchung.Name = "tb_trieuchung";
+            this.tb_trieuchung.Size = new System.Drawing.Size(152, 20);
+            this.tb_trieuchung.TabIndex = 15;
             // 
             // button2
             // 
@@ -128,15 +137,6 @@
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Mã loại bệnh";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(455, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 32);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -186,9 +186,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_malb;
+        private System.Windows.Forms.TextBox tb_tenloaibenh;
+        private System.Windows.Forms.TextBox tb_trieuchung;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
