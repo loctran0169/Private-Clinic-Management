@@ -34,6 +34,7 @@
             this.sua = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tim = new System.Windows.Forms.Button();
             this.Load = new System.Windows.Forms.Button();
             this.dtp_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.tb_hoten = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tim = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_benhnhan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -133,6 +133,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Bệnh Nhân";
             // 
+            // tim
+            // 
+            this.tim.Location = new System.Drawing.Point(311, 18);
+            this.tim.Name = "tim";
+            this.tim.Size = new System.Drawing.Size(75, 23);
+            this.tim.TabIndex = 14;
+            this.tim.Text = "Tìm kiếm";
+            this.tim.UseVisualStyleBackColor = true;
+            this.tim.Click += new System.EventHandler(this.tim_Click);
+            // 
             // Load
             // 
             this.Load.Location = new System.Drawing.Point(186, 118);
@@ -145,6 +155,8 @@
             // 
             // dtp_ngaysinh
             // 
+            this.dtp_ngaysinh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtp_ngaysinh.CustomFormat = "dd/MM/yyyy";
             this.dtp_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_ngaysinh.Location = new System.Drawing.Point(123, 75);
             this.dtp_ngaysinh.Name = "dtp_ngaysinh";
@@ -256,16 +268,6 @@
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Giới Tính";
-            // 
-            // tim
-            // 
-            this.tim.Location = new System.Drawing.Point(311, 18);
-            this.tim.Name = "tim";
-            this.tim.Size = new System.Drawing.Size(75, 23);
-            this.tim.TabIndex = 14;
-            this.tim.Text = "Tìm kiếm";
-            this.tim.UseVisualStyleBackColor = true;
-            this.tim.Click += new System.EventHandler(this.tim_Click);
             // 
             // firmBenhNhan
             // 

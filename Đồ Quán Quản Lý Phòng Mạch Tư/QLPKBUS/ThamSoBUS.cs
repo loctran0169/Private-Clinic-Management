@@ -8,37 +8,36 @@ using System.Threading.Tasks;
 
 namespace QLPKBUS
 {
-    public class ThuocBUS
+    public class ThamSoBUS
     {
-        private ThuocDAL bdal;
-
-        public ThuocBUS()
+        private ThamSoDAL bdal;
+        public ThamSoBUS()
         {
-            bdal = new ThuocDAL();
+            bdal = new ThamSoDAL();
         }
-        public bool them(ThuocDTO lb)
+        public bool them(ThamSoDTO lb)
         {
             bool re = bdal.them(lb);
             return re;
         }
 
-        public bool xoa(ThuocDTO lb)
+        public bool xoa(ThamSoDTO lb)
         {
             bool re = bdal.xoa(lb);
             return re;
         }
 
-        public bool sua(ThuocDTO lb)
+        public bool sua(ThamSoDTO lb)
         {
             bool re = bdal.sua(lb);
             return re;
         }
 
-        public List<ThuocDTO> select()
+        public List<ThamSoDTO> select()
         {
             return bdal.select();
         }
-        public List<ThuocDTO> selectByKeyWord(string sKeyword)
+        public List<ThamSoDTO> selectByKeyWord(string sKeyword)
         {
             return bdal.selectByKeyWord(sKeyword);
         }

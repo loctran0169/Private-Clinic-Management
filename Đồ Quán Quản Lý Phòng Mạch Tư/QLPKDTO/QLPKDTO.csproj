@@ -49,6 +49,7 @@
     <Compile Include="PhieuKhamDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuyenHanDTO.cs" />
+    <Compile Include="ThamSoDTO.cs" />
     <Compile Include="ThuocDTO.cs" />
     <Compile Include="UserDTO.cs" />
   </ItemGroup>
