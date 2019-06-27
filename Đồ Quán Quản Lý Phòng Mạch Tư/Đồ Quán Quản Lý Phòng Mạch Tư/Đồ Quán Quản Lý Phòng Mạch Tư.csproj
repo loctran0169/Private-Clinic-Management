@@ -185,6 +185,12 @@
     <Compile Include="firmQuyenHan.Designer.cs">
       <DependentUpon>firmQuyenHan.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmSaoLuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmSaoLuu.Designer.cs">
+      <DependentUpon>firmSaoLuu.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmThamSo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="firmQuyenHan.resx">
       <DependentUpon>firmQuyenHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmSaoLuu.resx">
+      <DependentUpon>firmSaoLuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmThamSo.resx">
       <DependentUpon>firmThamSo.cs</DependentUpon>

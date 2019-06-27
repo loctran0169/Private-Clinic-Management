@@ -303,7 +303,17 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Form frm = kiemtraform(typeof(firmSaoLuu));
+            if (frm == null)
+            {
+                firmSaoLuu forms = new firmSaoLuu();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
         }
 
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
