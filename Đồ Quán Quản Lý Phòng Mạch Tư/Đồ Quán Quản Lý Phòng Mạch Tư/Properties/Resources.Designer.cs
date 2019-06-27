@@ -143,6 +143,16 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DistinctSafeAlleycat_small {
+            get {
+                object obj = ResourceManager.GetObject("DistinctSafeAlleycat-small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap đơn_vị {
             get {
                 object obj = ResourceManager.GetObject("đơn_vị", resourceCulture);
@@ -156,6 +166,16 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties {
         internal static System.Drawing.Bitmap giới_thiệu {
             get {
                 object obj = ResourceManager.GetObject("giới_thiệu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap giphy {
+            get {
+                object obj = ResourceManager.GetObject("giphy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

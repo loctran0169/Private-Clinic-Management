@@ -85,7 +85,6 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
             dtgv_benhnhan.Columns.Clear();
             dtgv_benhnhan.DataSource = null;
-
             dtgv_benhnhan.AutoGenerateColumns = false;
             dtgv_benhnhan.AllowUserToAddRows = false;
 

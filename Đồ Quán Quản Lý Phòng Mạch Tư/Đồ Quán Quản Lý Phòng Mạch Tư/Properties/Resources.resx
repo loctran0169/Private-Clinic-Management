@@ -133,14 +133,17 @@
   <data name="vai_trò_và_quyền_hạn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vai trò và quyền hạn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="giphy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bệnh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bệnh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="báo_cáo_sử_dụng_thuốc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\báo cáo sử dụng thuốc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="quản_lí_bệnh_nhân" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quản lí bệnh nhân.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tham_số" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tham số.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lịch_làm_việc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lịch làm việc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,14 +151,17 @@
   <data name="người_dùng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\người dùng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thông_tin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thông tin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="quản_lí_bệnh_nhân" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quản lí bệnh nhân.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="báo_cáo_theo_ngày" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\báo cáo theo ngày.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kết_thúc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kết thúc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thuốc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thuốc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phần_mềm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phần mềm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,6 +172,9 @@
   <data name="quản_li" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quản li.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="noname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noname.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="nhóm_sản_xuất" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nhóm sản xuất.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,11 +184,11 @@
   <data name="phiếu_khám" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phiếu khám.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="báo_cáo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\báo cáo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="thông_tin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thông tin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thuốc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thuốc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sao_lưu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sao lưu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="danh_sách_khám_bệnh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\danh sách khám bệnh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,11 +199,11 @@
   <data name="thay_đổi_mật_khẩu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thay đổi mật khẩu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="báo_cáo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\báo cáo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hóa_đơn_thuốc_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hóa đơn thuốc].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sao_lưu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sao lưu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="quản_lí_nhân_viên_phòng_khám" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quản lí nhân viên phòng khám.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,13 +211,10 @@
   <data name="đơn_vị" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\đơn vị.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tham_số" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tham số.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="hệ_thống" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hệ thống.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="noname" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noname.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DistinctSafeAlleycat-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DistinctSafeAlleycat-small.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

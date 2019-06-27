@@ -11,21 +11,12 @@ namespace QLPKBUS
     public class ThamSoBUS
     {
         private ThamSoDAL bdal;
+
         public ThamSoBUS()
         {
             bdal = new ThamSoDAL();
-        }
-        public bool them(ThamSoDTO lb)
-        {
-            bool re = bdal.them(lb);
-            return re;
-        }
-
-        public bool xoa(ThamSoDTO lb)
-        {
-            bool re = bdal.xoa(lb);
-            return re;
-        }
+        }   
+            
 
         public bool sua(ThamSoDTO lb)
         {
@@ -37,9 +28,6 @@ namespace QLPKBUS
         {
             return bdal.select();
         }
-        public List<ThamSoDTO> selectByKeyWord(string sKeyword)
-        {
-            return bdal.selectByKeyWord(sKeyword);
-        }
+        
     }
 }
