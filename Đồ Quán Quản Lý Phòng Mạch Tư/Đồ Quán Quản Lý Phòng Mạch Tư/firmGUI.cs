@@ -1,11 +1,15 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+//using MySql.Data.MySqlClient;
 
 namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
@@ -45,256 +49,136 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmDoiMatKhau));
-            if (frm == null)
-            {
-                firmDoiMatKhau forms = new firmDoiMatKhau();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            Form fm = new firmDoiMatKhau();
+            fm.ShowDialog();
         }
 
         private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmThongTinNV));
-            if (frm == null)
-            {
-                firmThongTinNV forms = new firmThongTinNV();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmThongTinNV fm = new firmThongTinNV();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmNguoiDung));
-            if (frm == null)
-            {
-                firmNguoiDung forms = new firmNguoiDung();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmNguoiDung fm = new firmNguoiDung();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmQuyenHan));
-            if (frm == null)
-            {
-                firmQuyenHan forms = new firmQuyenHan();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmQuyenHan fm = new firmQuyenHan();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmNhanVien));
-            if (frm == null)
-            {
-                firmNhanVien forms = new firmNhanVien();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmNhanVien fm = new firmNhanVien();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmBenhNhan));
-            if (frm == null)
-            {
-                firmBenhNhan forms = new firmBenhNhan();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmBenhNhan fm = new firmBenhNhan();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmDanhSachKhamBenh));
-            if (frm == null)
-            {
-                firmDanhSachKhamBenh forms = new firmDanhSachKhamBenh();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmDanhSachKhamBenh fm = new firmDanhSachKhamBenh();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmLapDanhSachKhamBenh));
-            if (frm == null)
-            {
-                firmLapDanhSachKhamBenh forms = new firmLapDanhSachKhamBenh();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmLapDanhSachKhamBenh fm = new firmLapDanhSachKhamBenh();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmPhieuKham));
-            if (frm == null)
-            {
-                firmPhieuKham forms = new firmPhieuKham();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmPhieuKham fm = new firmPhieuKham();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmLapDonThuoc));
-            if (frm == null)
-            {
-                firmLapDonThuoc forms = new firmLapDonThuoc();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmLapDonThuoc fm = new firmLapDonThuoc();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmHoaDon));
-            if (frm == null)
-            {
-                firmHoaDon forms = new firmHoaDon();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmHoaDon fm = new firmHoaDon();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmBanThuoc));
-            if (frm == null)
-            {
-                firmBanThuoc forms = new firmBanThuoc();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmBanThuoc fm = new firmBanThuoc();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmThamSo));
-            if (frm == null)
-            {
-                firmThamSo forms = new firmThamSo();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmThamSo fm = new firmThamSo();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmThuoc));
-            if (frm == null)
-            {
-                firmThuoc forms = new firmThuoc();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmThuoc fm = new firmThuoc();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmDonVi));
-            if (frm == null)
-            {
-                firmDonVi forms = new firmDonVi();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmDonVi fm = new firmDonVi();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmCachDung));
-            if (frm == null)
-            {
-                firmCachDung forms = new firmCachDung();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmCachDung fm = new firmCachDung();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmBenh));
-            if (frm == null)
-            {
-                firmBenh forms = new firmBenh();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmBenh fm = new firmBenh();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -305,76 +189,51 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmCaLam));
-            if (frm == null)
-            {
-                firmCaLam forms = new firmCaLam();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmCaLam fm = new firmCaLam();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(firmBaoCaoSuDungThuoc_Ngay));
-            if (frm == null)
-            {
-                firmBaoCaoSuDungThuoc_Ngay forms = new firmBaoCaoSuDungThuoc_Ngay();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            };
+            Form frm = kiemtraform(typeof(firmCaLam));
+            firmBaoCaoSuDungThuoc_Ngay fm = new firmBaoCaoSuDungThuoc_Ngay();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmBaoCaoSuDungThuoc_Thang));
-            if (frm == null)
-            {
-                firmBaoCaoSuDungThuoc_Thang forms = new firmBaoCaoSuDungThuoc_Thang();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmBaoCaoSuDungThuoc_Thang fm = new firmBaoCaoSuDungThuoc_Thang();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmBaoCaoNgay));
-            if (frm == null)
-            {
-                firmBaoCaoNgay forms = new firmBaoCaoNgay();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmBaoCaoNgay fm = new firmBaoCaoNgay();
+            fm.MdiParent = this;
+            fm.Show();
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmBaoCaoThang));
-            if (frm == null)
-            {
-                firmBaoCaoThang forms = new firmBaoCaoThang();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            firmBaoCaoThang fm = new firmBaoCaoThang();
+            fm.MdiParent = this;
+            fm.Show();
+        }
+
+        private void firmGUI_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

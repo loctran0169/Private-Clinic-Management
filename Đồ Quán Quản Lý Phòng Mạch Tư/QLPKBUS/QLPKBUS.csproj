@@ -41,10 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BenhBUS.cs" />
     <Compile Include="BenhNhanBUS.cs" />
-    <Compile Include="HoaDonBUS.cs" />
+    <Compile Include="CachDungBUS.cs" />
+    <Compile Include="DonViTinhBUS.cs" />
+    <Compile Include="NhanVienBUS.cs" />
+    <Compile Include="PhieuKhamBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThamSoBUS.cs" />
+    <Compile Include="QuyenHanBUS.cs" />
+    <Compile Include="ThuocBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLPKDAL\QLPKDAL.csproj">

@@ -29,17 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dtgv_benhnhan = new System.Windows.Forms.DataGridView();
+            this.xoa = new System.Windows.Forms.Button();
+            this.sua = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Load = new System.Windows.Forms.Button();
             this.dtp_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.tb_hoten = new System.Windows.Forms.TextBox();
             this.tb_mabn = new System.Windows.Forms.TextBox();
@@ -53,14 +48,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tim = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_benhnhan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.dtgv_benhnhan);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 166);
             this.groupBox3.Name = "groupBox3";
@@ -69,70 +65,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Bệnh Nhân";
             // 
-            // dataGridView1
+            // dtgv_benhnhan
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(794, 265);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgv_benhnhan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_benhnhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_benhnhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgv_benhnhan.Location = new System.Drawing.Point(3, 16);
+            this.dtgv_benhnhan.Name = "dtgv_benhnhan";
+            this.dtgv_benhnhan.Size = new System.Drawing.Size(794, 265);
+            this.dtgv_benhnhan.TabIndex = 0;
             // 
-            // Column1
+            // xoa
             // 
-            this.Column1.HeaderText = "Mã Bệnh Nhân";
-            this.Column1.Name = "Column1";
+            this.xoa.Location = new System.Drawing.Point(452, 118);
+            this.xoa.Name = "xoa";
+            this.xoa.Size = new System.Drawing.Size(78, 31);
+            this.xoa.TabIndex = 9;
+            this.xoa.Text = "Xóa";
+            this.xoa.UseVisualStyleBackColor = true;
+            this.xoa.Click += new System.EventHandler(this.xoa_Click);
             // 
-            // Column2
+            // sua
             // 
-            this.Column2.HeaderText = "Họ Và Tên";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Ngày Sinh";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Giới Tính";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Số Điện Thoại";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Địa Chỉ";
-            this.Column6.Name = "Column6";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(452, 118);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 31);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(368, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 31);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.sua.Location = new System.Drawing.Point(368, 118);
+            this.sua.Name = "sua";
+            this.sua.Size = new System.Drawing.Size(78, 31);
+            this.sua.TabIndex = 8;
+            this.sua.Text = "Sửa";
+            this.sua.UseVisualStyleBackColor = true;
+            this.sua.Click += new System.EventHandler(this.sua_Click);
             // 
             // button1
             // 
@@ -146,10 +107,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tim);
+            this.groupBox1.Controls.Add(this.Load);
             this.groupBox1.Controls.Add(this.dtp_ngaysinh);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.xoa);
             this.groupBox1.Controls.Add(this.tb_hoten);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.sua);
             this.groupBox1.Controls.Add(this.tb_mabn);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.tb_diachi);
@@ -170,8 +133,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Bệnh Nhân";
             // 
+            // Load
+            // 
+            this.Load.Location = new System.Drawing.Point(186, 118);
+            this.Load.Name = "Load";
+            this.Load.Size = new System.Drawing.Size(92, 31);
+            this.Load.TabIndex = 13;
+            this.Load.Text = "Load Dữ Liệu";
+            this.Load.UseVisualStyleBackColor = true;
+            this.Load.Click += new System.EventHandler(this.Load_Click);
+            // 
             // dtp_ngaysinh
             // 
+            this.dtp_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_ngaysinh.Location = new System.Drawing.Point(123, 75);
             this.dtp_ngaysinh.Name = "dtp_ngaysinh";
             this.dtp_ngaysinh.Size = new System.Drawing.Size(172, 20);
@@ -283,6 +257,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Giới Tính";
             // 
+            // tim
+            // 
+            this.tim.Location = new System.Drawing.Point(311, 18);
+            this.tim.Name = "tim";
+            this.tim.Size = new System.Drawing.Size(75, 23);
+            this.tim.TabIndex = 14;
+            this.tim.Text = "Tìm kiếm";
+            this.tim.UseVisualStyleBackColor = true;
+            this.tim.Click += new System.EventHandler(this.tim_Click);
+            // 
             // firmBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,7 +277,7 @@
             this.Name = "firmBenhNhan";
             this.Text = "Bệnh Nhân";
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_benhnhan)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -303,29 +287,25 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dtgv_benhnhan;
+        private System.Windows.Forms.Button xoa;
+        private System.Windows.Forms.Button sua;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtp_ngaysinh;
         private System.Windows.Forms.TextBox tb_hoten;
-        private System.Windows.Forms.TextBox tb_mabn;
         private System.Windows.Forms.TextBox tb_diachi;
         private System.Windows.Forms.TextBox tb_sdt;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_mabn;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Load;
+        private System.Windows.Forms.Button tim;
     }
 }

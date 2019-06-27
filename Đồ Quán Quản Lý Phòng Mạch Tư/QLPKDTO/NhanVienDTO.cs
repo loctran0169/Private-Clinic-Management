@@ -6,28 +6,20 @@ using System.Threading.Tasks;
 
 namespace QLPKDTO
 {
-    public class BenhNhanDTO
+    public class NhanVienDTO
     {
-        private int MaBN;
+        private int MaNV;
         private string HoTen;
         private DateTime NgaySinh;
         private string GioiTinh;
+        private string ChucVu;
         private string DiaChi;
-        public BenhNhanDTO(){
-         }
-        public BenhNhanDTO(int maBN, string hoTen, DateTime ngaySinh, string gioiTinh, string diaChi)
-        {
-            MaBN = maBN;
-            HoTen = hoTen;
-            NgaySinh = ngaySinh;
-            GioiTinh = gioiTinh;
-            DiaChi = diaChi;
-        }
 
-        public int MaBN1 { get => MaBN; set => MaBN = value; }
+        public int MaNV1 { get => MaNV; set => MaNV = value; }
         public string HoTen1 { get => HoTen; set => HoTen = value; }
         public DateTime NgaySinh1 { get => NgaySinh; set => NgaySinh = value; }
         public string GioiTinh1 { get => GioiTinh; set => GioiTinh = value; }
+        public string ChucVu1 { get => ChucVu; set => ChucVu = value; }
         public string DiaChi1 { get => DiaChi; set => DiaChi = value; }
     }
 }

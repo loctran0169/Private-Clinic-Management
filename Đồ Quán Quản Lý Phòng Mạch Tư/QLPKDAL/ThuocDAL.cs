@@ -1,38 +1,44 @@
-﻿using QLPKDTO;
+﻿using MySql.Data.MySqlClient;
+using QLPKDTO;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace QLPKDAL
 {
-    public class BenhNhanDAL
+    public class ThuocDAL
     {
         private string connectionString;
 
         public string ConnectionString { get => connectionString; set => connectionString = value; }
 
-        public BenhNhanDAL()
+        public ThuocDAL()
         {
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
 
-        public bool them(BenhNhanDTO bn)
+        public bool them(ThuocDTO bn)
         {
+
             string query = string.Empty;
-            query += "INSERT INTO BENHNHAN VALUES (";
-            query += "'"+bn.MaBN1+"',N'"+ bn.HoTen1+"','"+bn.NgaySinh1+"',N'"+bn.GioiTinh1+"',N'"+bn.DiaChi1+ "'";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            query += "INSERT INTO THUOC(tenthuoc,madv,nsx,hsd,dongia,soluongton) VALUES (@tenthuoc,@madv,@nsx,@hsd,@dongia,@soluong)";
+            using (MySqlConnection con = new MySqlConnection(connectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@tenthuoc", bn.TenThuoc1);
+                    cmd.Parameters.AddWithValue("@madv", bn.MaDV1);
+                    cmd.Parameters.AddWithValue("@nsx", bn.NSX1);
+                    cmd.Parameters.AddWithValue("@hsd", bn.HSD1);
+                    cmd.Parameters.AddWithValue("@dongia", bn.DonGia1);
+                    cmd.Parameters.AddWithValue("@soluongton", bn.SoLuongTon1);
                     try
                     {
                         con.Open();
@@ -50,23 +56,27 @@ namespace QLPKDAL
             return true;
         }
 
-        public bool sua(BenhNhanDTO bn)
+        public bool sua(ThuocDTO bn)
         {
             string query = string.Empty;
-            query += "UPDATE BENHNHAN SET mabn = @mabn, HoTen = @hoten, ngaysinh = @ngaysinh, gioitinh = @gioitinh,diachi = @diachi WHERE mabn = @mabn";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            query += "UPDATE THUOC SET mathuoc = @mathuoc, madv = @madv, nsx = @nsx, hsd = @hsd ,dongia = @dongia,soluongton=@soluongton  WHERE mathuoc = @mathuoc";
+
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@mabn", bn.MaBN1);
-                    cmd.Parameters.AddWithValue("@hoten", bn.HoTen1);
-                    cmd.Parameters.AddWithValue("@ngaysinh", bn.NgaySinh1);
-                    cmd.Parameters.AddWithValue("@gioitinh", bn.GioiTinh1);
-                    cmd.Parameters.AddWithValue("@diachi", bn.DiaChi1);
+                    cmd.Parameters.AddWithValue("@mathuoc", bn.MaThuoc1);
+                    cmd.Parameters.AddWithValue("@tenthuoc", bn.TenThuoc1);
+                    cmd.Parameters.AddWithValue("@madv", bn.MaDV1);
+                    cmd.Parameters.AddWithValue("@nsx", bn.NSX1);
+                    cmd.Parameters.AddWithValue("@hsd", bn.HSD1);
+                    cmd.Parameters.AddWithValue("@dongia", bn.DonGia1);
+                    cmd.Parameters.AddWithValue("@soluongton", bn.SoLuongTon1);
+
                     try
                     {
                         con.Open();
@@ -84,19 +94,19 @@ namespace QLPKDAL
             return true;
         }
 
-        public bool xoa(BenhNhanDTO bn)
+        public bool xoa(ThuocDTO bn)
         {
             string query = string.Empty;
-            query += "DELETE FROM BenhNhan WHERE mabn = @mabn";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            query += "DELETE FROM THUOC WHERE mathuoc = @mathuoc";
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@mabn", bn.MaBN1);
+                    cmd.Parameters.AddWithValue("@mathuoc", bn.MaThuoc1);
                     try
                     {
                         con.Open();
@@ -114,18 +124,19 @@ namespace QLPKDAL
             return true;
         }
 
-        public List<BenhNhanDTO> select()
+        public List<ThuocDTO> select()
         {
             string query = string.Empty;
             query += "SELECT * ";
-            query += "FROM BenhNhan";
+            query += "FROM THUOC";
 
-            List<BenhNhanDTO> listBenhNhan = new List<BenhNhanDTO>();
+            List<ThuocDTO> listthuoc = new List<ThuocDTO>();
 
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            string ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -134,19 +145,20 @@ namespace QLPKDAL
                     try
                     {
                         con.Open();
-                        SqlDataReader reader = null;
+                        MySqlDataReader reader = null;
                         reader = cmd.ExecuteReader();
                         if (reader.HasRows == true)
                         {
                             while (reader.Read())
                             {
-                                BenhNhanDTO bn = new BenhNhanDTO();
-                                bn.MaBN1 = reader["MaBN"].ToString();
-                                bn.NgaySinh1 = (DateTime)reader["NgaySinh"];
-                                bn.GioiTinh1 = reader["GioiTinh"].ToString();
-                                bn.DiaChi1 = reader["DiaChi"].ToString();
-                                bn.HoTen1 = reader["SDT"].ToString();
-                                listBenhNhan.Add(bn);
+                                ThuocDTO bn = new ThuocDTO();
+                                bn.MaThuoc1 = int.Parse(reader["MaThuoc"].ToString());
+                                bn.MaDV1 = int.Parse(reader["MaDV"].ToString());
+                                bn.NSX1 = (DateTime)reader["NSX"];
+                                bn.HSD1 = (DateTime)reader["HSD"];
+                                bn.DonGia1 = int.Parse(reader["DonGia"].ToString());
+                                bn.SoLuongTon1 = int.Parse(reader["SoLuongTon"].ToString());
+                                listthuoc.Add(bn);
                             }
                         }
 
@@ -158,25 +170,26 @@ namespace QLPKDAL
                         con.Close();
                         return null;
                     }
+
                 }
             }
-            return listBenhNhan;
+            return listthuoc;
         }
 
-        public List<BenhNhanDTO> selectByKeyWord(string sKeyword)
+        public List<ThuocDTO> selectByKeyWord(string sKeyword)
         {
             string query = string.Empty;
             query += " SELECT *";
-            query += " FROM BenhNhan";
-            query += " WHERE (mabn LIKE CONCAT('%',@sKeyword,'%'))";
-            query += " OR (Hoten LIKE CONCAT('%',@sKeyword,'%'))";
+            query += " FROM THUOC";
+            query += " WHERE (mathuoc LIKE CONCAT('%',@sKeyword,'%'))";
+            query += " OR (tenthuoc LIKE CONCAT('%',@sKeyword,'%'))";
 
-            List<BenhNhanDTO> listBenhNhan = new List<BenhNhanDTO>();
+            List<ThuocDTO> listthuoc = new List<ThuocDTO>();
 
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -185,19 +198,20 @@ namespace QLPKDAL
                     try
                     {
                         con.Open();
-                        SqlDataReader reader = null;
+                        MySqlDataReader reader = null;
                         reader = cmd.ExecuteReader();
                         if (reader.HasRows == true)
                         {
                             while (reader.Read())
                             {
-                                BenhNhanDTO bn = new BenhNhanDTO();
-                                bn.MaBN1 = reader["MaBN"].ToString();
-                                bn.NgaySinh1 = (DateTime)reader["NgaySinh"];
-                                bn.GioiTinh1 = reader["GioiTinh"].ToString();
-                                bn.DiaChi1 = reader["DiaChi"].ToString();
-                                bn.HoTen1 = reader["SDT"].ToString();
-                                listBenhNhan.Add(bn);
+                                ThuocDTO bn = new ThuocDTO();
+                                bn.MaThuoc1 = int.Parse(reader["MaThuoc"].ToString());
+                                bn.MaDV1 = int.Parse(reader["MaDV"].ToString());
+                                bn.NSX1 = (DateTime)reader["NSX"];
+                                bn.HSD1 = (DateTime)reader["HSD"];
+                                bn.DonGia1 = int.Parse(reader["DonGia"].ToString());
+                                bn.SoLuongTon1 = int.Parse(reader["SoLuongTon"].ToString());
+                                listthuoc.Add(bn);
                             }
                         }
 
@@ -211,8 +225,7 @@ namespace QLPKDAL
                     }
                 }
             }
-            return listBenhNhan;
+            return listthuoc;
         }
     }
-
 }

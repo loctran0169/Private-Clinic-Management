@@ -16,10 +16,5 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("aaa");
-        }
     }
 }
