@@ -228,6 +228,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+           
+            
             Form frm = kiemtraform(typeof(firmThamSo));
             if (frm == null)
             {

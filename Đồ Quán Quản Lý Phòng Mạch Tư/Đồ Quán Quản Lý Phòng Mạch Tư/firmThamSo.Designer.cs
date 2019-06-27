@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_MaTS = new System.Windows.Forms.TextBox();
+            this.textBox_TenTS = new System.Windows.Forms.TextBox();
+            this.textBox_GiaTri = new System.Windows.Forms.TextBox();
+            this.bt_sua = new System.Windows.Forms.Button();
+            this.label_GiaTri = new System.Windows.Forms.Label();
+            this.label_TenTS = new System.Windows.Forms.Label();
+            this.label_MaTS = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,85 +46,76 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBox_MaTS);
+            this.panel1.Controls.Add(this.textBox_TenTS);
+            this.panel1.Controls.Add(this.textBox_GiaTri);
+            this.panel1.Controls.Add(this.bt_sua);
+            this.panel1.Controls.Add(this.label_GiaTri);
+            this.panel1.Controls.Add(this.label_TenTS);
+            this.panel1.Controls.Add(this.label_MaTS);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 142);
             this.panel1.TabIndex = 0;
             // 
-            // textBox3
+            // textBox_MaTS
             // 
-            this.textBox3.Location = new System.Drawing.Point(185, 30);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 20);
-            this.textBox3.TabIndex = 17;
+            this.textBox_MaTS.Location = new System.Drawing.Point(185, 30);
+            this.textBox_MaTS.Name = "textBox_MaTS";
+            this.textBox_MaTS.Size = new System.Drawing.Size(152, 20);
+            this.textBox_MaTS.TabIndex = 17;
             // 
-            // textBox2
+            // textBox_TenTS
             // 
-            this.textBox2.Location = new System.Drawing.Point(455, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(253, 20);
-            this.textBox2.TabIndex = 16;
+            this.textBox_TenTS.Location = new System.Drawing.Point(447, 30);
+            this.textBox_TenTS.Name = "textBox_TenTS";
+            this.textBox_TenTS.Size = new System.Drawing.Size(261, 20);
+            this.textBox_TenTS.TabIndex = 16;
             // 
-            // textBox1
+            // textBox_GiaTri
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 15;
+            this.textBox_GiaTri.Location = new System.Drawing.Point(185, 70);
+            this.textBox_GiaTri.Name = "textBox_GiaTri";
+            this.textBox_GiaTri.Size = new System.Drawing.Size(152, 20);
+            this.textBox_GiaTri.TabIndex = 15;
             // 
-            // button2
+            // bt_sua
             // 
-            this.button2.Location = new System.Drawing.Point(583, 73);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bt_sua.Location = new System.Drawing.Point(539, 63);
+            this.bt_sua.Name = "bt_sua";
+            this.bt_sua.Size = new System.Drawing.Size(75, 32);
+            this.bt_sua.TabIndex = 13;
+            this.bt_sua.Text = "Sửa";
+            this.bt_sua.UseVisualStyleBackColor = true;
+            this.bt_sua.Click += new System.EventHandler(this.bt_sua_Click);
             // 
-            // button1
+            // label_GiaTri
             // 
-            this.button1.Location = new System.Drawing.Point(455, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Sửa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label_GiaTri.AutoSize = true;
+            this.label_GiaTri.Location = new System.Drawing.Point(87, 73);
+            this.label_GiaTri.Name = "label_GiaTri";
+            this.label_GiaTri.Size = new System.Drawing.Size(38, 13);
+            this.label_GiaTri.TabIndex = 12;
+            this.label_GiaTri.Text = "Giá Trị";
             // 
-            // label4
+            // label_TenTS
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(87, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Giá Trị";
+            this.label_TenTS.AutoSize = true;
+            this.label_TenTS.Location = new System.Drawing.Point(357, 33);
+            this.label_TenTS.Name = "label_TenTS";
+            this.label_TenTS.Size = new System.Drawing.Size(72, 13);
+            this.label_TenTS.TabIndex = 11;
+            this.label_TenTS.Text = "Tên Tham Số";
             // 
-            // label3
+            // label_MaTS
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(357, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Tên Tham Số";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Mã Tham Số";
+            this.label_MaTS.AutoSize = true;
+            this.label_MaTS.Location = new System.Drawing.Point(87, 33);
+            this.label_MaTS.Name = "label_MaTS";
+            this.label_MaTS.Size = new System.Drawing.Size(68, 13);
+            this.label_MaTS.TabIndex = 10;
+            this.label_MaTS.Text = "Mã Tham Số";
             // 
             // dataGridView1
             // 
@@ -165,6 +155,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "firmThamSo";
             this.Text = "Tham Số";
+            this.Load += new System.EventHandler(this.firmThamSo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -175,14 +166,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox_MaTS;
+        private System.Windows.Forms.TextBox textBox_TenTS;
+        private System.Windows.Forms.TextBox textBox_GiaTri;
+        private System.Windows.Forms.Button bt_sua;
+        private System.Windows.Forms.Label label_GiaTri;
+        private System.Windows.Forms.Label label_TenTS;
+        private System.Windows.Forms.Label label_MaTS;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

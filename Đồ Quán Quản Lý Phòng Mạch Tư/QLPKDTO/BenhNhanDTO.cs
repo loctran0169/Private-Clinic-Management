@@ -13,8 +13,10 @@ namespace QLPKDTO
         private DateTime NgaySinh;
         private string GioiTinh;
         private string DiaChi;
+
         public BenhNhanDTO(){
-         }
+
+        }
         public BenhNhanDTO(int maBN, string hoTen, DateTime ngaySinh, string gioiTinh, string diaChi)
         {
             MaBN = maBN;
