@@ -73,7 +73,13 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         }
         private void firmThamSo_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Đang load tham số");
+            
+
+        }
+
+        private void bt_load_Click(object sender, EventArgs e)
+        {
+            
             tsbus = new ThamSoBUS();
             List<ThamSoDTO> listthamso = new List<ThamSoDTO>();
             listthamso = tsbus.select();
@@ -83,9 +89,19 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             else
             {
                 MessageBox.Show("Load tham số thành công");
-                
+
             }
             loadData_Vao_GridView(listthamso);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dataGridView1.Rows[e.RowIndex];
+
+            textBox_MaTS.Text = row.Cells[0].Value.ToString();
+            textBox_TenTS.Text = row.Cells[1].Value.ToString();
+            textBox_GiaTri.Text = row.Cells[2].Value.ToString();
 
         }
     }
