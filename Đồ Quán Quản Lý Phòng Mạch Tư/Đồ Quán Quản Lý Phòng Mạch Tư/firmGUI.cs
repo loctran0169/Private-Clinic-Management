@@ -402,5 +402,20 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         {
 
         }
+
+        private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmKhoiPhuc));
+            if (frm == null)
+            {
+                firmKhoiPhuc forms = new firmKhoiPhuc();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
     }
 }

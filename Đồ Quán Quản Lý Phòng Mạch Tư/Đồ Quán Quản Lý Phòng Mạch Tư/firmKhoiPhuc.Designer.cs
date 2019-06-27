@@ -41,6 +41,9 @@
             this.bt_restore = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
+            this.lb_restore = new System.Windows.Forms.Label();
+            this.tb_port = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 135);
+            this.label4.Location = new System.Drawing.Point(33, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 13);
             this.label4.TabIndex = 3;
@@ -82,7 +85,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 162);
+            this.label5.Location = new System.Drawing.Point(33, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 4;
@@ -91,6 +94,8 @@
             // cbb_server
             // 
             this.cbb_server.FormattingEnabled = true;
+            this.cbb_server.Items.AddRange(new object[] {
+            "mysql-1325-0.cloudclusters.net"});
             this.cbb_server.Location = new System.Drawing.Point(124, 53);
             this.cbb_server.Name = "cbb_server";
             this.cbb_server.Size = new System.Drawing.Size(197, 21);
@@ -112,21 +117,21 @@
             // 
             // tb_dbname
             // 
-            this.tb_dbname.Location = new System.Drawing.Point(124, 135);
+            this.tb_dbname.Location = new System.Drawing.Point(124, 164);
             this.tb_dbname.Name = "tb_dbname";
             this.tb_dbname.Size = new System.Drawing.Size(197, 20);
             this.tb_dbname.TabIndex = 8;
             // 
             // tb_path
             // 
-            this.tb_path.Location = new System.Drawing.Point(124, 162);
+            this.tb_path.Location = new System.Drawing.Point(124, 191);
             this.tb_path.Name = "tb_path";
             this.tb_path.Size = new System.Drawing.Size(197, 20);
             this.tb_path.TabIndex = 9;
             // 
             // bt_restore
             // 
-            this.bt_restore.Location = new System.Drawing.Point(339, 162);
+            this.bt_restore.Location = new System.Drawing.Point(339, 191);
             this.bt_restore.Name = "bt_restore";
             this.bt_restore.Size = new System.Drawing.Size(100, 23);
             this.bt_restore.TabIndex = 10;
@@ -136,14 +141,15 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(36, 207);
+            this.progressBar1.AccessibleName = "";
+            this.progressBar1.Location = new System.Drawing.Point(36, 236);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(403, 23);
             this.progressBar1.TabIndex = 11;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(339, 135);
+            this.button1.Location = new System.Drawing.Point(339, 164);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 12;
@@ -151,11 +157,39 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lb_restore
+            // 
+            this.lb_restore.AutoSize = true;
+            this.lb_restore.Location = new System.Drawing.Point(33, 220);
+            this.lb_restore.Name = "lb_restore";
+            this.lb_restore.Size = new System.Drawing.Size(21, 13);
+            this.lb_restore.TabIndex = 13;
+            this.lb_restore.Text = "0%";
+            // 
+            // tb_port
+            // 
+            this.tb_port.Location = new System.Drawing.Point(124, 135);
+            this.tb_port.Name = "tb_port";
+            this.tb_port.Size = new System.Drawing.Size(197, 20);
+            this.tb_port.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Port:";
+            // 
             // firmKhoiPhuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tb_port);
+            this.Controls.Add(this.lb_restore);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.bt_restore);
@@ -191,5 +225,8 @@
         private System.Windows.Forms.Button bt_restore;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lb_restore;
+        private System.Windows.Forms.TextBox tb_port;
+        private System.Windows.Forms.Label label6;
     }
 }

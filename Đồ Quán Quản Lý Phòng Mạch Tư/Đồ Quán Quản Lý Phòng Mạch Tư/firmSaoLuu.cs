@@ -19,7 +19,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
     public partial class firmSaoLuu : Form
     {
         MySqlConnection conn;
-        string connString = "Data Source=localhost;Initial Catalog=QLPK;User ID=root;Password=angel1999";
+        string connString = ConfigurationManager.AppSettings["ConnectionString"];
+        //string connString = "Data Source = localhost; Initial Catalog = QLPK; User ID = root; Password = angel1999";
         public firmSaoLuu()
         {
             InitializeComponent();
