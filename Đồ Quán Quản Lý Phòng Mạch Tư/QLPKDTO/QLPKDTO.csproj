@@ -44,8 +44,9 @@
     <Compile Include="BenhDTO.cs" />
     <Compile Include="BenhNhanDTO.cs" />
     <Compile Include="CachDungDTO.cs" />
+    <Compile Include="DanhSachKhamBenhDTO.cs" />
     <Compile Include="DonViTinhDTO.cs" />
-    <Compile Include="LapDanhSachKhamBenhDTO.cs" />
+    <Compile Include="HoaDonDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />
     <Compile Include="PhieuKhamDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

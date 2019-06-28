@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bt_them = new System.Windows.Forms.Button();
+            this.bt_load = new System.Windows.Forms.Button();
+            this.tb_maBN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_lap = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,16 +44,18 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.bt_them);
+            this.panel1.Controls.Add(this.bt_load);
+            this.panel1.Controls.Add(this.tb_maBN);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bt_lap);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -62,43 +65,54 @@
             this.panel1.Size = new System.Drawing.Size(800, 181);
             this.panel1.TabIndex = 15;
             // 
-            // button2
+            // bt_them
             // 
-            this.button2.Location = new System.Drawing.Point(391, 113);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 34);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bt_them.Location = new System.Drawing.Point(471, 113);
+            this.bt_them.Name = "bt_them";
+            this.bt_them.Size = new System.Drawing.Size(75, 34);
+            this.bt_them.TabIndex = 34;
+            this.bt_them.Text = "Thêm";
+            this.bt_them.UseVisualStyleBackColor = true;
+            this.bt_them.Click += new System.EventHandler(this.bt_them_Click);
             // 
-            // textBox1
+            // bt_load
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 32;
+            this.bt_load.Location = new System.Drawing.Point(364, 113);
+            this.bt_load.Name = "bt_load";
+            this.bt_load.Size = new System.Drawing.Size(94, 34);
+            this.bt_load.TabIndex = 33;
+            this.bt_load.Text = "Load danh sách";
+            this.bt_load.UseVisualStyleBackColor = true;
+            this.bt_load.Click += new System.EventHandler(this.bt_load_Click);
+            // 
+            // tb_maBN
+            // 
+            this.tb_maBN.Location = new System.Drawing.Point(173, 124);
+            this.tb_maBN.Name = "tb_maBN";
+            this.tb_maBN.Size = new System.Drawing.Size(100, 20);
+            this.tb_maBN.TabIndex = 32;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(131, 118);
+            this.label3.Location = new System.Drawing.Point(78, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 31;
             this.label3.Text = "Mã bệnh nhân";
             // 
-            // button1
+            // bt_lap
             // 
-            this.button1.Location = new System.Drawing.Point(552, 113);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 34);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Lập Danh Sách ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_lap.Location = new System.Drawing.Point(552, 113);
+            this.bt_lap.Name = "bt_lap";
+            this.bt_lap.Size = new System.Drawing.Size(135, 34);
+            this.bt_lap.TabIndex = 30;
+            this.bt_lap.Text = "Lập Danh Sách ";
+            this.bt_lap.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(312, 79);
+            this.dateTimePicker1.Location = new System.Drawing.Point(173, 155);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 29;
@@ -106,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(245, 79);
+            this.label2.Location = new System.Drawing.Point(78, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 28;
@@ -132,12 +146,14 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.Column7});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 181);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 269);
             this.dataGridView1.TabIndex = 16;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Column1
             // 
@@ -169,6 +185,11 @@
             this.Column6.HeaderText = "Địa Chỉ";
             this.Column6.Name = "Column6";
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Ngày Khám";
+            this.Column7.Name = "Column7";
+            // 
             // firmLapDanhSachKhamBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,12 +208,12 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_lap;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button bt_load;
+        private System.Windows.Forms.TextBox tb_maBN;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -201,5 +222,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button bt_them;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
