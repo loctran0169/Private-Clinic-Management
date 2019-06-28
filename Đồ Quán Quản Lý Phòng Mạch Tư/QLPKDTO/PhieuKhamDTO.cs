@@ -8,12 +8,17 @@ namespace QLPKDTO
 {
     public class PhieuKhamDTO
     {
-        private int MaPK;
+        private static int MaPK=0;
         private int MaBN;
         private int MaNV;
         private int MaLB;
         private DateTime NgayKham;
         private DateTime NgayKhamLai;
+
+        public PhieuKhamDTO()
+        {
+            MaPK++;
+        }
 
         public int MaKP1 { get => MaPK; set => MaPK = value; }
         public int MaBN1 { get => MaBN; set => MaBN = value; }

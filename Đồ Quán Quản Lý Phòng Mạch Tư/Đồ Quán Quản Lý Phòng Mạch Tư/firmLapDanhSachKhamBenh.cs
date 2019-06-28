@@ -1,6 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using QLPKBUS;
+using QLPKDTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,6 +19,74 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         public firmLapDanhSachKhamBenh()
         {
             InitializeComponent();
+        }
+        private BenhNhanBUS bnbus;
+        private void loadBenhNhan(List<BenhNhanDTO> listbenhnhan)
+        {
+
+
+            //dataGridView1.Columns.Clear();
+            //dataGridView1.DataSource = null;
+            //dataGridView1.AutoGenerateColumns = false;
+            //dataGridView1.AllowUserToAddRows = false;
+
+            //DataGridViewTextBoxColumn bnma = new DataGridViewTextBoxColumn();
+            //bnma.Name = "MaBN1";
+            //bnma.HeaderText = "Mã Bệnh Nhân";
+            //bnma.DataPropertyName = "MaBN1";
+            //dataGridView1.Columns.Add(bnma);
+
+            //DataGridViewTextBoxColumn HoTen = new DataGridViewTextBoxColumn();
+            //HoTen.Name = "HoTen1";
+            //HoTen.HeaderText = "Họ Tên";
+            //HoTen.DataPropertyName = "HoTen1";
+            //dataGridView1.Columns.Add(HoTen);
+
+            //DataGridViewTextBoxColumn NgaySinh = new DataGridViewTextBoxColumn();
+            //NgaySinh.Name = "NgaySinh1";
+            //NgaySinh.HeaderText = "Ngày Sinh";
+            //NgaySinh.DataPropertyName = "NgaySinh1";
+            //dataGridView1.Columns.Add(NgaySinh);
+
+            //DataGridViewTextBoxColumn GioiTinh = new DataGridViewTextBoxColumn();
+            //GioiTinh.Name = "GioiTinh1";
+            //GioiTinh.HeaderText = "Giới Tính";
+            //GioiTinh.DataPropertyName = "GioiTinh1";
+            //dataGridView1.Columns.Add(GioiTinh);
+
+            //DataGridViewTextBoxColumn DiaChi = new DataGridViewTextBoxColumn();
+            //DiaChi.Name = "DiaChi1";
+            //DiaChi.HeaderText = "Địa Chỉ";
+            //DiaChi.DataPropertyName = "DiaChi1";
+            //dataGridView1.Columns.Add(DiaChi);
+
+            //var bindingList = new BindingList<BenhNhanDTO>(listbenhnhan);
+            //var source = new BindingSource(bindingList, null);
+            //dataGridView1.DataSource = source;
+
+            //CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dataGridView1.DataSource];
+            //myCurrencyManager.Refresh();
+            
+        }
+
+        private void bt_load_Click(object sender, EventArgs e)
+        {
+            //bnbus = new BenhNhanBUS();
+            //List<BenhNhanDTO> listbenhnhan = bnbus.select();
+            //if (listbenhnhan == null)
+            //    MessageBox.Show("Load danh sách bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu");
+            //else
+            //    MessageBox.Show("Load bệnh nhân thành công");
+            //loadBenhNhan(listbenhnhan);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dataGridView1.Rows[e.RowIndex];
+
+            tb_maBN.Text = row.Cells[0].Value.ToString();
+            
         }
     }
 }
