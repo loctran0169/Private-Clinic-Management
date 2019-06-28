@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace QLPKDAL
 {
@@ -24,7 +25,7 @@ namespace QLPKDAL
         {
 
             string query = string.Empty;
-            query += "INSERT INTO PHIEUKHAM(mapk,mabn,manv,malb,ngaykham,ngaykhamlai) VALUES (@mapk,@mabn,@manv,@malb,@ngaykham,@ngaykhamlai)";
+            query += "INSERT INTO PHIEUKHAM VALUES (@mapk,@mabn,@manv,@malb,@ngaykham,@ngaykhamlai)";
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
 
@@ -33,7 +34,7 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@mapk", pk.MaKP1);
+                    cmd.Parameters.AddWithValue("@mapk", pk.MaPK1);
                     cmd.Parameters.AddWithValue("@mabn", pk.MaBN1);
                     cmd.Parameters.AddWithValue("@manv", pk.MaNV1);
                     cmd.Parameters.AddWithValue("@malb", pk.MaLB1);
@@ -68,7 +69,7 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@mapk", pk.MaKP1);
+                    cmd.Parameters.AddWithValue("@mapk", pk.MaPK1);
                     cmd.Parameters.AddWithValue("@mabn", pk.MaBN1);
                     cmd.Parameters.AddWithValue("@manv", pk.MaNV1);
                     cmd.Parameters.AddWithValue("@malb", pk.MaLB1);
@@ -102,7 +103,7 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@mapk", bn.MaKP1);
+                    cmd.Parameters.AddWithValue("@mapk", bn.MaPK1);
                     try
                     {
                         con.Open();
@@ -119,7 +120,26 @@ namespace QLPKDAL
             }
             return true;
         }
+        public DataTable loadToDataTable()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+            try
+            {
+                kn.Open();
+                string sql = "SELECT * FROM PHIEUKHAM";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
+                dt.Dispose();
 
+            }
+            catch (Exception e)
+            {
+
+            }
+            return k;
+        }
         public List<PhieuKhamDTO> select()
         {
             string query = string.Empty;
@@ -147,10 +167,10 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 PhieuKhamDTO pk = new PhieuKhamDTO();
-                                pk.MaKP1 = int.Parse(reader["MaPK"].ToString());
-                                pk.MaBN1 = int.Parse(reader["MaBN"].ToString());
-                                pk.MaNV1 = int.Parse(reader["MaNV"].ToString());
-                                pk.MaLB1 = int.Parse(reader["MaLB"].ToString());
+                                pk.MaPK1 =reader["MaPK"].ToString();
+                                pk.MaBN1 = reader["MaBN"].ToString();
+                                pk.MaNV1 = reader["MaNV"].ToString();
+                                pk.MaLB1 = reader["MaLB"].ToString();
                                 pk.NgayKham1 = (DateTime)reader["NgayKham"];
                                 pk.NgayKhamLai1 = (DateTime)reader["NgayKhamLai"];                             
                                 listphieukham.Add(pk);
@@ -201,10 +221,10 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 PhieuKhamDTO pk = new PhieuKhamDTO();
-                                pk.MaKP1 = int.Parse(reader["MaPK"].ToString());
-                                pk.MaBN1 = int.Parse(reader["MaBN"].ToString());
-                                pk.MaNV1 = int.Parse(reader["MaNV"].ToString());
-                                pk.MaLB1 = int.Parse(reader["MaLB"].ToString());
+                                pk.MaPK1 = reader["MaPK"].ToString();
+                                pk.MaBN1 = reader["MaBN"].ToString();
+                                pk.MaNV1 = reader["MaNV"].ToString();
+                                pk.MaLB1 = reader["MaLB"].ToString();
                                 pk.NgayKham1 = (DateTime)reader["NgayKham"];
                                 pk.NgayKhamLai1 = (DateTime)reader["NgayKhamLai"];
                                 listphieukham.Add(pk);

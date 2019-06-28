@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
+
 namespace QLPKDAL
 {
     public class DanhSachKhamBenhDAL
@@ -23,6 +24,13 @@ namespace QLPKDAL
 
         public bool them(DanhSachKhamBenhDTO ds)
         {
+
+
+            
+
+
+
+
             string query = string.Empty;
             query += "UPDATE PHIEUKHAM SET NGAYKHAM=@ngaykham WHERE mabn = @mabn";
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
@@ -56,9 +64,10 @@ namespace QLPKDAL
         public List<DanhSachKhamBenhDTO> select()
         {
             string query = string.Empty;
-            query += "select BENHNHAN.MABN,HOTEN,NGAYSINH,GIOITINH,DIACHI,SDT,NGAYKHAM";
+            query += "select BENHNHAN.MABN,HOTEN,NGAYSINH,GIOITINH,DIACHI,SDT,PHIEUKHAM.NGAYKHAM";
             query += " from BENHNHAN left outer JOIN  PHIEUKHAM";
-            query += " on BENHNHAN.MaBN=PHIEUKHAM.MaBN";
+            query += " on BENHNHAN.MaBN=PHIEUKHAM.MaBN ";
+            
 
 
             List<DanhSachKhamBenhDTO> listDanhSachKhamBenh = new List<DanhSachKhamBenhDTO>();
@@ -86,18 +95,18 @@ namespace QLPKDAL
                                 ds.MaBN1 = reader["MABN"].ToString();
                                 ds.HoTen1 = reader["HOTEN"].ToString();
                                 ds.NgaySinh1 = (DateTime)reader["NGAYSINH"];
+                                
+
                                 ds.GioiTinh1 = reader["GIOITINH"].ToString();
                                 ds.DiaChi1 = reader["DIACHI"].ToString();
                                 ds.SDT1 = reader["SDT"].ToString();
-                                string str = ds.NgayKham1.ToString();
-                                if ( str!= "1/1/0001 12:00:00 AM")
-                                    
-                                ds.NgayKham1 = (DateTime)reader["NGAYKHAM"];
-                                
 
 
-
-                                    listDanhSachKhamBenh.Add(ds);
+                                //DateTime str = (DateTime)reader["NGAYKHAM"];
+                                string str = reader["NGAYKHAM"].ToString();
+                                if(str=="")                                 
+                                                                                                                                          
+                                listDanhSachKhamBenh.Add(ds);
                             }
                         }
 
@@ -114,6 +123,7 @@ namespace QLPKDAL
             }
             
             return listDanhSachKhamBenh;
+
         }
     }
 }
