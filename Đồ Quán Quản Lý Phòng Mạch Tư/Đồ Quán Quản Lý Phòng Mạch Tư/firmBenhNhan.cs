@@ -25,7 +25,6 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         {
             InitializeComponent();
             ChiDoc();
-            dtp_ngaysinh.CustomFormat = "yyyy-MM-dd";
         }
         private bool checkData()
         {

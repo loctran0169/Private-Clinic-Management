@@ -145,9 +145,9 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 UserDTO us = new UserDTO();
-                                us.MaUS1 = int.Parse(reader["MaUS"].ToString());
-                                us.MaNV1 = int.Parse(reader["MaNV"].ToString());
-                                us.MaQH1 = int.Parse(reader["MaQH"].ToString());
+                                us.MaUS1 = reader["MaUS"].ToString();
+                                us.MaNV1 = reader["MaNV"].ToString();
+                                us.MaQH1 = reader["MaQH"].ToString();
                                 us.TaiKhoan1 = reader["TaiKhoan"].ToString(); ;
                                 us.MatKhau1 = reader["MatKhau"].ToString();
                                 listuser.Add(us);
@@ -197,9 +197,9 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 UserDTO us = new UserDTO();
-                                us.MaUS1 = int.Parse(reader["MaUS"].ToString());
-                                us.MaNV1 = int.Parse(reader["MaNV"].ToString());
-                                us.MaQH1 = int.Parse(reader["MaQH"].ToString());
+                                us.MaUS1 = reader["MaUS"].ToString();
+                                us.MaNV1 = reader["MaNV"].ToString();
+                                us.MaQH1 = reader["MaQH"].ToString();
                                 us.TaiKhoan1 = reader["TaiKhoan"].ToString(); ;
                                 us.MatKhau1 = reader["MatKhau"].ToString();
                                 listuser.Add(us);
