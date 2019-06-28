@@ -53,7 +53,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         private void sua_Click(object sender, EventArgs e)
         {
             BenhNhanDTO bn = new BenhNhanDTO();
-            bn.MaBN1 = int.Parse(tb_mabn.Text);
+            bn.MaBN1 = tb_mabn.Text;
             bn.HoTen1 = tb_hoten.Text;
             bn.NgaySinh1 = ((DateTime)dtp_ngaysinh.Value);
             bn.GioiTinh1 = sex;
@@ -69,7 +69,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         private void xoa_Click(object sender, EventArgs e)
         {
             BenhNhanDTO bn = new BenhNhanDTO();
-            bn.MaBN1 = int.Parse(tb_mabn.Text);
+            bn.MaBN1 = tb_mabn.Text;
             bnbus = new BenhNhanBUS();
             bool kq = bnbus.xoa(bn);
             if (kq == false)

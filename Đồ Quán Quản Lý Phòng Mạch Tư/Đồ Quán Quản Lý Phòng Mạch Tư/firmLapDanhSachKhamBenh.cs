@@ -103,17 +103,17 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void bt_them_Click(object sender, EventArgs e)
         {
-            DanhSachKhamBenhDTO bn = new DanhSachKhamBenhDTO();
-            bn.MaBN1 = int.Parse(tb_maBN.Text);
+            //DanhSachKhamBenhDTO bn = new DanhSachKhamBenhDTO();
+            //bn.MaBN1 = tb_maBN.Text;
             
-            bn.NgaySinh1 = ((DateTime)dateTimePicker1.Value);
+            //bn.NgaySinh1 = ((DateTime)dateTimePicker1.Value);
             
-            dsbus = new DanhSachKhamBenhBUS();
-            bool kq = dsbus.them(bn);
-            if (kq == false)
-                MessageBox.Show("Thêm thất bại. Vui lòng kiểm tra lại dũ liệu");
-            else
-                MessageBox.Show("Thêm thành công");
+            //dsbus = new DanhSachKhamBenhBUS();
+            //bool kq = dsbus.them(bn);
+            //if (kq == false)
+            //    MessageBox.Show("Thêm thất bại. Vui lòng kiểm tra lại dũ liệu");
+            //else
+            //    MessageBox.Show("Thêm thành công");
         }
     }
 }

@@ -146,7 +146,7 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 BenhNhanDTO bn = new BenhNhanDTO();
-                                bn.MaBN1 = int.Parse(reader["MaBN"].ToString());
+                                bn.MaBN1 = reader["MaBN"].ToString();
                                 bn.NgaySinh1 = (DateTime)reader["NgaySinh"];
                                 bn.GioiTinh1 = reader["GioiTinh"].ToString();
                                 bn.DiaChi1 = reader["DiaChi"].ToString();
@@ -198,7 +198,7 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 BenhNhanDTO bn = new BenhNhanDTO();
-                                bn.MaBN1 = int.Parse(reader["MaBN"].ToString());
+                                bn.MaBN1 = reader["MaBN"].ToString();
                                 bn.NgaySinh1 = (DateTime)reader["NgaySinh"];
                                 bn.GioiTinh1 = reader["GioiTinh"].ToString();
                                 bn.DiaChi1 = reader["DiaChi"].ToString();

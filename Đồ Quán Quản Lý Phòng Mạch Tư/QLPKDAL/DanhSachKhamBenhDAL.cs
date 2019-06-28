@@ -56,7 +56,7 @@ namespace QLPKDAL
         public List<DanhSachKhamBenhDTO> select()
         {
             string query = string.Empty;
-            query += "select BENHNHAN.MABN,HOTEN,NGAYSINH,GIOITINH,DIACHI,SDT,NgayKham";
+            query += "select BENHNHAN.MABN,HOTEN,NGAYSINH,GIOITINH,DIACHI,SDT,NGAYKHAM";
             query += " from BENHNHAN left outer JOIN  PHIEUKHAM";
             query += " on BENHNHAN.MABN=PHIEUKHAM.MaBN";
 
@@ -79,17 +79,17 @@ namespace QLPKDAL
                         reader = cmd.ExecuteReader();
                         if (reader.HasRows == true)
                         
-                            {
+                        {
                             while (reader.Read())
                             {
                                 DanhSachKhamBenhDTO ds = new DanhSachKhamBenhDTO();
-                                ds.MaBN1 = int.Parse(reader["MaBN"].ToString());
-                                ds.NgaySinh1 = (DateTime)reader["NgaySinh"];
-                                ds.GioiTinh1 = reader["GioiTinh"].ToString();
-                                ds.DiaChi1 = reader["DiaChi"].ToString();
-                                ds.HoTen1 = reader["HoTen"].ToString();
-                                ds.NgayKham1 = (DateTime)reader["NgayKham"];
+                                ds.MaBN1 = reader["MABN"].ToString();
+                                ds.HoTen1 = reader["HOTEN"].ToString();
+                                ds.NgaySinh1 = (DateTime)reader["NGAYSINH"];
+                                ds.GioiTinh1 = reader["GIOITINH"].ToString();
+                                ds.DiaChi1 = reader["DIACHI"].ToString();                                
                                 ds.SDT1 = reader["SDT"].ToString();
+                                ds.NgayKham1 = (DateTime)reader["NGAYKHAM"];
 
 
 

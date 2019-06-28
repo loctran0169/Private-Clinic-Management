@@ -8,7 +8,7 @@ namespace QLPKDTO
 {
     public class DanhSachKhamBenhDTO
     {
-        private int MaBN;
+        private string MaBN;
         private string HoTen;
         private DateTime NgaySinh;
         private string GioiTinh;
@@ -16,7 +16,7 @@ namespace QLPKDTO
         private string SDT;
         private DateTime NgayKham;
 
-        public int MaBN1 { get => MaBN; set => MaBN = value; }
+        public string MaBN1 { get => MaBN; set => MaBN = value; }
         public string HoTen1 { get => HoTen; set => HoTen = value; }
         public DateTime NgaySinh1 { get => NgaySinh; set => NgaySinh = value; }
         public string GioiTinh1 { get => GioiTinh; set => GioiTinh = value; }
