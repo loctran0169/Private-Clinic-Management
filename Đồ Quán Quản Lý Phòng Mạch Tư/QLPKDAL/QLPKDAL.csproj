@@ -46,6 +46,7 @@
     <Compile Include="BenhDAL.cs" />
     <Compile Include="BenhNhanDAL.cs" />
     <Compile Include="CachDungDAL.cs" />
+    <Compile Include="DanhSachKhamBenhDAL.cs" />
     <Compile Include="DonViTinhDAL.cs" />
     <Compile Include="HoaDonDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_them = new System.Windows.Forms.Button();
             this.bt_load = new System.Windows.Forms.Button();
             this.tb_maBN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_them = new System.Windows.Forms.Button();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,6 +64,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 181);
             this.panel1.TabIndex = 15;
+            // 
+            // bt_them
+            // 
+            this.bt_them.Location = new System.Drawing.Point(471, 113);
+            this.bt_them.Name = "bt_them";
+            this.bt_them.Size = new System.Drawing.Size(75, 34);
+            this.bt_them.TabIndex = 34;
+            this.bt_them.Text = "Thêm";
+            this.bt_them.UseVisualStyleBackColor = true;
+            this.bt_them.Click += new System.EventHandler(this.bt_them_Click);
             // 
             // bt_load
             // 
@@ -174,15 +184,6 @@
             // 
             this.Column6.HeaderText = "Địa Chỉ";
             this.Column6.Name = "Column6";
-            // 
-            // bt_them
-            // 
-            this.bt_them.Location = new System.Drawing.Point(471, 113);
-            this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(75, 34);
-            this.bt_them.TabIndex = 34;
-            this.bt_them.Text = "Thêm";
-            this.bt_them.UseVisualStyleBackColor = true;
             // 
             // Column7
             // 
