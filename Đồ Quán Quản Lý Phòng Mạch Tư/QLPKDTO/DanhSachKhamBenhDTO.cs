@@ -8,6 +8,7 @@ namespace QLPKDTO
 {
     public class DanhSachKhamBenhDTO
     {
+
         private string MaBN;
         private string HoTen;
         private DateTime NgaySinh;
@@ -15,6 +16,11 @@ namespace QLPKDTO
         private string DiaChi;
         private string SDT;
         private DateTime NgayKham;
+
+       public DanhSachKhamBenhDTO()
+        {
+
+        }
 
         public string MaBN1 { get => MaBN; set => MaBN = value; }
         public string HoTen1 { get => HoTen; set => HoTen = value; }

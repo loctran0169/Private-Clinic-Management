@@ -58,7 +58,7 @@ namespace QLPKDAL
             string query = string.Empty;
             query += "select BENHNHAN.MABN,HOTEN,NGAYSINH,GIOITINH,DIACHI,SDT,NGAYKHAM";
             query += " from BENHNHAN left outer JOIN  PHIEUKHAM";
-            query += " on BENHNHAN.MABN=PHIEUKHAM.MaBN";
+            query += " on BENHNHAN.MaBN=PHIEUKHAM.MaBN";
 
 
             List<DanhSachKhamBenhDTO> listDanhSachKhamBenh = new List<DanhSachKhamBenhDTO>();
@@ -87,13 +87,17 @@ namespace QLPKDAL
                                 ds.HoTen1 = reader["HOTEN"].ToString();
                                 ds.NgaySinh1 = (DateTime)reader["NGAYSINH"];
                                 ds.GioiTinh1 = reader["GIOITINH"].ToString();
-                                ds.DiaChi1 = reader["DIACHI"].ToString();                                
+                                ds.DiaChi1 = reader["DIACHI"].ToString();
                                 ds.SDT1 = reader["SDT"].ToString();
+                                string str = ds.NgayKham1.ToString();
+                                if ( str!= "1/1/0001 12:00:00 AM")
+                                    
                                 ds.NgayKham1 = (DateTime)reader["NGAYKHAM"];
+                                
 
 
 
-                                listDanhSachKhamBenh.Add(ds);
+                                    listDanhSachKhamBenh.Add(ds);
                             }
                         }
 

@@ -89,6 +89,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 MessageBox.Show("Load danh sách bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu");
             else
                 MessageBox.Show("Load bệnh nhân thành công");
+
             loadDanhSach(listdanhsach);
         }
 
