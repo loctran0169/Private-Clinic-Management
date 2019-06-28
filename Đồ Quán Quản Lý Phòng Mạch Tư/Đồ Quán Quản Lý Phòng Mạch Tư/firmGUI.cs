@@ -395,7 +395,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void firmGUI_Load(object sender, EventArgs e)
         {
-            
+            //MessageBox.Show(int.Parse(("BN001").Substring(2,3)).ToString());
         }
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
