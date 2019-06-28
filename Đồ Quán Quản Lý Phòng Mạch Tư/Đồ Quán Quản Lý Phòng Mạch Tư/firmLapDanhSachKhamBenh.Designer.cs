@@ -33,7 +33,6 @@
             this.bt_load = new System.Windows.Forms.Button();
             this.tb_maBN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.bt_lap = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@
             this.panel1.Controls.Add(this.bt_load);
             this.panel1.Controls.Add(this.tb_maBN);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.bt_lap);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -100,15 +98,6 @@
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 31;
             this.label3.Text = "Mã bệnh nhân";
-            // 
-            // bt_lap
-            // 
-            this.bt_lap.Location = new System.Drawing.Point(552, 113);
-            this.bt_lap.Name = "bt_lap";
-            this.bt_lap.Size = new System.Drawing.Size(135, 34);
-            this.bt_lap.TabIndex = 30;
-            this.bt_lap.Text = "Lập Danh Sách ";
-            this.bt_lap.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -208,7 +197,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button bt_lap;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

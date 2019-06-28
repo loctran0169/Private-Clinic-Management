@@ -21,6 +21,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             InitializeComponent();
         }
         private DanhSachKhamBenhBUS dsbus;
+        private PhieuKhamBUS pkbus;
         private void loadDanhSach(List<DanhSachKhamBenhDTO> listdanhsach)
         {
             dataGridView1.Columns.Clear();
@@ -64,11 +65,11 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             DiaChi.DataPropertyName = "DiaChi1";
             dataGridView1.Columns.Add(DiaChi);
 
-            DataGridViewTextBoxColumn ngaykham = new DataGridViewTextBoxColumn();
-            ngaykham.Name = "NgayKham1";
-            ngaykham.HeaderText = "Ngày Khám";
-            ngaykham.DataPropertyName = "NgayKham1";
-            dataGridView1.Columns.Add(ngaykham);
+            DataGridViewTextBoxColumn NgayKham = new DataGridViewTextBoxColumn();
+            NgayKham.Name = "NgayKham1";
+            NgayKham.HeaderText = "Ngày Khám";
+            NgayKham.DataPropertyName = "NgayKham1";
+            dataGridView1.Columns.Add(NgayKham);
 
             var bindingList = new BindingList<DanhSachKhamBenhDTO>(listdanhsach);
             var source = new BindingSource(bindingList, null);
@@ -101,20 +102,76 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             tb_maBN.Text = row.Cells[0].Value.ToString();
             
         }
+        private string TaoMaTuDong(string key)
+        {
+            DataTable dt = new DataTable();
+            pkbus = new PhieuKhamBUS();
+            dt = pkbus.loadToDataTable();
+            int coso = 0;
+            if (dt.Rows.Count == 0)
+            {
+                coso = 1;
+            }
+            else if (dt.Rows.Count == 1 && int.Parse(dt.Rows[0][0].ToString().Substring(2, 3)) == 1)
+            {
+                coso = 2;
+            }
+            else if (dt.Rows.Count == 1 && int.Parse(dt.Rows[0][0].ToString().Substring(2, 3)) > 1)
+            {
+                coso = 1;
+            }
+            else
+            {
+                for (int i = 0; i < dt.Rows.Count - 1; i++)
+                {
+                    if (int.Parse(dt.Rows[i + 1][0].ToString().Substring(2, 3)) - int.Parse(dt.Rows[i][0].ToString().Substring(2, 3)) > 1)
+                    {
+                        coso = int.Parse(dt.Rows[i][0].ToString().Substring(2, 3)) + 1;
+                        break;
+                    }
+                }
+                coso = int.Parse(dt.Rows[dt.Rows.Count - 1][0].ToString().Substring(2, 3)) + 1;
+            }
+
+            //Sau khi lấy được cơ số thứ tự của thuốc, ta gắn thêm tiền tố T vào
+
+            string ma = "";
+            if (coso < 10)
+                return ma = key + "00" + coso;
+            else if (coso < 100)
+                return ma = key + "0" + coso;
+            else
+                return ma = key + coso;
+        }
 
         private void bt_them_Click(object sender, EventArgs e)
         {
-            //DanhSachKhamBenhDTO bn = new DanhSachKhamBenhDTO();
-            //bn.MaBN1 = tb_maBN.Text;
-            
-            //bn.NgaySinh1 = ((DateTime)dateTimePicker1.Value);
-            
-            //dsbus = new DanhSachKhamBenhBUS();
-            //bool kq = dsbus.them(bn);
-            //if (kq == false)
-            //    MessageBox.Show("Thêm thất bại. Vui lòng kiểm tra lại dũ liệu");
-            //else
-            //    MessageBox.Show("Thêm thành công");
+            if (tb_maBN.Text != "")
+            {
+                PhieuKhamDTO pk = new PhieuKhamDTO();
+                pk.MaPK1 = TaoMaTuDong("PK");
+                pk.MaBN1 = tb_maBN.Text;
+                pk.NgayKham1 = dateTimePicker1.Value.Date;
+                pk.MaLB1 = "";
+                pk.MaNV1 = "";
+
+
+                PhieuKhamBUS pkbus = new PhieuKhamBUS();
+                bool kq = pkbus.them(pk);
+                if (kq == true)
+                {
+                    MessageBox.Show("Thêm bệnh nhân thành công");
+                    dsbus = new DanhSachKhamBenhBUS();
+                    List<DanhSachKhamBenhDTO> listdanhsach = dsbus.select();                   
+
+                    loadDanhSach(listdanhsach);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm bệnh nhân thất bại");
+
+                }
+            }
         }
     }
 }
