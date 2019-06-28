@@ -82,7 +82,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(txtMaNhanVien.Text))
+                return;
             MoKhoaButton();
             txtMaNhanVien.Enabled = false;//không cho sửa mã loại thuốc
             flag = "Sửa";
@@ -92,6 +93,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtMaNhanVien.Text))
+                return;
             if (MessageBox.Show("Bạn muốn xóa thông tin nhân viên?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 NhanVienDTO nvDTO = new NhanVienDTO();
@@ -347,5 +350,10 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             dataGridViewNhanVien.Enabled = true;
         }
 
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

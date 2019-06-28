@@ -113,6 +113,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             empty();
             tb_mabn.Text = TaoMaTuDong("BN");
             flag = "them";
+            dtgv_benhnhan.Enabled = false;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -131,6 +132,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 return;
             ChiSua();
             flag = "sua";
+            dtgv_benhnhan.Enabled = false;
         }
 
         private void xoa_Click(object sender, EventArgs e)
@@ -270,6 +272,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 if (kq == true)
                 {
                     MessageBox.Show("Thêm bệnh nhân thành công");
+                    dtgv_benhnhan.Enabled = true;
                     ChiDoc();
                 }
                 else
@@ -300,6 +303,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 else
                 {
                     MessageBox.Show("Sữa bệnh nhân thành công");
+                    dtgv_benhnhan.Enabled = false;
                 }             
             }
             Reload();
@@ -309,6 +313,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         {
             ChiDoc();
             empty();
+            dtgv_benhnhan.Enabled = true;
         }
 
         private void tb_hoten_Validated(object sender, EventArgs e)

@@ -99,32 +99,41 @@ namespace QLPKDAL
             }
             return true;
         }
-        public bool sua(NhanVienDTO nvDTO)
+
+        public bool sua(NhanVienDTO bn)
         {
-            MySqlConnection kn = new MySqlConnection(connectionString);
-            try
+            string query = string.Empty;
+            query += "UPDATE NHANVIEN SET manv = @manv, hoten = @hoten, gioitinh = @gioitinh, ngaysinh = @ngaysinh,diachi = @diachi,sdt=@sdt, chucvu=@chucvu WHERE manv = @manv";
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
-                kn.Open();
 
-                string sql1 = "update NhanVien set HoVaTen=N'" + nvDTO.HoVaTen + "',GioiTinh=N'" + nvDTO.GioiTinh + "',NgaySinh=N'" + nvDTO.NgaySinh.ToString() + "',DiaChi=N'" + nvDTO.DiaChi + "',SDT='" + nvDTO.SDT + "',ChucVu='" + nvDTO.ChucVu + "' where MaNhanVien=N'" + nvDTO.MaNhanVien + "'";
-
-                MySqlCommand cmd = new MySqlCommand(sql1, kn);
-                int kq = (int)cmd.ExecuteNonQuery();
-                kn.Close();
-                if (kq > 0)
+                using (MySqlCommand cmd = new MySqlCommand())
                 {
-                    return true;
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@manv", bn.MaNhanVien);
+                    cmd.Parameters.AddWithValue("@hoten", bn.HoVaTen);
+                    cmd.Parameters.AddWithValue("@gioitinh", bn.GioiTinh);
+                    cmd.Parameters.AddWithValue("@ngaysinh", bn.NgaySinh);
+                    cmd.Parameters.AddWithValue("@diachi", bn.DiaChi);
+                    cmd.Parameters.AddWithValue("@sdt", bn.SDT);
+                    cmd.Parameters.AddWithValue("@chucvu", bn.ChucVu);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
                 }
-                else
-                    return false;
-
             }
-            catch (Exception ex)
-            {
-
-                
-                return false;
-            }
+            return true;
         }
         public bool xoa(NhanVienDTO nvDTO)
         {
