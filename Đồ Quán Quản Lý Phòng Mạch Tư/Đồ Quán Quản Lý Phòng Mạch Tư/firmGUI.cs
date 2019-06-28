@@ -305,7 +305,17 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Form frm = kiemtraform(typeof(firmSaoLuu));
+            if (frm == null)
+            {
+                firmSaoLuu forms = new firmSaoLuu();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
         }
 
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -391,6 +401,21 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmKhoiPhuc));
+            if (frm == null)
+            {
+                firmKhoiPhuc forms = new firmKhoiPhuc();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
         }
     }
 }

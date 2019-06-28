@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v18.1" />
     <Reference Include="DevExpress.Data.v18.1" />
     <Reference Include="DevExpress.Dialogs.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -45,10 +48,24 @@
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.16\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlBackup.NET.2.3.0\lib\net462\MySqlBackup.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -143,6 +160,12 @@
     <Compile Include="firmHoaDon.Designer.cs">
       <DependentUpon>firmHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmKhoiPhuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmKhoiPhuc.Designer.cs">
+      <DependentUpon>firmKhoiPhuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmLapDanhSachKhamBenh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +207,12 @@
     </Compile>
     <Compile Include="firmQuyenHan.Designer.cs">
       <DependentUpon>firmQuyenHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmSaoLuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmSaoLuu.Designer.cs">
+      <DependentUpon>firmSaoLuu.cs</DependentUpon>
     </Compile>
     <Compile Include="firmThamSo.cs">
       <SubType>Form</SubType>
@@ -247,6 +276,9 @@
     <EmbeddedResource Include="firmHoaDon.resx">
       <DependentUpon>firmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="firmKhoiPhuc.resx">
+      <DependentUpon>firmKhoiPhuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="firmLapDanhSachKhamBenh.resx">
       <DependentUpon>firmLapDanhSachKhamBenh.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="firmQuyenHan.resx">
       <DependentUpon>firmQuyenHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmSaoLuu.resx">
+      <DependentUpon>firmSaoLuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmThamSo.resx">
       <DependentUpon>firmThamSo.cs</DependentUpon>
@@ -289,6 +324,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
