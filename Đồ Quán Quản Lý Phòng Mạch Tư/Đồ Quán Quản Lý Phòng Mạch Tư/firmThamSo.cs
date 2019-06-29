@@ -25,7 +25,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         private void bt_sua_Click(object sender, EventArgs e)
         {
             ThamSoDTO ts = new ThamSoDTO();
-            ts.MaTS1 = int.Parse(textBox_MaTS.Text);
+            ts.MaTS1 = textBox_MaTS.Text;
             ts.TenThamSo1 = textBox_TenTS.Text;
             ts.GiaTri1 = int.Parse(textBox_GiaTri.Text);
             tsbus = new ThamSoBUS();

@@ -3,6 +3,7 @@ using QLPKDTO;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -140,7 +141,7 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 DonViTinhDTO dv = new DonViTinhDTO();
-                                dv.MaDV1 = int.Parse(reader["MaDV"].ToString());
+                                dv.MaDV1 = reader["MaDV"].ToString();
                                 dv.TenDonVi1 = reader["TenDonVi"].ToString(); ;
                                 listdonvi.Add(dv);
                             }
@@ -159,6 +160,7 @@ namespace QLPKDAL
             }
             return listdonvi;
         }
+
 
         public List<DonViTinhDTO> selectByKeyWord(string sKeyword)
         {
@@ -189,7 +191,7 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 DonViTinhDTO dv = new DonViTinhDTO();
-                                dv.MaDV1 = int.Parse(reader["MaDV"].ToString());
+                                dv.MaDV1 = reader["MaDV"].ToString();
                                 dv.TenDonVi1 = reader["TenDonVi"].ToString(); ;
                                 listdonvi.Add(dv);
                             }
@@ -206,6 +208,27 @@ namespace QLPKDAL
                 }
             }
             return listdonvi;
+        }
+
+        public DataTable loadDuLieuDonViTinh()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+            try
+            {
+                kn.Open();
+                string sql = "select * from DONVITINH";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
+                dt.Dispose();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return k;
         }
     }
 }

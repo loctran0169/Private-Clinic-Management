@@ -41,7 +41,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 conn.Open();
                 MessageBox.Show("Kết nối database thành công");
             }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }         
@@ -91,6 +91,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 tb_thumuc.Text = dlg.SelectedPath;
                 bt_SaoLuu.Enabled = true;
             }
+            else
+                return;
             Load();
         }
         public void Load()

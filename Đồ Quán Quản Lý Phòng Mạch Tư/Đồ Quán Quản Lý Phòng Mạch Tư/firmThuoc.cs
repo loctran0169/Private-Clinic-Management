@@ -24,6 +24,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         }
         private void MoKhoaButton()
         {
+            nsx.Enabled = true;
+            hsd.Enabled = true;
             tb_tenthuoc.Enabled = true;
             cbb_donvi.Enabled = true;
             tb_dongia.Enabled = true;
@@ -35,6 +37,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         }
         private void KhoaButton()
         {
+            nsx.Enabled = false;
+            hsd.Enabled = false;
             tb_tenthuoc.Enabled = false;
             cbb_donvi.Enabled = false;
             tb_dongia.Enabled = false;

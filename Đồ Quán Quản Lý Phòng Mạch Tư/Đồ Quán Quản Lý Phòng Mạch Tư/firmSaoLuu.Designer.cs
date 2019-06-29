@@ -73,7 +73,7 @@
             this.brower.Name = "brower";
             this.brower.Size = new System.Drawing.Size(75, 23);
             this.brower.TabIndex = 8;
-            this.brower.Text = "Brower";
+            this.brower.Text = "Browser";
             this.brower.UseVisualStyleBackColor = true;
             this.brower.Click += new System.EventHandler(this.brower_Click);
             // 
@@ -140,7 +140,7 @@
             this.Controls.Add(this.dtgv_saoluu);
             this.Controls.Add(this.groupBox1);
             this.Name = "firmSaoLuu";
-            this.Text = "firmSaoLuu";
+            this.Text = "Sao Lưu";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_saoluu)).EndInit();

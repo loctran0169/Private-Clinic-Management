@@ -130,6 +130,12 @@
     <Compile Include="firmCaLam.Designer.cs">
       <DependentUpon>firmCaLam.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmDangNhap.Designer.cs">
+      <DependentUpon>firmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmDanhSachKhamBenh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="firmCaLam.resx">
       <DependentUpon>firmCaLam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmDangNhap.resx">
+      <DependentUpon>firmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmDanhSachKhamBenh.resx">
       <DependentUpon>firmDanhSachKhamBenh.cs</DependentUpon>
