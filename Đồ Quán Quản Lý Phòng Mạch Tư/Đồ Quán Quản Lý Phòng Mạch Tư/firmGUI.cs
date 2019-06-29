@@ -420,12 +420,13 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         }
 
-        private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(firmKhoiPhuc));
+
+            Form frm = kiemtraform(typeof(firmGioiThieu));
             if (frm == null)
             {
-                firmKhoiPhuc forms = new firmKhoiPhuc();
+                firmGioiThieu forms = new firmGioiThieu();
                 forms.MdiParent = this;
                 forms.Show();
             }
