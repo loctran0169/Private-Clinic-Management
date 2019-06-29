@@ -462,5 +462,10 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 frm.Activate();
             }
         }
+
+        private void firmGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

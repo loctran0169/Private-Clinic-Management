@@ -93,7 +93,7 @@ namespace QLPKDAL
         public bool suamk(UserDTO us)
         {
             string query = string.Empty;
-            query += "UPDATE USERS SET  matkhau = @matkhauWHERE maus = @maus";
+            query += "UPDATE USERS SET  matkhau = @matkhau WHERE maus = @maus";
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 

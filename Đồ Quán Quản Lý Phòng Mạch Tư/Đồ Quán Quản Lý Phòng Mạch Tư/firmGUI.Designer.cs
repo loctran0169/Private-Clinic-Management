@@ -585,6 +585,7 @@
             this.Name = "firmGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Quản lý phòng mạch tư";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.firmGUI_FormClosed);
             this.Load += new System.EventHandler(this.firmGUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();

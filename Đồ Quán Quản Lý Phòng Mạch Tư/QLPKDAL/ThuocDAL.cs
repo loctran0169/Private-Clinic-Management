@@ -159,7 +159,7 @@ namespace QLPKDAL
                                 bn.NSX1 = (DateTime)reader["NSX"];
                                 bn.HSD1 = (DateTime)reader["HSD"];
                                 bn.DonGia1 = int.Parse(reader["DonGia"].ToString());
-                                //bn.SoLuongTon1 = int.Parse(reader["SoLuongTon"].ToString());
+                                bn.SoLuongTon1 = int.Parse(reader["SoLuongTon"].ToString());
                                 listthuoc.Add(bn);
                             }
                         }
