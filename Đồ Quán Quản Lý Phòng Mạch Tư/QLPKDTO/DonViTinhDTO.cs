@@ -8,10 +8,10 @@ namespace QLPKDTO
 {
     public class DonViTinhDTO
     {
-        private int MaDV;
+        private string MaDV;
         private string TenDonVi;
 
-        public int MaDV1 { get => MaDV; set => MaDV = value; }
+        public string MaDV1 { get => MaDV; set => MaDV = value; }
         public string TenDonVi1 { get => TenDonVi; set => TenDonVi = value; }
     }
 }

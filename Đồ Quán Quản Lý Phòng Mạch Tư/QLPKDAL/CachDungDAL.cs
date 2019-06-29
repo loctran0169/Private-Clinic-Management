@@ -3,6 +3,7 @@ using QLPKDTO;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,7 +87,7 @@ namespace QLPKDAL
         public bool xoa(CachDungDTO cd)
         {
             string query = string.Empty;
-            query += "DELETE FROM CACHDUNG  WHERE macd = @macd";
+            query += "DELETE FROM CACHDUNG WHERE macd = @macd";
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
@@ -95,7 +96,7 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@macd", cd.MaCD1);
+                    cmd.Parameters.AddWithValue("@macd", cd.CachDung1);
                     try
                     {
                         con.Open();
@@ -105,6 +106,7 @@ namespace QLPKDAL
                     }
                     catch (Exception ex)
                     {
+                        string s = ex.Message;
                         con.Close();
                         return false;
                     }
@@ -140,7 +142,7 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 CachDungDTO cd = new CachDungDTO();
-                                cd.MaCD1 = int.Parse(reader["MaCD"].ToString());
+                                cd.MaCD1 = reader["MaCD"].ToString();
                                 cd.CachDung1 = reader["CachDung"].ToString(); ;
                                 listcachdung.Add(cd);
                             }
@@ -189,7 +191,7 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 CachDungDTO cd = new CachDungDTO();
-                                cd.MaCD1 = int.Parse(reader["MaCD"].ToString());
+                                cd.MaCD1 = reader["MaCD"].ToString();
                                 cd.CachDung1 = reader["CachDung"].ToString(); ;
                                 listcachdung.Add(cd);
                             }
@@ -207,5 +209,27 @@ namespace QLPKDAL
             }
             return listcachdung;
         }
+
+        public DataTable loadDuLieuCachDung()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+            try
+            {
+                kn.Open();
+                string sql = "select * from CACHDUNG";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
+                dt.Dispose();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return k;
+        }
+
     }
 }

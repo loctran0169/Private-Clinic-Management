@@ -81,7 +81,7 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 ThamSoDTO bn = new ThamSoDTO();
-                                bn.MaTS1 = int.Parse(reader["MaTS"].ToString());
+                                bn.MaTS1 = reader["MaTS"].ToString();
                                 bn.GiaTri1 = int.Parse(reader["GiaTri"].ToString());
                                 bn.TenThamSo1 = reader["TenThamSo"].ToString();
                                 listthamso.Add(bn);

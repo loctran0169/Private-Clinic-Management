@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_mk2 = new System.Windows.Forms.TextBox();
+            this.tb_mk1 = new System.Windows.Forms.TextBox();
+            this.tb_mkc = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,9 +43,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tb_mk2);
+            this.panel1.Controls.Add(this.tb_mk1);
+            this.panel1.Controls.Add(this.tb_mkc);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
@@ -58,26 +58,26 @@
             this.panel1.Size = new System.Drawing.Size(425, 277);
             this.panel1.TabIndex = 0;
             // 
-            // textBox3
+            // tb_mk2
             // 
-            this.textBox3.Location = new System.Drawing.Point(119, 147);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(244, 20);
-            this.textBox3.TabIndex = 26;
+            this.tb_mk2.Location = new System.Drawing.Point(119, 147);
+            this.tb_mk2.Name = "tb_mk2";
+            this.tb_mk2.Size = new System.Drawing.Size(244, 20);
+            this.tb_mk2.TabIndex = 26;
             // 
-            // textBox2
+            // tb_mk1
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 115);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 20);
-            this.textBox2.TabIndex = 25;
+            this.tb_mk1.Location = new System.Drawing.Point(119, 115);
+            this.tb_mk1.Name = "tb_mk1";
+            this.tb_mk1.Size = new System.Drawing.Size(244, 20);
+            this.tb_mk1.TabIndex = 25;
             // 
-            // textBox1
+            // tb_mkc
             // 
-            this.textBox1.Location = new System.Drawing.Point(119, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 20);
-            this.textBox1.TabIndex = 24;
+            this.tb_mkc.Location = new System.Drawing.Point(119, 82);
+            this.tb_mkc.Name = "tb_mkc";
+            this.tb_mkc.Size = new System.Drawing.Size(244, 20);
+            this.tb_mkc.TabIndex = 24;
             // 
             // button2
             // 
@@ -87,6 +87,7 @@
             this.button2.TabIndex = 23;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -96,6 +97,7 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Lưu";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -151,9 +153,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_mk2;
+        private System.Windows.Forms.TextBox tb_mk1;
+        private System.Windows.Forms.TextBox tb_mkc;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;

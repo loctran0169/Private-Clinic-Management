@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using QLPKDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,19 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
     public partial class firmGUI : DevExpress.XtraEditors.XtraForm
     {
-        public firmGUI()
+        private UserDTO us = new UserDTO();
+        public firmGUI(UserDTO user)
         {
+            us.MaUS1 = user.MaUS1;
+            us.TaiKhoan1 = user.TaiKhoan1;
+            us.MatKhau1 = user.MatKhau1;
+            us.MaNV1 = user.MaNV1;
+            us.MaQH1 = user.MaQH1;
+
             InitializeComponent();
+            //Status bar
+            bartk.Caption = "Tài Khoản: "+us.TaiKhoan1;
+            bartt.Caption = "Trạng thái: Đã đăng nhập";
         }
         private Form kiemtraform(Type ftype)
         {
@@ -51,7 +62,13 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             Form frm = kiemtraform(typeof(firmDoiMatKhau));
             if (frm == null)
             {
-                firmDoiMatKhau forms = new firmDoiMatKhau();
+                UserDTO user = new UserDTO();
+                user.MaUS1 = us.MaUS1;
+                user.TaiKhoan1 = us.TaiKhoan1;
+                user.MatKhau1 = us.MatKhau1;
+                user.MaNV1 = us.MaNV1;
+                user.MaQH1 = us.MaQH1;
+                firmDoiMatKhau forms = new firmDoiMatKhau(user);
                 forms.MdiParent = this;
                 forms.Show();
             }
@@ -410,6 +427,33 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             if (frm == null)
             {
                 firmGioiThieu forms = new firmGioiThieu();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn muốn đăng xuất chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                firmDangNhap f = new firmDangNhap();
+                this.Hide();
+                f.ShowDialog();
+               
+               //hiển thị form chính
+            }
+        }
+
+        private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(firmKhoiPhuc));
+            if (frm == null)
+            {
+                firmKhoiPhuc forms = new firmKhoiPhuc();
                 forms.MdiParent = this;
                 forms.Show();
             }

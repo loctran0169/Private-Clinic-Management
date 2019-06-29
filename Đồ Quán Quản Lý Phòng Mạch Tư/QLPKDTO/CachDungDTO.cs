@@ -8,10 +8,10 @@ namespace QLPKDTO
 {
     public class CachDungDTO
     {
-        private int MaCD;
+        private string MaCD;
         private string CachDung;
 
-        public int MaCD1 { get => MaCD; set => MaCD = value; }
+        public string MaCD1 { get => MaCD; set => MaCD = value; }
         public string CachDung1 { get => CachDung; set => CachDung = value; }
     }
 }

@@ -20,7 +20,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new firmGUI());
+            Application.Run(new firmDangNhap());
         }
     }
 }

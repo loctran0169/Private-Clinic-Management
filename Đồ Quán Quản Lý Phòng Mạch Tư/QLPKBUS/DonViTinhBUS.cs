@@ -2,6 +2,7 @@
 using QLPKDTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,11 @@ namespace QLPKBUS
         public List<DonViTinhDTO> selectByKeyWord(string sKeyword)
         {
             return bdal.selectByKeyWord(sKeyword);
+        }
+        public DataTable loadDuLieuDonViTinh()
+        {
+            bdal = new DonViTinhDAL();
+            return bdal.loadDuLieuDonViTinh();
         }
     }
 }
