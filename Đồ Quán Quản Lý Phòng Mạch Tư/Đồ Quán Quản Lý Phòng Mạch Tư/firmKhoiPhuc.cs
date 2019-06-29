@@ -86,9 +86,9 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             }
             try
             {
-                connString= "SERVER="+cbb_server.Text+";PORT="+tb_port.Text+";DATABASE="+tb_dbname.Text+"QLKP;UID="+tb_tk.Text+";PASSWORD="+tb_mk.Text+";Charset = utf8";
+                //connString= "SERVER="+cbb_server.Text+";PORT="+tb_port.Text+";DATABASE="+tb_dbname.Text+";UID="+tb_tk.Text+";PASSWORD="+tb_mk.Text+";Charset = utf8";
                 //connString= "Data Source = localhost; Initial Catalog = QLPK; User ID = root; Password = angel1999";
-                //connString = "SERVER=mysql-1325-0.cloudclusters.net;PORT=10001;DATABASE=QLKP;UID=loctran0169;PASSWORD=angel1999;Charset = utf8";
+                connString = "SERVER=mysql-1325-0.cloudclusters.net;PORT=10001;DATABASE=QLKP;UID=loctran0169;PASSWORD=angel1999;Charset = utf8";
                 using (MySqlConnection conn = new MySqlConnection(connString))
                 {
                     using (MySqlCommand cmd = new MySqlCommand())
@@ -104,8 +104,9 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                string x = ex.Message;
                 MessageBox.Show("Khôi phục thất bại");
             }
         }
@@ -118,6 +119,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 tb_path.Text = dlg.FileName;
                 bt_restore.Enabled = true;
             }
+            else
+                return;
         }
     }
 }

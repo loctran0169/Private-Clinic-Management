@@ -19,6 +19,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
     public partial class firmSaoLuu : Form
     {
         MySqlConnection conn;
+        private int flag = 0;
         string connString = ConfigurationManager.AppSettings["ConnectionString"];
         //string connString = "Data Source = localhost; Initial Catalog = QLPK; User ID = root; Password = angel1999";
         public firmSaoLuu()
@@ -40,6 +41,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 conn.ConnectionString = connString;
                 conn.Open();
                 MessageBox.Show("Kết nối database thành công");
+                flag = 1;
             }
             catch (MySqlException ex)
             {
@@ -54,7 +56,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 MessageBox.Show("Chưa chọn thư mục");
                 return;
             }
-            if (conn.State==ConnectionState.Closed)
+            if (flag!=1)
             {
                 MessageBox.Show("Chưa kết nối database");
                 return;
