@@ -347,6 +347,7 @@
             this.barButtonItem25.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.nhóm_sản_xuất;
             this.barButtonItem25.Name = "barButtonItem25";
             this.barButtonItem25.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem25.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem25_ItemClick);
             // 
             // barButtonItem26
             // 

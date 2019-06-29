@@ -209,6 +209,12 @@
     <Compile Include="firmThuoc.Designer.cs">
       <DependentUpon>firmThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmGioiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmGioiThieu.Designer.cs">
+      <DependentUpon>firmGioiThieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="firmBanThuoc.resx">
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="firmDonVi.resx">
       <DependentUpon>firmDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmGioiThieu.resx">
+      <DependentUpon>firmGioiThieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmGUI.resx">
       <DependentUpon>firmGUI.cs</DependentUpon>
