@@ -49,6 +49,7 @@
     <Compile Include="DanhSachKhamBenhDAL.cs" />
     <Compile Include="DonViTinhDAL.cs" />
     <Compile Include="HoaDonDAL.cs" />
+    <Compile Include="LichSuDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="PhieuKhamDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
