@@ -40,12 +40,14 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_load = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.bt_load);
             this.panel1.Controls.Add(this.textBox_MaTS);
             this.panel1.Controls.Add(this.textBox_TenTS);
             this.panel1.Controls.Add(this.textBox_GiaTri);
@@ -64,28 +66,28 @@
             this.textBox_MaTS.Location = new System.Drawing.Point(185, 30);
             this.textBox_MaTS.Name = "textBox_MaTS";
             this.textBox_MaTS.Size = new System.Drawing.Size(152, 20);
-            this.textBox_MaTS.TabIndex = 17;
+            this.textBox_MaTS.TabIndex = 2;
             // 
             // textBox_TenTS
             // 
             this.textBox_TenTS.Location = new System.Drawing.Point(447, 30);
             this.textBox_TenTS.Name = "textBox_TenTS";
             this.textBox_TenTS.Size = new System.Drawing.Size(261, 20);
-            this.textBox_TenTS.TabIndex = 16;
+            this.textBox_TenTS.TabIndex = 3;
             // 
             // textBox_GiaTri
             // 
             this.textBox_GiaTri.Location = new System.Drawing.Point(185, 70);
             this.textBox_GiaTri.Name = "textBox_GiaTri";
             this.textBox_GiaTri.Size = new System.Drawing.Size(152, 20);
-            this.textBox_GiaTri.TabIndex = 15;
+            this.textBox_GiaTri.TabIndex = 4;
             // 
             // bt_sua
             // 
-            this.bt_sua.Location = new System.Drawing.Point(539, 63);
+            this.bt_sua.Location = new System.Drawing.Point(633, 63);
             this.bt_sua.Name = "bt_sua";
             this.bt_sua.Size = new System.Drawing.Size(75, 32);
-            this.bt_sua.TabIndex = 13;
+            this.bt_sua.TabIndex = 1;
             this.bt_sua.Text = "Sửa";
             this.bt_sua.UseVisualStyleBackColor = true;
             this.bt_sua.Click += new System.EventHandler(this.bt_sua_Click);
@@ -130,6 +132,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 308);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Column1
             // 
@@ -145,6 +148,16 @@
             // 
             this.Column3.HeaderText = "Giá Trị";
             this.Column3.Name = "Column3";
+            // 
+            // bt_load
+            // 
+            this.bt_load.Location = new System.Drawing.Point(447, 63);
+            this.bt_load.Name = "bt_load";
+            this.bt_load.Size = new System.Drawing.Size(75, 32);
+            this.bt_load.TabIndex = 0;
+            this.bt_load.Text = "Load";
+            this.bt_load.UseVisualStyleBackColor = true;
+            this.bt_load.Click += new System.EventHandler(this.bt_load_Click);
             // 
             // firmThamSo
             // 
@@ -177,5 +190,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button bt_load;
     }
 }

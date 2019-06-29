@@ -8,18 +8,18 @@ namespace QLPKDTO
 {
     public class PhieuKhamDTO
     {
-        private int MaPK;
-        private int MaBN;
-        private int MaNV;
-        private int MaLB;
+        private  string MaPK;
+        private string MaBN;
+        private string MaNV;
+        private string MaLB;
         private DateTime NgayKham;
         private DateTime NgayKhamLai;
 
-        public int MaKP1 { get => MaPK; set => MaPK = value; }
-        public int MaBN1 { get => MaBN; set => MaBN = value; }
-        public int MaLB1 { get => MaLB; set => MaLB = value; }
+        public string MaPK1 { get => MaPK; set => MaPK = value; }
+        public string MaBN1 { get => MaBN; set => MaBN = value; }
+        public string MaNV1 { get => MaNV; set => MaNV = value; }
+        public string MaLB1 { get => MaLB; set => MaLB = value; }
         public DateTime NgayKham1 { get => NgayKham; set => NgayKham = value; }
-        public int MaNV1 { get => MaNV; set => MaNV = value; }
         public DateTime NgayKhamLai1 { get => NgayKhamLai; set => NgayKhamLai = value; }
     }
 }

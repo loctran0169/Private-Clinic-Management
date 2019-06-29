@@ -30,10 +30,13 @@
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtgv_benhnhan = new System.Windows.Forms.DataGridView();
-            this.xoa = new System.Windows.Forms.Button();
-            this.sua = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_xoa = new System.Windows.Forms.Button();
+            this.bt_sua = new System.Windows.Forms.Button();
+            this.bt_them = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_huy = new System.Windows.Forms.Button();
+            this.bt_lưu = new System.Windows.Forms.Button();
+            this.tb_search = new System.Windows.Forms.TextBox();
             this.tim = new System.Windows.Forms.Button();
             this.Load = new System.Windows.Forms.Button();
             this.dtp_ngaysinh = new System.Windows.Forms.DateTimePicker();
@@ -74,47 +77,51 @@
             this.dtgv_benhnhan.Name = "dtgv_benhnhan";
             this.dtgv_benhnhan.Size = new System.Drawing.Size(794, 265);
             this.dtgv_benhnhan.TabIndex = 0;
+            this.dtgv_benhnhan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_benhnhan_CellClick);
             // 
-            // xoa
+            // bt_xoa
             // 
-            this.xoa.Location = new System.Drawing.Point(452, 118);
-            this.xoa.Name = "xoa";
-            this.xoa.Size = new System.Drawing.Size(78, 31);
-            this.xoa.TabIndex = 9;
-            this.xoa.Text = "Xóa";
-            this.xoa.UseVisualStyleBackColor = true;
-            this.xoa.Click += new System.EventHandler(this.xoa_Click);
+            this.bt_xoa.Location = new System.Drawing.Point(649, 129);
+            this.bt_xoa.Name = "bt_xoa";
+            this.bt_xoa.Size = new System.Drawing.Size(78, 31);
+            this.bt_xoa.TabIndex = 9;
+            this.bt_xoa.Text = "Xóa";
+            this.bt_xoa.UseVisualStyleBackColor = true;
+            this.bt_xoa.Click += new System.EventHandler(this.xoa_Click);
             // 
-            // sua
+            // bt_sua
             // 
-            this.sua.Location = new System.Drawing.Point(368, 118);
-            this.sua.Name = "sua";
-            this.sua.Size = new System.Drawing.Size(78, 31);
-            this.sua.TabIndex = 8;
-            this.sua.Text = "Sửa";
-            this.sua.UseVisualStyleBackColor = true;
-            this.sua.Click += new System.EventHandler(this.sua_Click);
+            this.bt_sua.Location = new System.Drawing.Point(565, 129);
+            this.bt_sua.Name = "bt_sua";
+            this.bt_sua.Size = new System.Drawing.Size(78, 31);
+            this.bt_sua.TabIndex = 8;
+            this.bt_sua.Text = "Sửa";
+            this.bt_sua.UseVisualStyleBackColor = true;
+            this.bt_sua.Click += new System.EventHandler(this.sua_Click);
             // 
-            // button1
+            // bt_them
             // 
-            this.button1.Location = new System.Drawing.Point(284, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 31);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bt_them.Location = new System.Drawing.Point(481, 129);
+            this.bt_them.Name = "bt_them";
+            this.bt_them.Size = new System.Drawing.Size(78, 31);
+            this.bt_them.TabIndex = 7;
+            this.bt_them.Text = "Thêm";
+            this.bt_them.UseVisualStyleBackColor = true;
+            this.bt_them.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bt_huy);
+            this.groupBox1.Controls.Add(this.bt_lưu);
+            this.groupBox1.Controls.Add(this.tb_search);
             this.groupBox1.Controls.Add(this.tim);
             this.groupBox1.Controls.Add(this.Load);
             this.groupBox1.Controls.Add(this.dtp_ngaysinh);
-            this.groupBox1.Controls.Add(this.xoa);
+            this.groupBox1.Controls.Add(this.bt_xoa);
             this.groupBox1.Controls.Add(this.tb_hoten);
-            this.groupBox1.Controls.Add(this.sua);
+            this.groupBox1.Controls.Add(this.bt_sua);
             this.groupBox1.Controls.Add(this.tb_mabn);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.bt_them);
             this.groupBox1.Controls.Add(this.tb_diachi);
             this.groupBox1.Controls.Add(this.tb_sdt);
             this.groupBox1.Controls.Add(this.radioButton2);
@@ -133,11 +140,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Bệnh Nhân";
             // 
+            // bt_huy
+            // 
+            this.bt_huy.Location = new System.Drawing.Point(649, 129);
+            this.bt_huy.Name = "bt_huy";
+            this.bt_huy.Size = new System.Drawing.Size(78, 31);
+            this.bt_huy.TabIndex = 17;
+            this.bt_huy.Text = "Hủy";
+            this.bt_huy.UseVisualStyleBackColor = true;
+            this.bt_huy.Click += new System.EventHandler(this.bt_huy_Click);
+            // 
+            // bt_lưu
+            // 
+            this.bt_lưu.Location = new System.Drawing.Point(565, 129);
+            this.bt_lưu.Name = "bt_lưu";
+            this.bt_lưu.Size = new System.Drawing.Size(78, 31);
+            this.bt_lưu.TabIndex = 16;
+            this.bt_lưu.Text = "Lưu";
+            this.bt_lưu.UseVisualStyleBackColor = true;
+            this.bt_lưu.Click += new System.EventHandler(this.bt_lưu_Click);
+            // 
+            // tb_search
+            // 
+            this.tb_search.Location = new System.Drawing.Point(159, 129);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(152, 20);
+            this.tb_search.TabIndex = 15;
+            // 
             // tim
             // 
-            this.tim.Location = new System.Drawing.Point(311, 18);
+            this.tim.Location = new System.Drawing.Point(331, 123);
             this.tim.Name = "tim";
-            this.tim.Size = new System.Drawing.Size(75, 23);
+            this.tim.Size = new System.Drawing.Size(75, 31);
             this.tim.TabIndex = 14;
             this.tim.Text = "Tìm kiếm";
             this.tim.UseVisualStyleBackColor = true;
@@ -145,7 +179,7 @@
             // 
             // Load
             // 
-            this.Load.Location = new System.Drawing.Point(186, 118);
+            this.Load.Location = new System.Drawing.Point(12, 129);
             this.Load.Name = "Load";
             this.Load.Size = new System.Drawing.Size(92, 31);
             this.Load.TabIndex = 13;
@@ -169,9 +203,11 @@
             this.tb_hoten.Name = "tb_hoten";
             this.tb_hoten.Size = new System.Drawing.Size(172, 20);
             this.tb_hoten.TabIndex = 11;
+            this.tb_hoten.Validated += new System.EventHandler(this.tb_hoten_Validated);
             // 
             // tb_mabn
             // 
+            this.tb_mabn.Enabled = false;
             this.tb_mabn.Location = new System.Drawing.Point(123, 20);
             this.tb_mabn.Name = "tb_mabn";
             this.tb_mabn.Size = new System.Drawing.Size(172, 20);
@@ -190,6 +226,7 @@
             this.tb_sdt.Name = "tb_sdt";
             this.tb_sdt.Size = new System.Drawing.Size(196, 20);
             this.tb_sdt.TabIndex = 8;
+            this.tb_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_sdt_KeyPress);
             // 
             // radioButton2
             // 
@@ -290,9 +327,9 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dtgv_benhnhan;
-        private System.Windows.Forms.Button xoa;
-        private System.Windows.Forms.Button sua;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_xoa;
+        private System.Windows.Forms.Button bt_sua;
+        private System.Windows.Forms.Button bt_them;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtp_ngaysinh;
         private System.Windows.Forms.TextBox tb_hoten;
@@ -309,5 +346,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Load;
         private System.Windows.Forms.Button tim;
+        private System.Windows.Forms.TextBox tb_search;
+        private System.Windows.Forms.Button bt_huy;
+        private System.Windows.Forms.Button bt_lưu;
     }
 }

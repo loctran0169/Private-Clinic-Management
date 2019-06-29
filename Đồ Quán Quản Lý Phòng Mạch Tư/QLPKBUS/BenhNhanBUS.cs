@@ -2,6 +2,7 @@
 using QLPKDTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,10 @@ namespace QLPKBUS
         public List<BenhNhanDTO> selectByKeyWord(string sKeyword)
         {
             return bndal.selectByKeyWord(sKeyword);
+        }
+        public DataTable loadToDataTable()
+        {
+            return bndal.loadToDataTable();
         }
     }
 }

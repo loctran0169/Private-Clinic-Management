@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace QLPKDAL
 {
@@ -23,9 +24,8 @@ namespace QLPKDAL
 
         public bool them(BenhNhanDTO bn)
         {
-
             string query = string.Empty;
-            query += "INSERT INTO BENHNHAN(hoten,ngaysinh,gioitinh,diachi) VALUES (@hoten,@ngaysinh,@gioitinh,@diachi)";
+            query += "INSERT INTO BENHNHAN (mabn,hoten,ngaysinh,gioitinh,diachi,sdt) VALUES (@mabn,@hoten,@ngaysinh,@gioitinh,@diachi,@sdt)";
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
 
@@ -34,15 +34,18 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@mabn", bn.MaBN1);
                     cmd.Parameters.AddWithValue("@hoten", bn.HoTen1);
-                    cmd.Parameters.AddWithValue("@ngaysinh", bn.NgaySinh1);
+                    cmd.Parameters.AddWithValue("@ngaysinh", bn.NgaySinh1.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@gioitinh", bn.GioiTinh1);
                     cmd.Parameters.AddWithValue("@diachi", bn.DiaChi1);
+                    cmd.Parameters.AddWithValue("@sdt", bn.SDT1);
                     try
                     {
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
+                        return true;
                         con.Dispose();
                     }
                     catch (Exception ex)
@@ -58,7 +61,7 @@ namespace QLPKDAL
         public bool sua(BenhNhanDTO bn)
         {
             string query = string.Empty;
-            query += "UPDATE BENHNHAN SET mabn = @mabn, HoTen = @hoten, ngaysinh = @ngaysinh, gioitinh = @gioitinh,diachi = @diachi WHERE mabn = @mabn";
+            query += "UPDATE BENHNHAN SET mabn = @mabn, HoTen = @hoten, ngaysinh = @ngaysinh, gioitinh = @gioitinh,diachi = @diachi,sdt=@sdt WHERE mabn = @mabn";
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
@@ -72,6 +75,7 @@ namespace QLPKDAL
                     cmd.Parameters.AddWithValue("@ngaysinh", bn.NgaySinh1);
                     cmd.Parameters.AddWithValue("@gioitinh", bn.GioiTinh1);
                     cmd.Parameters.AddWithValue("@diachi", bn.DiaChi1);
+                    cmd.Parameters.AddWithValue("@sdt", bn.SDT1);
                     try
                     {
                         con.Open();
@@ -146,11 +150,12 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 BenhNhanDTO bn = new BenhNhanDTO();
-                                bn.MaBN1 = int.Parse(reader["MaBN"].ToString());
+                                bn.MaBN1 = reader["MaBN"].ToString();
                                 bn.NgaySinh1 = (DateTime)reader["NgaySinh"];
                                 bn.GioiTinh1 = reader["GioiTinh"].ToString();
                                 bn.DiaChi1 = reader["DiaChi"].ToString();
                                 bn.HoTen1 = reader["HoTen"].ToString();
+                                bn.SDT1= reader["SDT"].ToString();
                                 listBenhNhan.Add(bn);
                             }
                         }
@@ -198,11 +203,12 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 BenhNhanDTO bn = new BenhNhanDTO();
-                                bn.MaBN1 = int.Parse(reader["MaBN"].ToString());
+                                bn.MaBN1 = reader["MaBN"].ToString();
                                 bn.NgaySinh1 = (DateTime)reader["NgaySinh"];
                                 bn.GioiTinh1 = reader["GioiTinh"].ToString();
                                 bn.DiaChi1 = reader["DiaChi"].ToString();
                                 bn.HoTen1 = reader["HoTen"].ToString();
+                                bn.SDT1 = reader["SDT"].ToString();
                                 listBenhNhan.Add(bn);
                             }
                         }
@@ -218,6 +224,27 @@ namespace QLPKDAL
                 }
             }
             return listBenhNhan;
+        }
+
+        public DataTable loadToDataTable()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+            try
+            {
+                kn.Open();
+                string sql = "select * from BENHNHAN";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
+                dt.Dispose();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return k;
         }
     }
 }

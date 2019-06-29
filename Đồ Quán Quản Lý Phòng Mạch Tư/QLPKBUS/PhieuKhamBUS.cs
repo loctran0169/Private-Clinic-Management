@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace QLPKBUS
 {
@@ -33,7 +34,11 @@ namespace QLPKBUS
             bool re = pkdal.sua(pk);
             return re;
         }
-
+        
+        public DataTable loadToDataTable()
+        {
+            return pkdal.loadToDataTable();
+        }
         public List<PhieuKhamDTO> select()
         {
             return pkdal.select();
@@ -42,5 +47,6 @@ namespace QLPKBUS
         {
             return pkdal.selectByKeyWord(sKeyword);
         }
+        
     }
 }

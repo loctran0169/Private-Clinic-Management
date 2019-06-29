@@ -8,16 +8,16 @@ namespace QLPKDTO
 {
     public class ThuocDTO
     {
-        private int MaThuoc;
-        private int MaDV;
+        private string MaThuoc;
         private string TenThuoc;
+        private string MaDV;
         private DateTime NSX;
         private DateTime HSD;
         private int DonGia;
         private int SoLuongTon;
 
-        public int MaThuoc1 { get => MaThuoc; set => MaThuoc = value; }
-        public int MaDV1 { get => MaDV; set => MaDV = value; }
+        public string MaThuoc1 { get => MaThuoc; set => MaThuoc = value; }
+        public string MaDV1 { get => MaDV; set => MaDV = value; }
         public string TenThuoc1 { get => TenThuoc; set => TenThuoc = value; }
         public DateTime NSX1 { get => NSX; set => NSX = value; }
         public DateTime HSD1 { get => HSD; set => HSD = value; }

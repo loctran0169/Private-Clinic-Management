@@ -9,47 +9,52 @@ using System.Threading.Tasks;
 
 namespace QLPKBUS
 {
-    public class ThuocBUS
+    public class UserBUS
     {
-        private ThuocDAL bdal;
-
-        public ThuocBUS()
+        private UserDAL bdal;
+        public UserBUS()
         {
-            bdal = new ThuocDAL();
+            bdal = new UserDAL();
         }
-        public bool them(ThuocDTO lb)
+        public bool them(UserDTO lb)
         {
             bool re = bdal.them(lb);
             return re;
         }
 
-        public bool xoa(ThuocDTO lb)
+        public bool xoa(UserDTO lb)
         {
             bool re = bdal.xoa(lb);
             return re;
         }
 
-        public bool sua(ThuocDTO lb)
+        public bool sua(UserDTO lb)
         {
             bool re = bdal.sua(lb);
             return re;
         }
 
-        public List<ThuocDTO> select()
+        public List<UserDTO> select()
         {
             return bdal.select();
         }
-        public List<ThuocDTO> selectByKeyWord(string sKeyword)
+        public List<UserDTO> selectByKeyWord(string sKeyword)
         {
             return bdal.selectByKeyWord(sKeyword);
         }
-        public DataTable loadDuLieuThuoc()
+
+        public DataTable loadDuLieuUsers()
         {
-            return bdal.loadDuLieuThuoc();
+            return bdal.loadDuLieuUsers();
         }
-        public DataTable loadDuLieuDonViTinh()
+
+        public DataTable loadDuLieuNhanVien()
         {
-            return bdal.loadDuLieuDonViTinh();
+            return bdal.loadDuLieuNhanVien();
+        }
+        public DataTable loadDuLieuQuyenHan()
+        {
+            return bdal.loadDuLieuQuyenHan();
         }
     }
 }

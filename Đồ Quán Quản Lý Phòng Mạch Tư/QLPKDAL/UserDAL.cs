@@ -3,6 +3,7 @@ using QLPKDTO;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace QLPKDAL
         {
 
             string query = string.Empty;
-            query += "INSERT INTO USERS (taikhoan,matkhau,manv,maqh) VALUES (@taikhoan,@matkhau,@manv,@maqh)";
+            query += "INSERT INTO USERS (maus,taikhoan,matkhau,manv,maqh) VALUES (@maus,@taikhoan,@matkhau,@manv,@maqh)";
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
 
@@ -33,6 +34,7 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@maus", us.MaUS1);
                     cmd.Parameters.AddWithValue("@taikhoan", us.TaiKhoan1);
                     cmd.Parameters.AddWithValue("@matkhau", us.MatKhau1);
                     cmd.Parameters.AddWithValue("@manv", us.MaNV1);
@@ -57,7 +59,7 @@ namespace QLPKDAL
         public bool sua(UserDTO us)
         {
             string query = string.Empty;
-            query += "UPDATE USERS SET maus = @maus, taikhoan = @taikhoan, matkhau = @matkhau,manv=@manv,maqh@maqh WHERE matk = @matk";
+            query += "UPDATE USERS SET  taikhoan = @taikhoan, matkhau = @matkhau,manv=@manv,maqh=@maqh WHERE maus = @maus";
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
@@ -145,9 +147,9 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 UserDTO us = new UserDTO();
-                                us.MaUS1 = int.Parse(reader["MaUS"].ToString());
-                                us.MaNV1 = int.Parse(reader["MaNV"].ToString());
-                                us.MaQH1 = int.Parse(reader["MaQH"].ToString());
+                                us.MaUS1 = reader["MaUS"].ToString();
+                                us.MaNV1 = reader["MaNV"].ToString();
+                                us.MaQH1 = reader["MaQH"].ToString();
                                 us.TaiKhoan1 = reader["TaiKhoan"].ToString(); ;
                                 us.MatKhau1 = reader["MatKhau"].ToString();
                                 listuser.Add(us);
@@ -197,9 +199,9 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 UserDTO us = new UserDTO();
-                                us.MaUS1 = int.Parse(reader["MaUS"].ToString());
-                                us.MaNV1 = int.Parse(reader["MaNV"].ToString());
-                                us.MaQH1 = int.Parse(reader["MaQH"].ToString());
+                                us.MaUS1 = reader["MaUS"].ToString();
+                                us.MaNV1 = reader["MaNV"].ToString();
+                                us.MaQH1 = reader["MaQH"].ToString();
                                 us.TaiKhoan1 = reader["TaiKhoan"].ToString(); ;
                                 us.MatKhau1 = reader["MatKhau"].ToString();
                                 listuser.Add(us);
@@ -217,6 +219,65 @@ namespace QLPKDAL
                 }
             }
             return listuser;
+        }
+
+        public DataTable loadDuLieuUsers()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+            try
+            {
+                kn.Open();
+                string sql = "select * from USERS";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
+                dt.Dispose();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return k;
+        }
+        public DataTable loadDuLieuNhanVien()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+
+            try
+            {
+                kn.Open();
+                string sql = "select MaNhanVien from NHANVIEN";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return k;
+        }
+        public DataTable loadDuLieuQuyenHan()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+
+            try
+            {
+                kn.Open();
+                string sql = "select MaQH,TenQuyenHan from QUYENHAN";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+
+            }
+            catch (Exception e)
+            {
+               
+            }
+            return k;
         }
     }
 }

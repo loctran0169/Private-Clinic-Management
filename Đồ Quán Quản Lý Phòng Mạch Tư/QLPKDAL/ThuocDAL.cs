@@ -3,6 +3,7 @@ using QLPKDTO;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace QLPKDAL
         {
 
             string query = string.Empty;
-            query += "INSERT INTO THUOC(tenthuoc,madv,nsx,hsd,dongia,soluongton) VALUES (@tenthuoc,@madv,@nsx,@hsd,@dongia,@soluong)";
+            query += "INSERT INTO THUOC(mathuoc,tenthuoc,madv,nsx,hsd,dongia) VALUES (@mathuoc,@tenthuoc,@madv,@nsx,@hsd,@dongia)";
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
 
@@ -33,6 +34,7 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@mathuoc", bn.MaThuoc1);
                     cmd.Parameters.AddWithValue("@tenthuoc", bn.TenThuoc1);
                     cmd.Parameters.AddWithValue("@madv", bn.MaDV1);
                     cmd.Parameters.AddWithValue("@nsx", bn.NSX1);
@@ -152,12 +154,12 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 ThuocDTO bn = new ThuocDTO();
-                                bn.MaThuoc1 = int.Parse(reader["MaThuoc"].ToString());
-                                bn.MaDV1 = int.Parse(reader["MaDV"].ToString());
+                                bn.MaThuoc1 = reader["MaThuoc"].ToString();
+                                bn.MaDV1 = reader["MaDV"].ToString();
                                 bn.NSX1 = (DateTime)reader["NSX"];
                                 bn.HSD1 = (DateTime)reader["HSD"];
                                 bn.DonGia1 = int.Parse(reader["DonGia"].ToString());
-                                bn.SoLuongTon1 = int.Parse(reader["SoLuongTon"].ToString());
+                                //bn.SoLuongTon1 = int.Parse(reader["SoLuongTon"].ToString());
                                 listthuoc.Add(bn);
                             }
                         }
@@ -205,8 +207,8 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 ThuocDTO bn = new ThuocDTO();
-                                bn.MaThuoc1 = int.Parse(reader["MaThuoc"].ToString());
-                                bn.MaDV1 = int.Parse(reader["MaDV"].ToString());
+                                bn.MaThuoc1 = reader["MaThuoc"].ToString();
+                                bn.MaDV1 = reader["MaDV"].ToString();
                                 bn.NSX1 = (DateTime)reader["NSX"];
                                 bn.HSD1 = (DateTime)reader["HSD"];
                                 bn.DonGia1 = int.Parse(reader["DonGia"].ToString());
@@ -226,6 +228,44 @@ namespace QLPKDAL
                 }
             }
             return listthuoc;
+        }
+
+        public DataTable loadDuLieuDonViTinh()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+
+            try
+            {
+                kn.Open();
+                string sql = "select MaDV, tendonvi from DONVITINH";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+
+            }
+            catch (Exception e)
+            {
+            }
+            return k;
+        }
+        public DataTable loadDuLieuThuoc()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+
+            try
+            {
+                kn.Open();
+                string sql = "select mathuoc,tenthuoc,DONVITINH.MaDV,nsx,hsd,DonGia from DONVITINH, THUOC where DONVITINH.Madv = THUOC.MaDV";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return k;
         }
     }
 }

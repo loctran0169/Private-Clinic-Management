@@ -2,6 +2,7 @@
 using QLPKDTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,36 +11,42 @@ namespace QLPKBUS
 {
     public class NhanVienBUS
     {
-        private NhanVienDAL nvdal;
+        private NhanVienDAL nvDAL;
         public NhanVienBUS()
         {
-            nvdal = new NhanVienDAL();
+            nvDAL = new NhanVienDAL();
         }
-        public bool them(NhanVienDTO nv)
+        public DataTable loadDuLieuNhanVien()
         {
-            bool re = nvdal.them(nv);
+            DataTable k = new DataTable();
+            k = nvDAL.loadDuLieuNhanVien();
+            return k;
+
+        }
+        public DataTable loadDuLieuNhanVienTuMaUsers(string Manv)
+        {
+            DataTable k = new DataTable();
+            k = nvDAL.loadDuLieuNhanVienTuMaUsers(Manv);
+            return k;
+
+        }
+        public bool them(NhanVienDTO nvDTO)
+        {
+            bool re = nvDAL.them(nvDTO);
+
             return re;
         }
-
-        public bool xoa(NhanVienDTO nv)
+        public bool sua(NhanVienDTO nvDTO)
         {
-            bool re = nvdal.xoa(nv);
+            bool re = nvDAL.sua(nvDTO);
+
             return re;
         }
-
-        public bool sua(NhanVienDTO nv)
+        public bool xoa(NhanVienDTO nvDTO)
         {
-            bool re = nvdal.sua(nv);
+            bool re = nvDAL.xoa(nvDTO);
+
             return re;
-        }
-
-        public List<NhanVienDTO> select()
-        {
-            return nvdal.select();
-        }
-        public List<NhanVienDTO> selectByKeyWord(string sKeyword)
-        {
-            return nvdal.selectByKeyWord(sKeyword);
         }
     }
 }

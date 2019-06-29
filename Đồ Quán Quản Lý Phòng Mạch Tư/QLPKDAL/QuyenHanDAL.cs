@@ -141,7 +141,7 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 QuyenHanDTO qh = new QuyenHanDTO();
-                                qh.MaQH1 = int.Parse(reader["MaQH"].ToString());
+                                qh.MaQH1 = reader["MaQH"].ToString();
                                 qh.TenQuyenHan1 = reader["TenQuyenHan"].ToString(); ;
                                 qh.NoiDung1 = reader["NoiDung"].ToString();
                                 listquyenhan.Add(qh);
@@ -191,7 +191,7 @@ namespace QLPKDAL
                             while (reader.Read())
                             {
                                 QuyenHanDTO qh = new QuyenHanDTO();
-                                qh.MaQH1 = int.Parse(reader["MaQH"].ToString());
+                                qh.MaQH1 = reader["MaQH"].ToString();
                                 qh.TenQuyenHan1 = reader["TenQuyenHan"].ToString(); ;
                                 qh.NoiDung1 = reader["NoiDung"].ToString();
                                 listquyenhan.Add(qh);
