@@ -114,6 +114,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter= "bak files (*.bak)|*.bak";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 tb_path.Text = dlg.FileName;

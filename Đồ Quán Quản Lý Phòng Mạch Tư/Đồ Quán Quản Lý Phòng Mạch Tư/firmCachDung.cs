@@ -154,7 +154,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 else
                 {
                     MessageBox.Show("Xóa thông tin cách dùng thành công");
-                    ReloadDb();//load lại dữ liệu cho datagridview
+                    dtgv.DataSource = bus.loadDuLieuCachDung();
+                    ResetGiaTri();
                 }
                 KhoaButton();
             }

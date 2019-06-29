@@ -87,7 +87,7 @@ namespace QLPKDAL
         public bool xoa(CachDungDTO cd)
         {
             string query = string.Empty;
-            query += "DELETE FROM CACHDUNG WHERE macd = @macd";
+            query += "DELETE FROM CACHDUNG where MaCD = @macd";
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
@@ -96,7 +96,7 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@macd", cd.CachDung1);
+                    cmd.Parameters.AddWithValue("@macd", cd.MaCD1);
                     try
                     {
                         con.Open();
