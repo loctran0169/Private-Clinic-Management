@@ -390,7 +390,7 @@
             this.barButtonItem29.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.khôi_phục;
             this.barButtonItem29.Name = "barButtonItem29";
             this.barButtonItem29.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem29.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem29_ItemClick);
+            
             // 
             // ribbonPage1
             // 
