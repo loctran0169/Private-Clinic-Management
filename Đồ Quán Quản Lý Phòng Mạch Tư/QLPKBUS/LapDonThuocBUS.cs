@@ -23,5 +23,9 @@ namespace QLPKBUS
         {
             return dtdal.loadPKtoCombobox();
         }
+        public List<LapDonThuocDTO> select(string s)
+        {
+            return dtdal.select(s);
+        }
     }
 }
