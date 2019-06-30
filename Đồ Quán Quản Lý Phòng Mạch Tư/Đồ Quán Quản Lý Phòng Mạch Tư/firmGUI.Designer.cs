@@ -132,7 +132,7 @@
             this.ribbonPage2,
             this.ribbonPage3,
             this.ribbonPage5});
-            this.ribbonControl1.Size = new System.Drawing.Size(1352, 139);
+            this.ribbonControl1.Size = new System.Drawing.Size(1027, 139);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // barButtonItem1
@@ -564,10 +564,10 @@
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.bartk);
             this.ribbonStatusBar1.ItemLinks.Add(this.bartt);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 716);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 566);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1352, 25);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1027, 25);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -578,12 +578,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1352, 741);
+            this.ClientSize = new System.Drawing.Size(1027, 591);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "firmGUI";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý phòng mạch tư";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.firmGUI_FormClosed);
             this.Load += new System.EventHandler(this.firmGUI_Load);

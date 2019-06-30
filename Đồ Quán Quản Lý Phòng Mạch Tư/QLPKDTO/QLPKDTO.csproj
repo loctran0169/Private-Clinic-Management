@@ -56,7 +56,7 @@
     <Compile Include="QuyenHanDTO.cs" />
     <Compile Include="ThamSoDTO.cs" />
     <Compile Include="ThuocDTO.cs" />
-    <Compile Include="UserDTO.cs" />
+    <Compile Include="UsersDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
-    partial class firmDoiMatKhau
+    partial class frmDoiMatKhau
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tb_mk2 = new System.Windows.Forms.TextBox();
-            this.tb_mk1 = new System.Windows.Forms.TextBox();
-            this.tb_mkc = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtMatKhauMoi2 = new System.Windows.Forms.TextBox();
+            this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
+            this.txtMauKhauCu = new System.Windows.Forms.TextBox();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,11 +43,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tb_mk2);
-            this.panel1.Controls.Add(this.tb_mk1);
-            this.panel1.Controls.Add(this.tb_mkc);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.txtMatKhauMoi2);
+            this.panel1.Controls.Add(this.txtMatKhauMoi);
+            this.panel1.Controls.Add(this.txtMauKhauCu);
+            this.panel1.Controls.Add(this.btnThoat);
+            this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -58,46 +58,46 @@
             this.panel1.Size = new System.Drawing.Size(425, 277);
             this.panel1.TabIndex = 0;
             // 
-            // tb_mk2
+            // txtMatKhauMoi2
             // 
-            this.tb_mk2.Location = new System.Drawing.Point(119, 147);
-            this.tb_mk2.Name = "tb_mk2";
-            this.tb_mk2.Size = new System.Drawing.Size(244, 20);
-            this.tb_mk2.TabIndex = 26;
+            this.txtMatKhauMoi2.Location = new System.Drawing.Point(119, 147);
+            this.txtMatKhauMoi2.Name = "txtMatKhauMoi2";
+            this.txtMatKhauMoi2.Size = new System.Drawing.Size(244, 20);
+            this.txtMatKhauMoi2.TabIndex = 26;
             // 
-            // tb_mk1
+            // txtMatKhauMoi
             // 
-            this.tb_mk1.Location = new System.Drawing.Point(119, 115);
-            this.tb_mk1.Name = "tb_mk1";
-            this.tb_mk1.Size = new System.Drawing.Size(244, 20);
-            this.tb_mk1.TabIndex = 25;
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(119, 115);
+            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(244, 20);
+            this.txtMatKhauMoi.TabIndex = 25;
             // 
-            // tb_mkc
+            // txtMauKhauCu
             // 
-            this.tb_mkc.Location = new System.Drawing.Point(119, 82);
-            this.tb_mkc.Name = "tb_mkc";
-            this.tb_mkc.Size = new System.Drawing.Size(244, 20);
-            this.tb_mkc.TabIndex = 24;
+            this.txtMauKhauCu.Location = new System.Drawing.Point(119, 82);
+            this.txtMauKhauCu.Name = "txtMauKhauCu";
+            this.txtMauKhauCu.Size = new System.Drawing.Size(244, 20);
+            this.txtMauKhauCu.TabIndex = 24;
             // 
-            // button2
+            // btnThoat
             // 
-            this.button2.Location = new System.Drawing.Point(270, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 43);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnThoat.Location = new System.Drawing.Point(270, 191);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(100, 43);
+            this.btnThoat.TabIndex = 23;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // button1
+            // btnLuu
             // 
-            this.button1.Location = new System.Drawing.Point(119, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 43);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLuu.Location = new System.Drawing.Point(119, 191);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(100, 43);
+            this.btnLuu.TabIndex = 22;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label4
             // 
@@ -136,13 +136,13 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "THAY ĐỔI MẬT KHẨU";
             // 
-            // firmDoiMatKhau
+            // frmDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 277);
             this.Controls.Add(this.panel1);
-            this.Name = "firmDoiMatKhau";
+            this.Name = "frmDoiMatKhau";
             this.Text = "Đổi Mật Khẩu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -153,11 +153,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tb_mk2;
-        private System.Windows.Forms.TextBox tb_mk1;
-        private System.Windows.Forms.TextBox tb_mkc;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtMatKhauMoi2;
+        private System.Windows.Forms.TextBox txtMatKhauMoi;
+        private System.Windows.Forms.TextBox txtMauKhauCu;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
