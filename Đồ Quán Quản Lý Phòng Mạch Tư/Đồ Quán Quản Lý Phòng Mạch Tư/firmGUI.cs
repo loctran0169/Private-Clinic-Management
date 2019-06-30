@@ -332,21 +332,6 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         }
 
-        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form frm = kiemtraform(typeof(firmBaoCaoSuDungThuoc_Ngay));
-            if (frm == null)
-            {
-                firmBaoCaoSuDungThuoc_Ngay forms = new firmBaoCaoSuDungThuoc_Ngay();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
-        }
-
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(firmBaoCaoSuDungThuoc_Thang));
@@ -362,20 +347,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             }
         }
 
-        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form frm = kiemtraform(typeof(firmBaoCaoNgay));
-            if (frm == null)
-            {
-                firmBaoCaoNgay forms = new firmBaoCaoNgay();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
-        }
+
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

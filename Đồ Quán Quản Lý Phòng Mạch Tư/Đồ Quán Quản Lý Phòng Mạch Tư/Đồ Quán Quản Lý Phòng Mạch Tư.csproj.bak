@@ -54,6 +54,7 @@
     <Reference Include="DevExpress.BonusSkins.v18.1" />
     <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v18.1" />
+    <Reference Include="DevExpress.DemoReports.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=4c3bc44151be4b47, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Dialogs.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.Reports.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -66,7 +67,6 @@
     <Reference Include="DevExpress.Utils.v18.1.UI, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpf.ReportDesigner.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v18.1.Wizard, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraDialogs.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.1" />
@@ -75,7 +75,6 @@
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.CodeParser.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v18.1.Extensions, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v18.1.Reporting, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -119,6 +118,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="firmBaoCaoNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoNgay.Designer.cs">
+      <DependentUpon>firmBaoCaoNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Ngay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBaoCaoSuDungThuoc_Ngay.Designer.cs">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Ngay.cs</DependentUpon>
+    </Compile>
     <Compile Include="firmBaoCaoSuDungThuoc_Thang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,12 +282,12 @@
     <Compile Include="rpDoanhThu.Designer.cs">
       <DependentUpon>rpDoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="rpSuDungThuoc.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="rpSuDungThuoc.Designer.cs">
-      <DependentUpon>rpSuDungThuoc.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="firmBaoCaoNgay.resx">
+      <DependentUpon>firmBaoCaoNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBaoCaoSuDungThuoc_Ngay.resx">
+      <DependentUpon>firmBaoCaoSuDungThuoc_Ngay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="firmBaoCaoSuDungThuoc_Thang.resx">
       <DependentUpon>firmBaoCaoSuDungThuoc_Thang.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,9 +373,6 @@
     </Compile>
     <EmbeddedResource Include="rpDoanhThu.resx">
       <DependentUpon>rpDoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rpSuDungThuoc.resx">
-      <DependentUpon>rpSuDungThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -508,6 +516,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dbQLPK.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dbQLPK_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>dbQLPK.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
