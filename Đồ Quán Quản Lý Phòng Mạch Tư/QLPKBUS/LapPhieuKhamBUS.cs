@@ -25,6 +25,11 @@ namespace QLPKBUS
             bool re = dsdal.sua(dsdto);
             return re;
         }
+        public bool xoa(LapPhieuKhamDTO dsdto)
+        {
+            bool re = dsdal.xoa(dsdto);
+            return re;
+        }
     }
 }
 
