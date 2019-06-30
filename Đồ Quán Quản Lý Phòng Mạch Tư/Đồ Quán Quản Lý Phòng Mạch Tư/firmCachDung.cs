@@ -236,21 +236,33 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             dtgv.Enabled = true;
             curline = -1;
         }
+        private void HienThiThongTin()
+        {
 
+            if (dtgv.RowCount > 0)
+            {
+                int r = dtgv.CurrentRow.Index;
+                DataGridViewRow row = dtgv.Rows[r];
+                txtMaCachDungThuoc.Text = row.Cells[0].Value.ToString();
+                txtNoiDungCachDungThuoc.Text = row.Cells[1].Value.ToString();
+                
+            }
+        }
         private void dtgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            int indexrow;
+            indexrow = e.RowIndex;
+            if (indexrow != -1)
             {
-                DataGridViewRow row = this.dtgv.Rows[e.RowIndex];
-
-                txtMaCachDungThuoc.Text = row.Cells[0].Value + string.Empty;
-                txtNoiDungCachDungThuoc.Text = row.Cells[1].Value + string.Empty;
+                HienThiThongTin();
             }
+           
         }
 
         private void load_Click(object sender, EventArgs e)
         {
             ReloadDb();
+            HienThiThongTin();
         }
     }
 }

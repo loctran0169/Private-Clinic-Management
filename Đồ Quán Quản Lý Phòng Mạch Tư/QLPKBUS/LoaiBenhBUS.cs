@@ -2,45 +2,46 @@
 using QLPKDTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace QLPKBUS
 {
-    public class BenhBUS
+    public class LoaiBenhBUS
     {
-        private BenhDAL bdal;
-        public BenhBUS()
+        private LoaiBenhDAL bdal;
+        public LoaiBenhBUS()
         {
-            bdal = new BenhDAL();
+            bdal = new LoaiBenhDAL();
         }
-        public bool them(BenhDTO lb)
+        public bool them(LoaiBenhDTO lb)
         {
             bool re = bdal.them(lb);
             return re;
         }
-        public System.Data.DataTable loadToDataTable()
+        public DataTable loadDuLieuLoaiBenh()
         {
-            return bdal.loadToDataTable();
+            return bdal.loadDuLieuLoaiBenh();
         }
-        public bool xoa(BenhDTO lb)
+        public bool xoa(LoaiBenhDTO lb)
         {
             bool re = bdal.xoa(lb);
             return re;
         }
 
-        public bool sua(BenhDTO lb)
+        public bool sua(LoaiBenhDTO lb)
         {
             bool re = bdal.sua(lb);
             return re;
         }
 
-        public List<BenhDTO> select()
+        public List<LoaiBenhDTO> select()
         {
             return bdal.select();
         }
-        public List<BenhDTO> selectByKeyWord(string sKeyword)
+        public List<LoaiBenhDTO> selectByKeyWord(string sKeyword)
         {
             return bdal.selectByKeyWord(sKeyword);
         }

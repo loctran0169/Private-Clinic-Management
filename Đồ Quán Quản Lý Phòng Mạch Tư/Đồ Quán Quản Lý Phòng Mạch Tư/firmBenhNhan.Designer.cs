@@ -179,7 +179,7 @@
             // 
             // Load
             // 
-            this.Load.Location = new System.Drawing.Point(12, 129);
+            this.Load.Location = new System.Drawing.Point(23, 123);
             this.Load.Name = "Load";
             this.Load.Size = new System.Drawing.Size(92, 31);
             this.Load.TabIndex = 13;

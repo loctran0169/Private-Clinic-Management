@@ -1,50 +1,50 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System;
 using QLPKDTO;
-using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms;
+using System.Configuration;
 namespace QLPKDAL
 {
-        public class BenhDAL
+        public class LoaiBenhDAL
         {
             private string connectionString;
 
             public string ConnectionString { get => connectionString; set => connectionString = value; }
 
-            public BenhDAL()
+            public LoaiBenhDAL()
             {
                 connectionString = ConfigurationManager.AppSettings["ConnectionString"];
             }
-        public DataTable loadToDataTable()
-        {
-            DataTable k = new DataTable();
-            MySqlConnection kn = new MySqlConnection(connectionString);
-            try
+            public DataTable loadDuLieuLoaiBenh()
             {
-                kn.Open();
-                string sql = "SELECT * FROM BENH";
-                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
-                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
-                kn.Close();
-                dt.Dispose();
+                DataTable k = new DataTable();
+                MySqlConnection kn = new MySqlConnection(connectionString);
+                try
+                {
+                    kn.Open();
+                    string sql = "SELECT * FROM BENH";
+                    MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                    dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                    kn.Close();
+                    dt.Dispose();
 
-            }
-            catch (Exception e)
-            {
+                }
+                catch (Exception e)
+                {
 
+                }
+                return k;
             }
-            return k;
-        }
-        public bool them(BenhDTO lb)
+            public bool them(LoaiBenhDTO lb)
             {
 
                 string query = string.Empty;
-                query += "INSERT INTO BENH (tenloaibenh,trieuchung) VALUES (@tenloaibenh,@trieuchung)";
+                query += "INSERT INTO BENH (malb,tenloaibenh,trieuchung) VALUES (@malb,@tenloaibenh,@trieuchung)";
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
 
@@ -53,8 +53,9 @@ namespace QLPKDAL
                         cmd.Connection = con;
                         cmd.CommandType = System.Data.CommandType.Text;
                         cmd.CommandText = query;
-                        cmd.Parameters.AddWithValue("@tenloaibenh", lb.TenLoaiBenh1);
-                        cmd.Parameters.AddWithValue("@trieuchung", lb.TrieuChung1);
+                    cmd.Parameters.AddWithValue("@malb", lb.MaLB);
+                    cmd.Parameters.AddWithValue("@tenloaibenh", lb.TenLoaiBenh);
+                        cmd.Parameters.AddWithValue("@trieuchung", lb.TrieuChung);
                         try
                         {
                             con.Open();
@@ -72,7 +73,7 @@ namespace QLPKDAL
                 return true;
             }
 
-            public bool sua(BenhDTO lb)
+            public bool sua(LoaiBenhDTO lb)
             {
                 string query = string.Empty;
                 query += "UPDATE BENH SET malb = @malb, tenloaibenh = @tenloaibenh, trieuchung = @trieuchung WHERE malb = @malb";
@@ -84,9 +85,9 @@ namespace QLPKDAL
                         cmd.Connection = con;
                         cmd.CommandType = System.Data.CommandType.Text;
                         cmd.CommandText = query;
-                        cmd.Parameters.AddWithValue("@malb", lb.MaLB1);
-                        cmd.Parameters.AddWithValue("@tenloaibenh", lb.TenLoaiBenh1);
-                        cmd.Parameters.AddWithValue("@trieuchung", lb.TrieuChung1);
+                        cmd.Parameters.AddWithValue("@malb", lb.MaLB);
+                        cmd.Parameters.AddWithValue("@tenloaibenh", lb.TenLoaiBenh);
+                        cmd.Parameters.AddWithValue("@trieuchung", lb.TrieuChung);
                         try
                         {
                             con.Open();
@@ -104,7 +105,7 @@ namespace QLPKDAL
                 return true;
             }
 
-            public bool xoa(BenhDTO lb)
+            public bool xoa(LoaiBenhDTO lb)
             {
                 string query = string.Empty;
                 query += "DELETE FROM BENH WHERE malb = @malb";
@@ -116,7 +117,7 @@ namespace QLPKDAL
                         cmd.Connection = con;
                         cmd.CommandType = System.Data.CommandType.Text;
                         cmd.CommandText = query;
-                        cmd.Parameters.AddWithValue("@malb", lb.MaLB1);
+                        cmd.Parameters.AddWithValue("@malb", lb.MaLB);
                         try
                         {
                             con.Open();
@@ -134,13 +135,13 @@ namespace QLPKDAL
                 return true;
             }
 
-            public List<BenhDTO> select()
+            public List<LoaiBenhDTO> select()
             {
                 string query = string.Empty;
                 query += "SELECT * ";
                 query += "FROM BENH";
 
-                List<BenhDTO> listBenh = new List<BenhDTO>();
+                List<LoaiBenhDTO> listBenh = new List<LoaiBenhDTO>();
                 string ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (MySqlConnection con = new MySqlConnection(ConnectionString))
                 {
@@ -160,10 +161,10 @@ namespace QLPKDAL
                             {
                                 while (reader.Read())
                                 {
-                                    BenhDTO lb = new BenhDTO();
-                                    lb.MaLB1 = int.Parse(reader["MaBN"].ToString());
-                                    lb.TenLoaiBenh1 = reader["TenLoaiBenh"].ToString(); ;
-                                    lb.TrieuChung1 = reader["TrieuChung"].ToString();
+                                    LoaiBenhDTO lb = new LoaiBenhDTO();
+                                    lb.MaLB = reader["MaLB"].ToString();
+                                    lb.TenLoaiBenh = reader["TenLoaiBenh"].ToString(); ;
+                                    lb.TrieuChung = reader["TrieuChung"].ToString();
                                     listBenh.Add(lb);
                                 }
                             }
@@ -182,7 +183,7 @@ namespace QLPKDAL
                 return listBenh;
             }
 
-            public List<BenhDTO> selectByKeyWord(string sKeyword)
+            public List<LoaiBenhDTO> selectByKeyWord(string sKeyword)
             {
                 string query = string.Empty;
                 query += " SELECT *";
@@ -190,7 +191,7 @@ namespace QLPKDAL
                 query += " WHERE (malb LIKE CONCAT('%',@sKeyword,'%'))";
                 query += " OR (tenloaibenh LIKE CONCAT('%',@sKeyword,'%'))";
 
-                List<BenhDTO> listBenh = new List<BenhDTO>();
+                List<LoaiBenhDTO> listBenh = new List<LoaiBenhDTO>();
 
                 using (MySqlConnection con = new MySqlConnection(ConnectionString))
                 {
@@ -210,10 +211,10 @@ namespace QLPKDAL
                             {
                                 while (reader.Read())
                                 {
-                                    BenhDTO lb = new BenhDTO();
-                                    lb.MaLB1 = int.Parse(reader["MaBN"].ToString());
-                                    lb.TenLoaiBenh1 = reader["TenLoaiBenh"].ToString(); ;
-                                    lb.TrieuChung1 = reader["TrieuChung"].ToString();
+                                    LoaiBenhDTO lb = new LoaiBenhDTO();
+                                    lb.MaLB = reader["MaLB"].ToString();
+                                    lb.TenLoaiBenh = reader["TenLoaiBenh"].ToString(); ;
+                                    lb.TrieuChung = reader["TrieuChung"].ToString();
                                     listBenh.Add(lb);
                                 }
                             }
@@ -230,5 +231,7 @@ namespace QLPKDAL
                 }
                 return listBenh;
             }
+
         }
-}
+    }
+

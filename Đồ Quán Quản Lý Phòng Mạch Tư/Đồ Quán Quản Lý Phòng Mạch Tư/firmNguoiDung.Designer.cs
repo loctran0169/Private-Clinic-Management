@@ -43,16 +43,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewNguoiDung = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cboNhanVien = new System.Windows.Forms.GroupBox();
-            this.cboMaNV = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PASS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NHANVIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cboNhanVien = new System.Windows.Forms.GroupBox();
             this.load = new System.Windows.Forms.Button();
+            this.cboMaNV = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNguoiDung)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -205,6 +205,41 @@
             this.dataGridViewNguoiDung.TabIndex = 0;
             this.dataGridViewNguoiDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNguoiDung_CellClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaUS";
+            this.Column1.HeaderText = "Mã Users";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // USER
+            // 
+            this.USER.DataPropertyName = "TaiKhoan";
+            this.USER.HeaderText = "Tài Khoản";
+            this.USER.Name = "USER";
+            this.USER.ReadOnly = true;
+            // 
+            // PASS
+            // 
+            this.PASS.DataPropertyName = "MatKhau";
+            this.PASS.HeaderText = "Mật Khẩu";
+            this.PASS.Name = "PASS";
+            this.PASS.ReadOnly = true;
+            // 
+            // NHANVIEN
+            // 
+            this.NHANVIEN.DataPropertyName = "MaNV";
+            this.NHANVIEN.HeaderText = "Mã nhân viên";
+            this.NHANVIEN.Name = "NHANVIEN";
+            this.NHANVIEN.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaQH";
+            this.Column2.HeaderText = "Mã quyền hạn";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.AutoSize = true;
@@ -253,57 +288,22 @@
             this.cboNhanVien.TabStop = false;
             this.cboNhanVien.Text = "Thông Tin Tài Khoản";
             // 
-            // cboMaNV
-            // 
-            this.cboMaNV.Location = new System.Drawing.Point(449, 23);
-            this.cboMaNV.Name = "cboMaNV";
-            this.cboMaNV.Size = new System.Drawing.Size(172, 20);
-            this.cboMaNV.TabIndex = 20;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaUS";
-            this.Column1.HeaderText = "Mã Users";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // USER
-            // 
-            this.USER.DataPropertyName = "TaiKhoan";
-            this.USER.HeaderText = "Tài Khoản";
-            this.USER.Name = "USER";
-            this.USER.ReadOnly = true;
-            // 
-            // PASS
-            // 
-            this.PASS.DataPropertyName = "MatKhau";
-            this.PASS.HeaderText = "Mật Khẩu";
-            this.PASS.Name = "PASS";
-            this.PASS.ReadOnly = true;
-            // 
-            // NHANVIEN
-            // 
-            this.NHANVIEN.DataPropertyName = "MaNV";
-            this.NHANVIEN.HeaderText = "Mã nhân viên";
-            this.NHANVIEN.Name = "NHANVIEN";
-            this.NHANVIEN.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "MaQH";
-            this.Column2.HeaderText = "Mã quyền hạn";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
             // load
             // 
             this.load.Location = new System.Drawing.Point(27, 121);
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(75, 36);
             this.load.TabIndex = 21;
-            this.load.Text = "Load";
+            this.load.Text = "Load dữ liệu";
             this.load.UseVisualStyleBackColor = true;
             this.load.Click += new System.EventHandler(this.load_Click);
+            // 
+            // cboMaNV
+            // 
+            this.cboMaNV.Location = new System.Drawing.Point(449, 23);
+            this.cboMaNV.Name = "cboMaNV";
+            this.cboMaNV.Size = new System.Drawing.Size(172, 20);
+            this.cboMaNV.TabIndex = 20;
             // 
             // firmNguoiDung
             // 

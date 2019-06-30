@@ -34,6 +34,12 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 MessageBox.Show("Sữa bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu");
             else
                 MessageBox.Show("Sữa bệnh nhân thành công");
+            bt_sua.Visible = true;
+            textBox_TenTS.ReadOnly = true;
+            textBox_GiaTri.ReadOnly = true;
+            bt_luu.Visible = false;
+            bt_Huy.Visible = false;
+            dataGridView1.Enabled = false;
         }
 
         private void loadData_Vao_GridView(List<ThamSoDTO> ListThamSo)
@@ -92,16 +98,31 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 bt_sua.Visible = true;
             }
             loadData_Vao_GridView(listthamso);
+            HienThiThongTinThuoc();
         }
 
+        private void HienThiThongTinThuoc()
+        {
+            if (dataGridView1.RowCount > 0)
+
+            {
+                int r = dataGridView1.CurrentRow.Index;
+                DataGridViewRow row = dataGridView1.Rows[r];
+
+                textBox_MaTS.Text = row.Cells[0].Value.ToString();
+                textBox_TenTS.Text = row.Cells[1].Value.ToString();
+                textBox_GiaTri.Text = row.Cells[2].Value.ToString();
+            }
+
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = new DataGridViewRow();
-            row = dataGridView1.Rows[e.RowIndex];
-
-            textBox_MaTS.Text = row.Cells[0].Value.ToString();
-            textBox_TenTS.Text = row.Cells[1].Value.ToString();
-            textBox_GiaTri.Text = row.Cells[2].Value.ToString();
+            int indexrow;
+            indexrow = e.RowIndex;
+            if (indexrow != -1)
+            {
+                HienThiThongTinThuoc();
+            }
 
         }
 
@@ -112,6 +133,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             bt_Huy.Visible = true;
             bt_luu.Visible = true;
             bt_sua.Visible = false;
+            dataGridView1.Enabled = true;
         }
 
         private void bt_Huy_Click(object sender, EventArgs e)
@@ -121,6 +143,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             textBox_GiaTri.ReadOnly = true;
             bt_luu.Visible = false;
             bt_Huy.Visible = false;
+            dataGridView1.Enabled = true;
         }
+
     }
 }

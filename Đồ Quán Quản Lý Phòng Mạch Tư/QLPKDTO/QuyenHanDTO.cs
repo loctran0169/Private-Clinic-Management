@@ -8,12 +8,12 @@ namespace QLPKDTO
 {
     public class QuyenHanDTO
     {
-        private string MaQH;
-        private string TenQuyenHan;
-        private string NoiDung;
+        private string maQH;
+        private string tenQuyenHan;
+        private string noiDung;
 
-        public string MaQH1 { get => MaQH; set => MaQH = value; }
-        public string TenQuyenHan1 { get => TenQuyenHan; set => TenQuyenHan = value; }
-        public string NoiDung1 { get => NoiDung; set => NoiDung = value; }
+        public string MaQH { get => maQH; set => maQH = value; }
+        public string TenQuyenHan { get => tenQuyenHan; set => tenQuyenHan = value; }
+        public string NoiDung { get => noiDung; set => noiDung = value; }
     }
 }

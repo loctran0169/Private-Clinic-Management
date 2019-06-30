@@ -67,7 +67,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void frmLichSuDN_Load(object sender, EventArgs e)
         {
-            lsBUS.them(lsDTO);
+            
             dataGridViewLS.DataSource = lsBUS.loadDuLieuloadDuLieuLichSuDangNhap();
             HienThiThongTinLSDN();
         }
@@ -81,7 +81,6 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             }
 
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();

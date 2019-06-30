@@ -35,9 +35,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dtgv = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.load = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -50,13 +49,14 @@
             this.dataGridViewDonViTinh = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.load = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dtgv = new System.Windows.Forms.DataGridView();
             this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDonViTinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -126,29 +126,6 @@
             this.panel1.Size = new System.Drawing.Size(800, 157);
             this.panel1.TabIndex = 0;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(188, 97);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 31);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // dtgv
-            // 
-            this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaDV,
-            this.TenDonVi});
-            this.dtgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgv.Location = new System.Drawing.Point(0, 157);
-            this.dtgv.Name = "dtgv";
-            this.dtgv.Size = new System.Drawing.Size(800, 293);
-            this.dtgv.TabIndex = 7;
-            this.dtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.load);
@@ -166,6 +143,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 157);
             this.panel2.TabIndex = 20;
+            // 
+            // load
+            // 
+            this.load.Location = new System.Drawing.Point(56, 97);
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(80, 31);
+            this.load.TabIndex = 22;
+            this.load.Text = "Load dữ liệu";
+            this.load.UseVisualStyleBackColor = true;
+            this.load.Click += new System.EventHandler(this.load_Click);
             // 
             // btnHuy
             // 
@@ -282,27 +269,45 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // load
+            // button3
             // 
-            this.load.Location = new System.Drawing.Point(34, 125);
-            this.load.Name = "load";
-            this.load.Size = new System.Drawing.Size(75, 23);
-            this.load.TabIndex = 22;
-            this.load.Text = "Load";
-            this.load.UseVisualStyleBackColor = true;
-            this.load.Click += new System.EventHandler(this.load_Click);
+            this.button3.Location = new System.Drawing.Point(188, 97);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 31);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Thêm";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // dtgv
+            // 
+            this.dtgv.AllowUserToAddRows = false;
+            this.dtgv.AllowUserToDeleteRows = false;
+            this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDV,
+            this.TenDonVi});
+            this.dtgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgv.Location = new System.Drawing.Point(0, 157);
+            this.dtgv.Name = "dtgv";
+            this.dtgv.ReadOnly = true;
+            this.dtgv.Size = new System.Drawing.Size(800, 293);
+            this.dtgv.TabIndex = 7;
+            this.dtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // MaDV
             // 
             this.MaDV.DataPropertyName = "MaDV";
             this.MaDV.HeaderText = "Mã đơn vị";
             this.MaDV.Name = "MaDV";
+            this.MaDV.ReadOnly = true;
             // 
             // TenDonVi
             // 
             this.TenDonVi.DataPropertyName = "TenDonVi";
             this.TenDonVi.HeaderText = "Tên đơn vị";
             this.TenDonVi.Name = "TenDonVi";
+            this.TenDonVi.ReadOnly = true;
             // 
             // firmDonVi
             // 
@@ -316,10 +321,10 @@
             this.Load += new System.EventHandler(this.firmDonVi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDonViTinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.ResumeLayout(false);
 
         }
