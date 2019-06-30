@@ -115,5 +115,39 @@ namespace QLPKDAL
             }
             return true;
         }
+        public bool xoa(LapPhieuKhamDTO pk)
+        {
+            string query = string.Empty;
+            query += "delete from PHIEUKHAM where mapk=@mapk";
+
+
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            {
+
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    
+                    cmd.Parameters.AddWithValue("@mapk", pk.MaPK1);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }

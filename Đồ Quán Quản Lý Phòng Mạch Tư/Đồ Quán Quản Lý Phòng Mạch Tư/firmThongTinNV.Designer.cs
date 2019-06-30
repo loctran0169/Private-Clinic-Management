@@ -60,6 +60,7 @@
             this.btnThoat.TabIndex = 90;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtQuyenHan
             // 
@@ -272,6 +273,7 @@
             this.Controls.Add(this.label1);
             this.Name = "firmThongTinNV";
             this.Text = "Thông Tin Tài Khoản";
+            this.Load += new System.EventHandler(this.frmThongTinNV_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

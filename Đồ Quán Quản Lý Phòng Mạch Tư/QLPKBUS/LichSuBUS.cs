@@ -11,16 +11,30 @@ namespace QLPKBUS
 {
     public class LichSuBUS
     {
-        private LichSuDAL dal;
-        public DataTable LoadByDate(DateTime ls)
+        private LichSuDAL lsDAL;
+        public LichSuBUS()
         {
-            dal = new LichSuDAL();
-            return dal.LoadByDate(ls);
+            lsDAL = new LichSuDAL();
         }
-        public DataTable LoadThongTinNV(string nv)
+
+        public DataTable loadDuLieuloadDuLieuLichSuDangNhap()
         {
-            dal = new LichSuDAL();
-            return dal.LoadThongTinNV(nv);
+            DataTable k = new DataTable();
+            k = lsDAL.loadDuLieuLichSuDangNhap();
+            return k;
+
+        }
+        public bool them(LichSuDTO lsDTO)
+        {
+            bool re = lsDAL.them(lsDTO);
+
+            return re;
+        }
+        public bool xoa()
+        {
+            bool re = lsDAL.xoa();
+
+            return re;
         }
     }
 }

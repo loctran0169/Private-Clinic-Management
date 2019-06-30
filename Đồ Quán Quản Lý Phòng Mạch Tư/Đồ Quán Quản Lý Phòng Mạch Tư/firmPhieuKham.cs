@@ -23,6 +23,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             InitializeComponent();
         }
         LapPhieuKhamBUS pkbus = new LapPhieuKhamBUS();
+
+        string flag = "";
         private void loadDsPK(List<LapPhieuKhamDTO> listphieukham)
         {
 
@@ -87,7 +89,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             {
                 MessageBox.Show("Load bệnh nhân thành công");
                 bt_sua.Visible = true;
-
+                bt_xoa.Visible = true;
             }
             loadDsPK(listphieukham);
 
@@ -96,32 +98,57 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void bt_luu_Click(object sender, EventArgs e)
         {
-            LapPhieuKhamDTO pk = new LapPhieuKhamDTO();
-            pk.MaPK1 = tB_MaPK.Text;
-            pk.MaLB1 = comboBox_LoaiBenh.Text.Substring(1, 5);
-            pk.MaBS1 = comboBox_TenBS.Text.Substring(1, 5);
-
-
-            LapPhieuKhamBUS pkbus = new LapPhieuKhamBUS();
-            bool kq = pkbus.sua(pk);
-            if (kq == true)
+            if (flag == "Sửa")
             {
-                MessageBox.Show("Thêm bệnh nhân thành công");
-                pkbus = new LapPhieuKhamBUS();
-                List<LapPhieuKhamDTO> listdanhsach = pkbus.select();
-                loadDsPK(listdanhsach);
+                LapPhieuKhamDTO pk = new LapPhieuKhamDTO();
+                pk.MaPK1 = tB_MaPK.Text;
+                pk.MaLB1 = comboBox_LoaiBenh.Text.Substring(1, 5);
+                pk.MaBS1 = comboBox_TenBS.Text.Substring(1, 5);
+
+
+                LapPhieuKhamBUS pkbus = new LapPhieuKhamBUS();
+                bool kq = pkbus.sua(pk);
+                if (kq == true)
+                {
+                    MessageBox.Show("Thêm bệnh nhân thành công");
+                    pkbus = new LapPhieuKhamBUS();
+                    List<LapPhieuKhamDTO> listdanhsach = pkbus.select();
+                    loadDsPK(listdanhsach);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm bệnh nhân thất bại");
+
+                }
+                
             }
-            else
+            else if(flag=="Xóa")
             {
-                MessageBox.Show("Thêm bệnh nhân thất bại");
+                LapPhieuKhamDTO pk = new LapPhieuKhamDTO();
+                pk.MaPK1 = tB_MaPK.Text;
+                
 
+
+                LapPhieuKhamBUS pkbus = new LapPhieuKhamBUS();
+                bool kq = pkbus.xoa(pk);
+                if (kq == true)
+                {
+                    MessageBox.Show("Xóa  thành công");
+                    pkbus = new LapPhieuKhamBUS();
+                    List<LapPhieuKhamDTO> listdanhsach = pkbus.select();
+                    loadDsPK(listdanhsach);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa  thất bại");
+
+                }
             }
             bt_sua.Visible = true;
             bt_luu.Visible = false;
             bt_Huy.Visible = false;
             comboBox_TenBS.Enabled = false;
             comboBox_LoaiBenh.Enabled = false;
-
         }
         private NhanVienBUS nvbus;
         public void loadcomboboxtenbs()
@@ -166,12 +193,21 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             comboBox_TenBS.Enabled = true;
             bt_luu.Visible = true;
             bt_sua.Visible = false;
+            bt_xoa.Visible = false;
             bt_Huy.Visible = true;
-
+            flag = "Sửa";
         }
-
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            bt_luu.Visible = true;
+            bt_sua.Visible = false;
+            bt_xoa.Visible = false;
+            bt_Huy.Visible = true;
+            flag = "Xóa";
+        }
         private void bt_Huy_Click(object sender, EventArgs e)
         {
+            bt_xoa.Visible = true;
             bt_sua.Visible = true;
             comboBox_LoaiBenh.Enabled = false;
             comboBox_TenBS.Enabled = false;
@@ -200,5 +236,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             comboBox_LoaiBenh.Text = row.Cells[5].Value.ToString();
 
         }
+
+        
     }
 }

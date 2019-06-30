@@ -52,7 +52,7 @@ namespace QLPKDAL
             try
             {
                 kn.Open();
-                string sql = "select * from NhanVien where MaNhanVien=N'" + MaNv + "'";
+                string sql = "select * from NHANVIEN where MaNV=N'" + MaNv + "'";
                 MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
                 dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
 
