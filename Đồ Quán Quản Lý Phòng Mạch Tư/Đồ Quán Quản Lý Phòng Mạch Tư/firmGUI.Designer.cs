@@ -479,7 +479,6 @@
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem21);
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem22);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Thanh Toán";
             // 

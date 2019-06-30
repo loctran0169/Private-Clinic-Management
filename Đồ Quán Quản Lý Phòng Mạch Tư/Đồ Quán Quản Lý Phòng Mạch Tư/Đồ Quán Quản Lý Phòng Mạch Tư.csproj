@@ -76,12 +76,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="firmBanThuoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="firmBanThuoc.Designer.cs">
-      <DependentUpon>firmBanThuoc.cs</DependentUpon>
-    </Compile>
     <Compile Include="firmBaoCaoNgay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,9 +240,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="firmBanThuoc.resx">
-      <DependentUpon>firmBanThuoc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="firmBaoCaoNgay.resx">
       <DependentUpon>firmBaoCaoNgay.cs</DependentUpon>
     </EmbeddedResource>

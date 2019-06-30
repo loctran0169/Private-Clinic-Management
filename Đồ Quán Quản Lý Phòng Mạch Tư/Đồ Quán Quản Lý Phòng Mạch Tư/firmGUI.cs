@@ -228,17 +228,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(firmBanThuoc));
-            if (frm == null)
-            {
-                firmBanThuoc forms = new firmBanThuoc();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
