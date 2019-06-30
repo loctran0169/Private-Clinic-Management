@@ -39,9 +39,9 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tB_TrieuChung = new System.Windows.Forms.TextBox();
+            this.tB_Benh = new System.Windows.Forms.TextBox();
+            this.tB_hoten = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,9 +72,9 @@
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tB_TrieuChung);
+            this.groupBox1.Controls.Add(this.tB_Benh);
+            this.groupBox1.Controls.Add(this.tB_hoten);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -176,26 +176,26 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Đơn Giá";
             // 
-            // textBox3
+            // tB_TrieuChung
             // 
-            this.textBox3.Location = new System.Drawing.Point(166, 57);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 20);
-            this.textBox3.TabIndex = 10;
+            this.tB_TrieuChung.Location = new System.Drawing.Point(166, 57);
+            this.tB_TrieuChung.Name = "tB_TrieuChung";
+            this.tB_TrieuChung.Size = new System.Drawing.Size(160, 20);
+            this.tB_TrieuChung.TabIndex = 10;
             // 
-            // textBox2
+            // tB_Benh
             // 
-            this.textBox2.Location = new System.Drawing.Point(555, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 20);
-            this.textBox2.TabIndex = 9;
+            this.tB_Benh.Location = new System.Drawing.Point(555, 57);
+            this.tB_Benh.Name = "tB_Benh";
+            this.tB_Benh.Size = new System.Drawing.Size(160, 20);
+            this.tB_Benh.TabIndex = 9;
             // 
-            // textBox1
+            // tB_hoten
             // 
-            this.textBox1.Location = new System.Drawing.Point(555, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 8;
+            this.tB_hoten.Location = new System.Drawing.Point(555, 17);
+            this.tB_hoten.Name = "tB_hoten";
+            this.tB_hoten.Size = new System.Drawing.Size(158, 20);
+            this.tB_hoten.TabIndex = 8;
             // 
             // label8
             // 
@@ -276,6 +276,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 146);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Column1
             // 
@@ -331,9 +332,9 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tB_TrieuChung;
+        private System.Windows.Forms.TextBox tB_Benh;
+        private System.Windows.Forms.TextBox tB_hoten;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
