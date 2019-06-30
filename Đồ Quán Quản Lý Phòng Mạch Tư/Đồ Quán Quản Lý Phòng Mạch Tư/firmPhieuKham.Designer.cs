@@ -50,12 +50,14 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_xoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bt_xoa);
             this.groupBox1.Controls.Add(this.bt_Huy);
             this.groupBox1.Controls.Add(this.bt_sua);
             this.groupBox1.Controls.Add(this.tB_HoTen);
@@ -256,6 +258,17 @@
             this.Column7.HeaderText = "Loại Bệnh";
             this.Column7.Name = "Column7";
             // 
+            // bt_xoa
+            // 
+            this.bt_xoa.Location = new System.Drawing.Point(444, 115);
+            this.bt_xoa.Name = "bt_xoa";
+            this.bt_xoa.Size = new System.Drawing.Size(75, 29);
+            this.bt_xoa.TabIndex = 19;
+            this.bt_xoa.Text = "Xóa";
+            this.bt_xoa.UseVisualStyleBackColor = true;
+            this.bt_xoa.Visible = false;
+            this.bt_xoa.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // firmPhieuKham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,5 +308,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Button bt_xoa;
     }
 }
