@@ -38,7 +38,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcthuoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvthuoc)).BeginInit();
@@ -111,9 +111,10 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn5,
-            this.gridColumn7});
+            this.gridColumn6});
             this.gvthuoc.GridControl = this.gcthuoc;
             this.gvthuoc.Name = "gvthuoc";
+            this.gvthuoc.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -139,13 +140,13 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
             // 
-            // gridColumn7
+            // gridColumn6
             // 
-            this.gridColumn7.Caption = "Số Lần Dùng";
-            this.gridColumn7.FieldName = "SoLanDung";
-            this.gridColumn7.Name = "gridColumn6";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 2;
+            this.gridColumn6.Caption = "Số Lần Dùng";
+            this.gridColumn6.FieldName = "SoLanDung";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 3;
             // 
             // firmBaoCaoSuDungThuoc_Thang
             // 
@@ -177,5 +178,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }
