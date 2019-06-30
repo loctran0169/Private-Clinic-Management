@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_Huy = new System.Windows.Forms.Button();
+            this.bt_sua = new System.Windows.Forms.Button();
             this.bt_load = new System.Windows.Forms.Button();
             this.textBox_MaTS = new System.Windows.Forms.TextBox();
             this.textBox_TenTS = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_sua = new System.Windows.Forms.Button();
-            this.bt_Huy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -65,11 +65,33 @@
             this.panel1.Size = new System.Drawing.Size(800, 142);
             this.panel1.TabIndex = 0;
             // 
+            // bt_Huy
+            // 
+            this.bt_Huy.Location = new System.Drawing.Point(633, 73);
+            this.bt_Huy.Name = "bt_Huy";
+            this.bt_Huy.Size = new System.Drawing.Size(75, 32);
+            this.bt_Huy.TabIndex = 14;
+            this.bt_Huy.Text = "Hủy";
+            this.bt_Huy.UseVisualStyleBackColor = true;
+            this.bt_Huy.Visible = false;
+            this.bt_Huy.Click += new System.EventHandler(this.bt_Huy_Click);
+            // 
+            // bt_sua
+            // 
+            this.bt_sua.Location = new System.Drawing.Point(471, 73);
+            this.bt_sua.Name = "bt_sua";
+            this.bt_sua.Size = new System.Drawing.Size(75, 32);
+            this.bt_sua.TabIndex = 13;
+            this.bt_sua.Text = "Sửa";
+            this.bt_sua.UseVisualStyleBackColor = true;
+            this.bt_sua.Visible = false;
+            this.bt_sua.Click += new System.EventHandler(this.bt_sua_Click_1);
+            // 
             // bt_load
             // 
-            this.bt_load.Location = new System.Drawing.Point(185, 96);
+            this.bt_load.Location = new System.Drawing.Point(379, 73);
             this.bt_load.Name = "bt_load";
-            this.bt_load.Size = new System.Drawing.Size(152, 32);
+            this.bt_load.Size = new System.Drawing.Size(86, 32);
             this.bt_load.TabIndex = 0;
             this.bt_load.Text = "Load Dữ Liệu";
             this.bt_load.UseVisualStyleBackColor = true;
@@ -101,7 +123,7 @@
             // 
             // bt_luu
             // 
-            this.bt_luu.Location = new System.Drawing.Point(633, 70);
+            this.bt_luu.Location = new System.Drawing.Point(552, 73);
             this.bt_luu.Name = "bt_luu";
             this.bt_luu.Size = new System.Drawing.Size(75, 32);
             this.bt_luu.TabIndex = 1;
@@ -139,6 +161,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -148,6 +172,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 142);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(800, 308);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -156,38 +181,19 @@
             // 
             this.Column1.HeaderText = "Mã Tham Số";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Tên Tham Số";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Giá Trị";
             this.Column3.Name = "Column3";
-            // 
-            // bt_sua
-            // 
-            this.bt_sua.Location = new System.Drawing.Point(447, 70);
-            this.bt_sua.Name = "bt_sua";
-            this.bt_sua.Size = new System.Drawing.Size(75, 32);
-            this.bt_sua.TabIndex = 13;
-            this.bt_sua.Text = "Sửa";
-            this.bt_sua.UseVisualStyleBackColor = true;
-            this.bt_sua.Visible = false;
-            this.bt_sua.Click += new System.EventHandler(this.bt_sua_Click_1);
-            // 
-            // bt_Huy
-            // 
-            this.bt_Huy.Location = new System.Drawing.Point(542, 70);
-            this.bt_Huy.Name = "bt_Huy";
-            this.bt_Huy.Size = new System.Drawing.Size(75, 32);
-            this.bt_Huy.TabIndex = 14;
-            this.bt_Huy.Text = "Hủy";
-            this.bt_Huy.UseVisualStyleBackColor = true;
-            this.bt_Huy.Visible = false;
-            this.bt_Huy.Click += new System.EventHandler(this.bt_Huy_Click);
+            this.Column3.ReadOnly = true;
             // 
             // firmThamSo
             // 

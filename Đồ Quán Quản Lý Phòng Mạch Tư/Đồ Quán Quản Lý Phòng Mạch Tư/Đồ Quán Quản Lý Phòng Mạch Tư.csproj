@@ -106,12 +106,6 @@
     <Compile Include="firmBaoCaoThang.Designer.cs">
       <DependentUpon>firmBaoCaoThang.cs</DependentUpon>
     </Compile>
-    <Compile Include="firmBenh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="firmBenh.Designer.cs">
-      <DependentUpon>firmBenh.cs</DependentUpon>
-    </Compile>
     <Compile Include="firmBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,12 +117,6 @@
     </Compile>
     <Compile Include="firmCachDung.Designer.cs">
       <DependentUpon>firmCachDung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="firmCaLam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="firmCaLam.Designer.cs">
-      <DependentUpon>firmCaLam.cs</DependentUpon>
     </Compile>
     <Compile Include="firmDangNhap.cs">
       <SubType>Form</SubType>
@@ -199,7 +187,7 @@
     <Compile Include="firmQuyenHan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="firmQuyenHan.Designer.cs">
+    <Compile Include="firmQuyenHan.designer.cs">
       <DependentUpon>firmQuyenHan.cs</DependentUpon>
     </Compile>
     <Compile Include="firmSaoLuu.cs">
@@ -244,6 +232,12 @@
     <Compile Include="firmLichSuDN.designer.cs">
       <DependentUpon>firmLichSuDN.cs</DependentUpon>
     </Compile>
+    <Compile Include="firmBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firmBenh.designer.cs">
+      <DependentUpon>firmBenh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="firmBanThuoc.resx">
@@ -261,17 +255,11 @@
     <EmbeddedResource Include="firmBaoCaoThang.resx">
       <DependentUpon>firmBaoCaoThang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="firmBenh.resx">
-      <DependentUpon>firmBenh.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="firmBenhNhan.resx">
       <DependentUpon>firmBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmCachDung.resx">
       <DependentUpon>firmCachDung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="firmCaLam.resx">
-      <DependentUpon>firmCaLam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmDangNhap.resx">
       <DependentUpon>firmDangNhap.cs</DependentUpon>
@@ -329,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="firmLichSuDN.resx">
       <DependentUpon>firmLichSuDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="firmBenh.resx">
+      <DependentUpon>firmBenh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

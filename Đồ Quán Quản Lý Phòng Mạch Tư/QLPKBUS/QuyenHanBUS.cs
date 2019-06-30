@@ -2,6 +2,7 @@
 using QLPKDTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,36 +11,17 @@ namespace QLPKBUS
 {
     public class QuyenHanBUS
     {
-        private QuyenHanDAL qhdal;
+        private QuyenHanDAL qhDAL;
         public QuyenHanBUS()
         {
-            qhdal = new QuyenHanDAL();
+            qhDAL= new QuyenHanDAL();
         }
-        public bool them(QuyenHanDTO qh)
+        public DataTable loadDuLieuQuyenHan()
         {
-            bool re = qhdal.them(qh);
-            return re;
-        }
+            DataTable k = new DataTable();
+            k = qhDAL.loadDuLieuQuyenHan();
+            return k;
 
-        public bool xoa(QuyenHanDTO qh)
-        {
-            bool re = qhdal.xoa(qh);
-            return re;
-        }
-
-        public bool sua(QuyenHanDTO qh)
-        {
-            bool re = qhdal.sua(qh);
-            return re;
-        }
-
-        public List<QuyenHanDTO> select()
-        {
-            return qhdal.select();
-        }
-        public List<QuyenHanDTO> selectByKeyWord(string sKeyword)
-        {
-            return qhdal.selectByKeyWord(sKeyword);
         }
     }
 }

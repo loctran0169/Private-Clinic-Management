@@ -137,12 +137,12 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             }
 
         }
-        private BenhBUS benhbus;
+        private LoaiBenhBUS benhbus;
         public void loadcomboboxloaibenh()
         {
             DataTable dt = new DataTable();
-            benhbus = new BenhBUS();
-            dt = benhbus.loadToDataTable();
+            benhbus = new LoaiBenhBUS();
+            dt = benhbus.loadDuLieuLoaiBenh();
 
 
             for (int i = 0; i < dt.Rows.Count; i++)

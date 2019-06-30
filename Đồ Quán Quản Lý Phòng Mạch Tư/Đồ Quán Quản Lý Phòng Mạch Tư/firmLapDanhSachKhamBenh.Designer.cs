@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_them = new System.Windows.Forms.Button();
+            this.bt_Huy = new System.Windows.Forms.Button();
             this.bt_luu = new System.Windows.Forms.Button();
             this.bt_load = new System.Windows.Forms.Button();
             this.tb_maBN = new System.Windows.Forms.TextBox();
@@ -44,8 +46,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_Huy = new System.Windows.Forms.Button();
-            this.bt_them = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,28 @@
             this.panel1.Size = new System.Drawing.Size(800, 181);
             this.panel1.TabIndex = 15;
             // 
+            // bt_them
+            // 
+            this.bt_them.Location = new System.Drawing.Point(513, 116);
+            this.bt_them.Name = "bt_them";
+            this.bt_them.Size = new System.Drawing.Size(75, 34);
+            this.bt_them.TabIndex = 36;
+            this.bt_them.Text = "Thêm";
+            this.bt_them.UseVisualStyleBackColor = true;
+            this.bt_them.Visible = false;
+            this.bt_them.Click += new System.EventHandler(this.bt_them_Click_1);
+            // 
+            // bt_Huy
+            // 
+            this.bt_Huy.Location = new System.Drawing.Point(594, 116);
+            this.bt_Huy.Name = "bt_Huy";
+            this.bt_Huy.Size = new System.Drawing.Size(75, 34);
+            this.bt_Huy.TabIndex = 35;
+            this.bt_Huy.Text = "Hủy";
+            this.bt_Huy.UseVisualStyleBackColor = true;
+            this.bt_Huy.Visible = false;
+            this.bt_Huy.Click += new System.EventHandler(this.bt_Huy_Click);
+            // 
             // bt_luu
             // 
             this.bt_luu.Location = new System.Drawing.Point(675, 116);
@@ -80,7 +102,7 @@
             // 
             // bt_load
             // 
-            this.bt_load.Location = new System.Drawing.Point(364, 113);
+            this.bt_load.Location = new System.Drawing.Point(397, 116);
             this.bt_load.Name = "bt_load";
             this.bt_load.Size = new System.Drawing.Size(94, 34);
             this.bt_load.TabIndex = 33;
@@ -185,28 +207,6 @@
             // 
             this.Column7.HeaderText = "Ngày Khám";
             this.Column7.Name = "Column7";
-            // 
-            // bt_Huy
-            // 
-            this.bt_Huy.Location = new System.Drawing.Point(594, 116);
-            this.bt_Huy.Name = "bt_Huy";
-            this.bt_Huy.Size = new System.Drawing.Size(75, 34);
-            this.bt_Huy.TabIndex = 35;
-            this.bt_Huy.Text = "Hủy";
-            this.bt_Huy.UseVisualStyleBackColor = true;
-            this.bt_Huy.Visible = false;
-            this.bt_Huy.Click += new System.EventHandler(this.bt_Huy_Click);
-            // 
-            // bt_them
-            // 
-            this.bt_them.Location = new System.Drawing.Point(513, 116);
-            this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(75, 34);
-            this.bt_them.TabIndex = 36;
-            this.bt_them.Text = "Thêm";
-            this.bt_them.UseVisualStyleBackColor = true;
-            this.bt_them.Visible = false;
-            this.bt_them.Click += new System.EventHandler(this.bt_them_Click_1);
             // 
             // firmLapDanhSachKhamBenh
             // 

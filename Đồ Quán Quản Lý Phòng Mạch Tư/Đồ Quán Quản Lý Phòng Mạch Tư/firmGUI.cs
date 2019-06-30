@@ -335,17 +335,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(firmCaLam));
-            if (frm == null)
-            {
-                firmCaLam forms = new firmCaLam();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+
         }
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -410,7 +400,14 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void firmGUI_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show(int.Parse(("BN001").Substring(2,3)).ToString());
+            if(us.MaQH=="QH002")// khi người dùng đăng nhập với quyền hạn là nhân viên bình thường thì sẽ ẩn đi những chức năng người này không được phép sử dụng
+            {
+                this.barBtnNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                this.barBtnVaiTro.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                this.barBtnNhatKy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                this.ribbonPageNhanVien.Visible = false;
+                this.ribbonPageDanhMuc.Visible = false;
+            }
         }
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
