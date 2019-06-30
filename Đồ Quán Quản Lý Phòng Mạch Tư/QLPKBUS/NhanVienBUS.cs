@@ -23,6 +23,10 @@ namespace QLPKBUS
             return k;
 
         }
+        public DataTable loadToDataTable()
+        {
+            return nvDAL.loadDuLieuNhanVien();
+        }
         public DataTable loadDuLieuNhanVienTuMaUsers(string Manv)
         {
             DataTable k = new DataTable();

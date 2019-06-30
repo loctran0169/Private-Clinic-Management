@@ -3,6 +3,7 @@ using QLPKDTO;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,27 @@ namespace QLPKDAL
             {
                 connectionString = ConfigurationManager.AppSettings["ConnectionString"];
             }
+        public DataTable loadToDataTable()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+            try
+            {
+                kn.Open();
+                string sql = "SELECT * FROM BENH";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
+                dt.Dispose();
 
-            public bool them(BenhDTO lb)
+            }
+            catch (Exception e)
+            {
+
+            }
+            return k;
+        }
+        public bool them(BenhDTO lb)
             {
 
                 string query = string.Empty;

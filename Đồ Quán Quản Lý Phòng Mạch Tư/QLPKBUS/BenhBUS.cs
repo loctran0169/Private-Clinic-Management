@@ -20,7 +20,10 @@ namespace QLPKBUS
             bool re = bdal.them(lb);
             return re;
         }
-
+        public System.Data.DataTable loadToDataTable()
+        {
+            return bdal.loadToDataTable();
+        }
         public bool xoa(BenhDTO lb)
         {
             bool re = bdal.xoa(lb);
