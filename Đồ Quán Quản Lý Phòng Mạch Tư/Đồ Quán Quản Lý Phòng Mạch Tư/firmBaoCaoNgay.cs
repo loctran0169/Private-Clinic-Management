@@ -16,5 +16,14 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            .BestFitColumns();
+            CustomerReport report = new CustomerReport();
+            report.GridControl = gcCustomerInfo;
+            ReportPrintTool printTool = new ReportPrintTool(report);
+            printTool.ShowPreviewDialog();
+        }
     }
 }
