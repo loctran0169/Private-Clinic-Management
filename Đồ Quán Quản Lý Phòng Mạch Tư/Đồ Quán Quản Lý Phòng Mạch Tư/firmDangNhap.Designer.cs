@@ -114,7 +114,9 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Name = "firmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "firmDangNhap";
+            this.Load += new System.EventHandler(this.firmDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

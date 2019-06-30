@@ -22,7 +22,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             
         }
 
-        private UserBUS usBUS = new UserBUS();
+        private UsersBUS usBUS = new UsersBUS();
         string flag = null;
         
         private void MoKhoaButton()
@@ -83,12 +83,12 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 return;
             if (MessageBox.Show("Bạn muốn xóa users?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                UserDTO us = new UserDTO();
-                us.MaUS1 = txtMaUS.Text;
-                us.TaiKhoan1 = txtTaiKhoan.Text;
-                us.MatKhau1 = txtMatKhau.Text;
-                us.MaNV1 = cboMaNV.Text;
-                us.MaQH1 = cboMaQuyenHan.Text;
+                UsersDTO us = new UsersDTO();
+                us.MaUS = txtMaUS.Text;
+                us.TaiKhoan = txtTaiKhoan.Text;
+                us.MatKhau = txtMatKhau.Text;
+                us.MaNV = cboMaNV.Text;
+                us.MaQH= cboMaQuyenHan.Text;
 
                 bool kq = usBUS.xoa(us);
                 if (kq == false)
@@ -160,13 +160,13 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
             else if (flag == "Thêm")
             {
-                UserDTO us = new UserDTO();
+                UsersDTO us = new UsersDTO();
 
-                us.MaNV1 = txtMaUS.Text;
-                us.TaiKhoan1 = txtTaiKhoan.Text;
-                us.MatKhau1 = txtMatKhau.Text;
-                us.MaNV1 = cboMaNV.Text;
-                us.MaQH1 = cboMaQuyenHan.SelectedValue.ToString();
+                us.MaUS = txtMaUS.Text;
+                us.TaiKhoan = txtTaiKhoan.Text;
+                us.MatKhau = txtMatKhau.Text;
+                us.MaNV = cboMaNV.Text;
+                us.MaQH = cboMaQuyenHan.SelectedValue.ToString();
 
                 bool kq = usBUS.them(us);
                 if (kq == false)
@@ -185,13 +185,13 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             else if (flag == "Sửa")
             {
 
-                UserDTO us = new UserDTO();
+                UsersDTO us = new UsersDTO();
 
-                us.MaUS1 = txtMaUS.Text;
-                us.TaiKhoan1 = txtTaiKhoan.Text;
-                us.MatKhau1 = txtMatKhau.Text;
-                us.MaNV1 = cboMaNV.Text;
-                us.MaQH1 = cboMaQuyenHan.SelectedValue.ToString();
+                us.MaUS = txtMaUS.Text;
+                us.TaiKhoan = txtTaiKhoan.Text;
+                us.MatKhau = txtMatKhau.Text;
+                us.MaNV = cboMaNV.Text;
+                us.MaQH = cboMaQuyenHan.SelectedValue.ToString();
 
 
 

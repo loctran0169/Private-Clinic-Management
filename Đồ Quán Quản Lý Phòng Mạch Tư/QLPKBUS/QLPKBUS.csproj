@@ -53,7 +53,7 @@
     <Compile Include="QuyenHanBUS.cs" />
     <Compile Include="ThamSoBUS.cs" />
     <Compile Include="ThuocBUS.cs" />
-    <Compile Include="UserBUS.cs" />
+    <Compile Include="UsersBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLPKDAL\QLPKDAL.csproj">
