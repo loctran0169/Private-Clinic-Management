@@ -8,14 +8,11 @@ namespace QLPKDTO
 {
     public class LichSuDTO
     {
-        private string MaUS;
-        private string MaNV;
-        private DateTime ThoiGianDN;
-        private DateTime ThoiGianDX;
+        private string maUS;
+        private string maNV;
+        private DateTime thoiGianDN;
 
-        public string MaUS1 { get => MaUS; set => MaUS = value; }
-        public string MaNV1 { get => MaNV; set => MaNV = value; }
-        public DateTime ThoiGianDN1 { get => ThoiGianDN; set => ThoiGianDN = value; }
-        public DateTime ThoiGianDX1 { get => ThoiGianDX; set => ThoiGianDX = value; }
+        public string MaUS { get => maUS; set => maUS = value; }
+        public DateTime ThoiGianDN { get => thoiGianDN; set => thoiGianDN = value; }
     }
 }

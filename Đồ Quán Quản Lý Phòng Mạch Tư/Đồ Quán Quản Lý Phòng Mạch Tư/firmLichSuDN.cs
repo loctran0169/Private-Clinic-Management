@@ -1,6 +1,4 @@
-﻿using QLPKBUS;
-using QLPKDTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,78 +7,84 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QLPKDAL;
+using QLPKBUS;
+using QLPKDTO;
 namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
     public partial class firmLichSuDN : Form
     {
-        private UserDTO usDTO = new UserDTO();
+        private UsersDTO usDTO = new UsersDTO();
         private LichSuDTO lsDTO = new LichSuDTO();
         private LichSuBUS lsBUS = new LichSuBUS();
         private NhanVienBUS nvBUS = new NhanVienBUS();
-        int curline = -1;
-        public firmLichSuDN()
+        public firmLichSuDN(UsersDTO us,LichSuDTO ls)
         {
             InitializeComponent();
+            usDTO.MaUS = us.MaUS;
+            usDTO.TaiKhoan = us.TaiKhoan;
+            usDTO.MatKhau = us.MatKhau;
+            usDTO.MaNV = us.MaNV;
+            usDTO.MaQH = us.MaQH;
+            lsDTO.MaUS = ls.MaUS;
+            lsDTO.ThoiGianDN = ls.ThoiGianDN;
+        }
+
+      
+        private void dataGridViewLS_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexrow;
+            indexrow = e.RowIndex;
+            if (indexrow != -1)
+            {
+                int r = dataGridViewLS.CurrentRow.Index;
+                DataGridViewRow row = dataGridViewLS.Rows[r];
+                usDTO.MaNV= row.Cells[1].Value.ToString();
+                HienThiThongTinLSDN();
+            }
+           
+        }
+        private void HienThiThongTinLSDN()
+        {
+            if (dataGridViewLS.RowCount > 0)
+
+            {
+                DataTable k = nvBUS.loadDuLieuNhanVienTuMaUsers(usDTO.MaNV);
+                foreach (DataRow row in k.Rows)
+                {
+                    txtMaNhanVien.Text = row[0].ToString();
+                    txtHoVaTen.Text = row[1].ToString();
+                    txtGioiTinh.Text = row[2].ToString();
+                    dtmNgaySinh.Text = row[3].ToString();
+                    
+                    txtDiaChi.Text = row[4].ToString();
+                    txtSDT.Text = row[5].ToString();
+                    txtChucVu.Text = row[6].ToString();
+                }
+            }
+
+        }
+
+        private void frmLichSuDN_Load(object sender, EventArgs e)
+        {
+            lsBUS.them(lsDTO);
+            dataGridViewLS.DataSource = lsBUS.loadDuLieuloadDuLieuLichSuDangNhap();
+            HienThiThongTinLSDN();
+        }
+
+        private void btnXoaLSDN_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Bạn muốn xóa lịch sử đăng nhập","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                lsBUS.xoa();
+                dataGridViewLS.DataSource = lsBUS.loadDuLieuloadDuLieuLichSuDangNhap();
+            }
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void load_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show(dtpk_load.Value.ToString("yyyy"));
-            try
-            {
-                DataTable dt = lsBUS.LoadByDate(dtpk_load.Value);
-                if (dt.Rows.Count > 0 )
-                    MessageBox.Show("Load Thành công");
-                else
-                    MessageBox.Show("Không có thông tin đăng nhập trong ngày");
-                dtgv_ls.DataSource = dt;
-                curline = -1;
-            }
-            catch(Exception ex)
-            {
-
-            }
-        }
-
-        private void dataGridViewLS_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            if (e.RowIndex >= 0 &&e.RowIndex!=curline)
-            {
-                curline = e.RowIndex;
-                DataGridViewRow row = this.dtgv_ls.Rows[e.RowIndex];
-
-                tb_manv.Text = row.Cells[1].Value + string.Empty;
-
-                try
-                {
-                    DataTable dt = lsBUS.LoadThongTinNV(tb_manv.Text);
-                    tb_hoten.Text = dt.Rows[0][1].ToString();
-                    tb_gioitinh.Text = dt.Rows[0][2].ToString();
-                    tb_ngaysinh.Text = ((DateTime)dt.Rows[0][3]).ToString("dd-MM-yyyy"); 
-                    tb_diachi.Text = dt.Rows[0][4].ToString();
-                    tb_sdt.Text = dt.Rows[0][5].ToString();
-                    tb_chucvu.Text = dt.Rows[0][6].ToString();
-                    tb_tk.Text = dt.Rows[0][7].ToString();
-
-                    //dtpk_ngaysinh.DataBindings.Add("Value", dt, "NgaySinh");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        private void Dtpk_load_Validated(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

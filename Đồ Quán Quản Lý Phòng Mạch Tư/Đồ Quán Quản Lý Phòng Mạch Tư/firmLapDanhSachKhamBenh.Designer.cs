@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bt_them = new System.Windows.Forms.Button();
+            this.bt_luu = new System.Windows.Forms.Button();
             this.bt_load = new System.Windows.Forms.Button();
             this.tb_maBN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +44,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_Huy = new System.Windows.Forms.Button();
+            this.bt_them = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +53,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.bt_them);
+            this.panel1.Controls.Add(this.bt_Huy);
+            this.panel1.Controls.Add(this.bt_luu);
             this.panel1.Controls.Add(this.bt_load);
             this.panel1.Controls.Add(this.tb_maBN);
             this.panel1.Controls.Add(this.label3);
@@ -63,15 +67,16 @@
             this.panel1.Size = new System.Drawing.Size(800, 181);
             this.panel1.TabIndex = 15;
             // 
-            // bt_them
+            // bt_luu
             // 
-            this.bt_them.Location = new System.Drawing.Point(471, 113);
-            this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(75, 34);
-            this.bt_them.TabIndex = 34;
-            this.bt_them.Text = "Thêm";
-            this.bt_them.UseVisualStyleBackColor = true;
-            this.bt_them.Click += new System.EventHandler(this.bt_them_Click);
+            this.bt_luu.Location = new System.Drawing.Point(675, 116);
+            this.bt_luu.Name = "bt_luu";
+            this.bt_luu.Size = new System.Drawing.Size(75, 34);
+            this.bt_luu.TabIndex = 34;
+            this.bt_luu.Text = "Lưu";
+            this.bt_luu.UseVisualStyleBackColor = true;
+            this.bt_luu.Visible = false;
+            this.bt_luu.Click += new System.EventHandler(this.bt_them_Click);
             // 
             // bt_load
             // 
@@ -101,6 +106,8 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(173, 155);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
@@ -179,6 +186,28 @@
             this.Column7.HeaderText = "Ngày Khám";
             this.Column7.Name = "Column7";
             // 
+            // bt_Huy
+            // 
+            this.bt_Huy.Location = new System.Drawing.Point(594, 116);
+            this.bt_Huy.Name = "bt_Huy";
+            this.bt_Huy.Size = new System.Drawing.Size(75, 34);
+            this.bt_Huy.TabIndex = 35;
+            this.bt_Huy.Text = "Hủy";
+            this.bt_Huy.UseVisualStyleBackColor = true;
+            this.bt_Huy.Visible = false;
+            this.bt_Huy.Click += new System.EventHandler(this.bt_Huy_Click);
+            // 
+            // bt_them
+            // 
+            this.bt_them.Location = new System.Drawing.Point(513, 116);
+            this.bt_them.Name = "bt_them";
+            this.bt_them.Size = new System.Drawing.Size(75, 34);
+            this.bt_them.TabIndex = 36;
+            this.bt_them.Text = "Thêm";
+            this.bt_them.UseVisualStyleBackColor = true;
+            this.bt_them.Visible = false;
+            this.bt_them.Click += new System.EventHandler(this.bt_them_Click_1);
+            // 
             // firmLapDanhSachKhamBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,7 +239,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button bt_them;
+        private System.Windows.Forms.Button bt_luu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Button bt_them;
+        private System.Windows.Forms.Button bt_Huy;
     }
 }

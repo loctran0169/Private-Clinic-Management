@@ -16,18 +16,22 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
     public partial class firmGUI : DevExpress.XtraEditors.XtraForm
     {
-        private UserDTO us = new UserDTO();
-        public firmGUI(UserDTO user)
+        private UsersDTO us = new UsersDTO();
+        private LichSuDTO lsDTO = new LichSuDTO();
+        public firmGUI(UsersDTO user)
         {
-            us.MaUS1 = user.MaUS1;
-            us.TaiKhoan1 = user.TaiKhoan1;
-            us.MatKhau1 = user.MatKhau1;
-            us.MaNV1 = user.MaNV1;
-            us.MaQH1 = user.MaQH1;
+            us.MaUS = user.MaUS;
+            us.TaiKhoan = user.TaiKhoan;
+            us.MatKhau = user.MatKhau;
+            us.MaNV= user.MaNV;
+            us.MaQH = user.MaQH;
+            //gán thông tin để tạo lịch sử đăng nhập
+            lsDTO.MaUS = us.MaUS;
+            lsDTO.ThoiGianDN = DateTime.Now;
 
             InitializeComponent();
             //Status bar
-            bartk.Caption = "Tài Khoản: "+us.TaiKhoan1;
+            bartk.Caption = "Tài Khoản: "+us.TaiKhoan;
             bartt.Caption = "Trạng thái: Đã đăng nhập";
         }
         private Form kiemtraform(Type ftype)
@@ -47,7 +51,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             Form frm = kiemtraform(typeof(firmLichSuDN));
             if (frm == null)
             {
-                firmLichSuDN forms = new firmLichSuDN();
+                firmLichSuDN forms = new firmLichSuDN(us, lsDTO);
                 forms.MdiParent = this;
                 forms.Show();
             }
@@ -59,16 +63,10 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(firmDoiMatKhau));
+            Form frm = kiemtraform(typeof(frmDoiMatKhau));
             if (frm == null)
             {
-                UserDTO user = new UserDTO();
-                user.MaUS1 = us.MaUS1;
-                user.TaiKhoan1 = us.TaiKhoan1;
-                user.MatKhau1 = us.MatKhau1;
-                user.MaNV1 = us.MaNV1;
-                user.MaQH1 = us.MaQH1;
-                firmDoiMatKhau forms = new firmDoiMatKhau(user);
+                frmDoiMatKhau forms = new frmDoiMatKhau(us);
                 forms.MdiParent = this;
                 forms.Show();
             }
@@ -83,7 +81,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             Form frm = kiemtraform(typeof(firmThongTinNV));
             if (frm == null)
             {
-                firmThongTinNV forms = new firmThongTinNV();
+                firmThongTinNV forms = new firmThongTinNV(us);
                 forms.MdiParent = this;
                 forms.Show();
             }
@@ -230,17 +228,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(firmBanThuoc));
-            if (frm == null)
-            {
-                firmBanThuoc forms = new firmBanThuoc();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
+            
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -417,7 +405,12 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (MessageBox.Show("Bạn muốn đăng xuất khỏi tài khoản?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                firmDangNhap dt = new firmDangNhap();
+                this.Hide();
+                dt.ShowDialog();
+            }
         }
 
         private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -438,14 +431,11 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Bạn muốn đăng xuất chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                firmDangNhap f = new firmDangNhap();
-                this.Hide();
-                f.ShowDialog();
-               
-               //hiển thị form chính
+                Application.Exit();
             }
+            
         }
 
         private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -461,6 +451,11 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             {
                 frm.Activate();
             }
+        }
+
+        private void firmGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

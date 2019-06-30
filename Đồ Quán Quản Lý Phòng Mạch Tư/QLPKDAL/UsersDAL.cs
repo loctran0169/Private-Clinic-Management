@@ -7,21 +7,231 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QLPKDAL
 {
-    public class UserDAL
+    public class UsersDAL
     {
+        //private string connectionString;
+
+        //public string ConnectionString
+        //{
+        //    get { return connectionString; }
+        //    set { connectionString = value; }
+        //}
+
+        //public UsersDAL()
+        //{
+        //    connectionString = ConfigurationManager.AppSettings["ConnectionString"];
+
+        //}
+        //public DataTable dangNhap(UsersDTO us)
+        //{
+        //    MySqlConnection conn = new MySqlConnection(connectionString);
+        //    DataTable k = new DataTable();
+        //    try
+        //    {
+        //        conn.Open();
+        //        string sql = "select * from USERS where taikhoan=@taikhoan and matkhau=@matkhau";
+        //        MySqlCommand cmd = new MySqlCommand(sql, conn);
+        //        cmd.Parameters.AddWithValue("@taikhoan", us.TaiKhoan);
+        //        cmd.Parameters.AddWithValue("@matkhau", us.MatKhau);
+        //        MySqlDataAdapter dt = new MySqlDataAdapter(cmd);
+        //        dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+        //        conn.Close();
+        //        dt.Dispose();
+        //        //conn.Open();
+        //        //string sql1 = "select * from USERS where TaiKhoan = '" + us.TaiKhoan + "' and MatKhau='" + us.MatKhau + "'";
+        //        //MySqlDataAdapter dt = new MySqlDataAdapter(sql1, conn);
+
+        //        //dt.Fill(k);
+        //        return k;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi kết nối " + ex.Message);
+        //    }
+        //    return k;
+        //}
+        //public bool doiMatKhau(UsersDTO us)
+        //{
+        //    MySqlConnection kn = new MySqlConnection(connectionString);
+        //    try
+        //    {
+        //        kn.Open();
+
+        //        string sql1 = "update USERS set MatKhau=N'" + us.MatKhau + "' where MaUS=N'" + us.MaUS + "'";
+
+        //        MySqlCommand cmd = new MySqlCommand(sql1, kn);
+
+        //        int kq = (int)cmd.ExecuteNonQuery();
+        //        kn.Close();
+        //        if (kq > 0)
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //            return false;
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        MessageBox.Show("Lỗi kết nối" + ex.Message);
+        //        return false;
+        //    }
+        //}
+        //public DataTable loadDuLieuUsers()
+        //{
+        //    DataTable k = new DataTable();
+        //    MySqlConnection kn = new MySqlConnection(connectionString);
+
+        //    try
+        //    {
+        //        kn.Open();
+        //        string sql = "select * from USERS";
+        //        MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+        //        dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        MessageBox.Show("Lỗi kết nối" + e.Message);
+        //    }
+        //    return k;
+        //}
+        //public DataTable loadDuLieuNhanVien()
+        //{
+        //    DataTable k = new DataTable();
+        //    MySqlConnection kn = new MySqlConnection(connectionString);
+
+        //    try
+        //    {
+        //        kn.Open();
+        //        string sql = "select MaNV from NHANVIEN";
+        //        MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+        //        dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        MessageBox.Show("Lỗi kết nối" + e.Message);
+        //    }
+        //    return k;
+        //}
+        //public DataTable loadDuLieuQuyenHan()
+        //{
+        //    DataTable k = new DataTable();
+        //    MySqlConnection kn = new MySqlConnection(connectionString);
+
+        //    try
+        //    {
+        //        kn.Open();
+        //        string sql = "select MaQH from QUYENHAN";
+        //        MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+        //        dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        MessageBox.Show("Lỗi kết nối" + e.Message);
+        //    }
+        //    return k;
+        //}
+        //public bool them(UsersDTO usDTO)
+        //{
+
+        //    MySqlConnection kn = new MySqlConnection(connectionString);
+        //    try
+        //    {
+        //        kn.Open();
+        //        //thêm thông tin đơn vị tính
+        //        string sql1 = "insert into USERS values(N'" + usDTO.MaUS + "',N'" + usDTO.TaiKhoan + "',N'" + usDTO.MatKhau + "',N'" + usDTO.MaNV + "',N'" + usDTO.MaQuyenHan + "')";
+        //        MySqlCommand cmd = new MySqlCommand(sql1, kn);
+        //        int kq = (int)cmd.ExecuteNonQuery();
+        //        kn.Close();
+        //        if (kq > 0)
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //            return false;
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        MessageBox.Show("Lỗi kết nối" + ex.Message);
+        //        return false;
+        //    }
+        //}
+        //public bool sua(UsersDTO usDTO)
+        //{
+        //    MySqlConnection kn = new MySqlConnection(connectionString);
+        //    try
+        //    {
+        //        kn.Open();
+        //        //sửa thông tin thuốc
+        //        string sql1 = "update USERS set TaiKhoan=N'" + usDTO.TaiKhoan + "',MatKhau=N'" + usDTO.MatKhau + "',MaNV=N'" + usDTO.MaNV + "',MaQH=N'" + usDTO.MaQuyenHan + "' where MaUS=N'" + usDTO.MaUS + "'";
+
+        //        MySqlCommand cmd = new MySqlCommand(sql1, kn);
+        //        int kq = (int)cmd.ExecuteNonQuery();
+        //        kn.Close();
+        //        if (kq > 0)
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //            return false;
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        MessageBox.Show("Lỗi kết nối" + ex.Message);
+        //        return false;
+        //    }
+        //}
+        //public bool xoa(UsersDTO usDTO)
+        //{
+        //    string query = string.Empty;
+        //    query += "DELETE FROM USERS WHERE [MaUS] = @MaUS";
+        //    using (MySqlConnection con = new MySqlConnection(ConnectionString))
+        //    {
+
+        //        using (MySqlCommand cmd = new MySqlCommand())
+        //        {
+        //            cmd.Connection = con;
+        //            cmd.CommandType = System.Data.CommandType.Text;
+        //            cmd.CommandText = query;
+        //            cmd.Parameters.AddWithValue("@MaUS", usDTO.MaUS);
+        //            try
+        //            {
+        //                con.Open();
+        //                cmd.ExecuteNonQuery();
+        //                con.Close();
+        //                con.Dispose();
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                con.Close();
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //    return true;
+        //}
         private string connectionString;
 
         public string ConnectionString { get => connectionString; set => connectionString = value; }
 
-        public UserDAL()
+        public UsersDAL()
         {
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
 
-        public bool them(UserDTO us)
+        public bool them(UsersDTO us)
         {
 
             string query = string.Empty;
@@ -34,11 +244,11 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@maus", us.MaUS1);
-                    cmd.Parameters.AddWithValue("@taikhoan", us.TaiKhoan1);
-                    cmd.Parameters.AddWithValue("@matkhau", us.MatKhau1);
-                    cmd.Parameters.AddWithValue("@manv", us.MaNV1);
-                    cmd.Parameters.AddWithValue("@maqh", us.MaQH1);
+                    cmd.Parameters.AddWithValue("@maus", us.MaUS);
+                    cmd.Parameters.AddWithValue("@taikhoan", us.TaiKhoan);
+                    cmd.Parameters.AddWithValue("@matkhau", us.MatKhau);
+                    cmd.Parameters.AddWithValue("@manv", us.MaNV);
+                    cmd.Parameters.AddWithValue("@maqh", us.MaQH);
                     try
                     {
                         con.Open();
@@ -56,7 +266,7 @@ namespace QLPKDAL
             return true;
         }
 
-        public bool sua(UserDTO us)
+        public bool sua(UsersDTO us)
         {
             string query = string.Empty;
             query += "UPDATE USERS SET  taikhoan = @taikhoan, matkhau = @matkhau,manv=@manv,maqh=@maqh WHERE maus = @maus";
@@ -68,11 +278,11 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@maus", us.MaUS1);
-                    cmd.Parameters.AddWithValue("@taikhoan", us.TaiKhoan1);
-                    cmd.Parameters.AddWithValue("@matkhau", us.MatKhau1);
-                    cmd.Parameters.AddWithValue("@manv", us.MaNV1);
-                    cmd.Parameters.AddWithValue("@maqh", us.MaQH1);
+                    cmd.Parameters.AddWithValue("@maus", us.MaUS);
+                    cmd.Parameters.AddWithValue("@taikhoan", us.TaiKhoan);
+                    cmd.Parameters.AddWithValue("@matkhau", us.MatKhau);
+                    cmd.Parameters.AddWithValue("@manv", us.MaNV);
+                    cmd.Parameters.AddWithValue("@maqh", us.MaQH);
                     try
                     {
                         con.Open();
@@ -90,10 +300,10 @@ namespace QLPKDAL
             return true;
         }
 
-        public bool suamk(UserDTO us)
+        public bool suamk(UsersDTO us)
         {
             string query = string.Empty;
-            query += "UPDATE USERS SET  matkhau = @matkhauWHERE maus = @maus";
+            query += "UPDATE USERS SET  matkhau = @matkhau WHERE maus = @maus";
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
 
@@ -102,8 +312,8 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@maus", us.MaUS1);
-                    cmd.Parameters.AddWithValue("@matkhau", us.MatKhau1);
+                    cmd.Parameters.AddWithValue("@maus", us.MaUS);
+                    cmd.Parameters.AddWithValue("@matkhau", us.MatKhau);
                     try
                     {
                         con.Open();
@@ -120,7 +330,7 @@ namespace QLPKDAL
             }
             return true;
         }
-        public bool xoa(UserDTO us)
+        public bool xoa(UsersDTO us)
         {
             string query = string.Empty;
             query += "DELETE FROM USERS WHERE maus = @maus";
@@ -132,7 +342,7 @@ namespace QLPKDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@maus", us.MaUS1);
+                    cmd.Parameters.AddWithValue("@maus", us.MaUS);
                     try
                     {
                         con.Open();
@@ -150,13 +360,13 @@ namespace QLPKDAL
             return true;
         }
 
-        public List<UserDTO> select()
+        public List<UsersDTO> select()
         {
             string query = string.Empty;
             query += "SELECT * ";
             query += "FROM USERS";
 
-            List<UserDTO> listuser = new List<UserDTO>();
+            List<UsersDTO> listuser = new List<UsersDTO>();
             string ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
@@ -176,12 +386,12 @@ namespace QLPKDAL
                         {
                             while (reader.Read())
                             {
-                                UserDTO us = new UserDTO();
-                                us.MaUS1 = reader["MaUS"].ToString();
-                                us.MaNV1 = reader["MaNV"].ToString();
-                                us.MaQH1 = reader["MaQH"].ToString();
-                                us.TaiKhoan1 = reader["TaiKhoan"].ToString(); ;
-                                us.MatKhau1 = reader["MatKhau"].ToString();
+                                UsersDTO us = new UsersDTO();
+                                us.MaUS = reader["MaUS"].ToString();
+                                us.MaNV = reader["MaNV"].ToString();
+                                us.MaQH = reader["MaQH"].ToString();
+                                us.TaiKhoan = reader["TaiKhoan"].ToString(); ;
+                                us.MatKhau = reader["MatKhau"].ToString();
                                 listuser.Add(us);
                             }
                         }
@@ -200,7 +410,7 @@ namespace QLPKDAL
             return listuser;
         }
 
-        public List<UserDTO> selectByKeyWord(string sKeyword)
+        public List<UsersDTO> selectByKeyWord(string sKeyword)
         {
             string query = string.Empty;
             query += " SELECT *";
@@ -208,7 +418,7 @@ namespace QLPKDAL
             query += " WHERE (maus LIKE CONCAT('%',@sKeyword,'%'))";
             query += " OR (taikhoan LIKE CONCAT('%',@sKeyword,'%'))";
 
-            List<UserDTO> listuser = new List<UserDTO>();
+            List<UsersDTO> listuser = new List<UsersDTO>();
 
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
@@ -228,12 +438,12 @@ namespace QLPKDAL
                         {
                             while (reader.Read())
                             {
-                                UserDTO us = new UserDTO();
-                                us.MaUS1 = reader["MaUS"].ToString();
-                                us.MaNV1 = reader["MaNV"].ToString();
-                                us.MaQH1 = reader["MaQH"].ToString();
-                                us.TaiKhoan1 = reader["TaiKhoan"].ToString(); ;
-                                us.MatKhau1 = reader["MatKhau"].ToString();
+                                UsersDTO us = new UsersDTO();
+                                us.MaUS = reader["MaUS"].ToString();
+                                us.MaNV= reader["MaNV"].ToString();
+                                us.MaQH = reader["MaQH"].ToString();
+                                us.TaiKhoan = reader["TaiKhoan"].ToString(); ;
+                                us.MatKhau = reader["MatKhau"].ToString();
                                 listuser.Add(us);
                             }
                         }
@@ -305,7 +515,7 @@ namespace QLPKDAL
             }
             catch (Exception e)
             {
-               
+
             }
             return k;
         }
@@ -316,15 +526,15 @@ namespace QLPKDAL
             MySqlConnection kn = new MySqlConnection(ConfigurationManager.AppSettings["ConnectionString"]);
             try
             {
-                
+
                 string sql = "select * from USERS where taikhoan=@taikhoan and MatKhau=@MatKhau";
                 MySqlCommand cmd = new MySqlCommand(sql, kn);
                 cmd.Parameters.AddWithValue("@taikhoan", tk);
                 cmd.Parameters.AddWithValue("@MatKhau", mk);
                 kn.Open();
-                MySqlDataAdapter dt = new MySqlDataAdapter(cmd);     
+                MySqlDataAdapter dt = new MySqlDataAdapter(cmd);
                 dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
-                if (k.Rows.Count >0)
+                if (k.Rows.Count > 0)
                     return true;
                 kn.Close();
                 dt.Dispose();
@@ -336,7 +546,7 @@ namespace QLPKDAL
             return false;
         }
 
-        public DataTable dangNhap(UserDTO us)
+        public DataTable dangNhap(UsersDTO us)
         {
             DataTable k = new DataTable();
             MySqlConnection kn = new MySqlConnection(ConfigurationManager.AppSettings["ConnectionString"]);
@@ -345,8 +555,8 @@ namespace QLPKDAL
                 kn.Open();
                 string sql = "select * from USERS where taikhoan=@taikhoan and matkhau=@matkhau";
                 MySqlCommand cmd = new MySqlCommand(sql, kn);
-                cmd.Parameters.AddWithValue("@taikhoan", us.TaiKhoan1);
-                cmd.Parameters.AddWithValue("@matkhau", us.MatKhau1);
+                cmd.Parameters.AddWithValue("@taikhoan", us.TaiKhoan);
+                cmd.Parameters.AddWithValue("@matkhau", us.MatKhau);
                 MySqlDataAdapter dt = new MySqlDataAdapter(cmd);
                 dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
                 kn.Close();

@@ -89,7 +89,10 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             if (listdanhsach == null)
                 MessageBox.Show("Load danh sách bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu");
             else
+            {
                 MessageBox.Show("Load bệnh nhân thành công");
+                bt_them.Visible = true;
+            }
 
             loadDanhSach(listdanhsach);
         }
@@ -146,6 +149,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void bt_them_Click(object sender, EventArgs e)
         {
+
             if (tb_maBN.Text != "")
             {
                 PhieuKhamDTO pk = new PhieuKhamDTO();
@@ -172,6 +176,22 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
                 }
             }
+        }
+
+        private void bt_them_Click_1(object sender, EventArgs e)
+        {
+            dateTimePicker1.Enabled = true;
+            bt_Huy.Visible = true;
+            bt_luu.Visible = true;
+            bt_them.Visible = false;
+        }
+
+        private void bt_Huy_Click(object sender, EventArgs e)
+        {
+            bt_them.Visible = true;
+            dateTimePicker1.Enabled = false;
+            bt_luu.Visible = false;
+            bt_Huy.Visible = false;
         }
     }
 }

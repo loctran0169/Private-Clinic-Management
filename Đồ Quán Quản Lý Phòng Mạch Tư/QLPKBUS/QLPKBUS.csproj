@@ -46,6 +46,8 @@
     <Compile Include="CachDungBUS.cs" />
     <Compile Include="DanhSachKhamBenhBUS.cs" />
     <Compile Include="DonViTinhBUS.cs" />
+    <Compile Include="LapDonThuocBUS.cs" />
+    <Compile Include="LapPhieuKhamBUS.cs" />
     <Compile Include="LichSuBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhieuKhamBUS.cs" />
@@ -53,7 +55,7 @@
     <Compile Include="QuyenHanBUS.cs" />
     <Compile Include="ThamSoBUS.cs" />
     <Compile Include="ThuocBUS.cs" />
-    <Compile Include="UserBUS.cs" />
+    <Compile Include="UsersBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLPKDAL\QLPKDAL.csproj">

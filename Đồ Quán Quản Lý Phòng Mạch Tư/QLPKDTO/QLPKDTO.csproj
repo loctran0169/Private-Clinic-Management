@@ -47,6 +47,8 @@
     <Compile Include="DanhSachKhamBenhDTO.cs" />
     <Compile Include="DonViTinhDTO.cs" />
     <Compile Include="HoaDonDTO.cs" />
+    <Compile Include="LapDonThuocDTO.cs" />
+    <Compile Include="LapPhieuKhamDTO.cs" />
     <Compile Include="LichSuDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />
     <Compile Include="PhieuKhamDTO.cs" />
@@ -54,7 +56,7 @@
     <Compile Include="QuyenHanDTO.cs" />
     <Compile Include="ThamSoDTO.cs" />
     <Compile Include="ThuocDTO.cs" />
-    <Compile Include="UserDTO.cs" />
+    <Compile Include="UsersDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
