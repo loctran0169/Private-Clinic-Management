@@ -41,15 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BanThuocDTO.cs" />
-    <Compile Include="BenhDTO.cs" />
     <Compile Include="BenhNhanDTO.cs" />
     <Compile Include="CachDungDTO.cs" />
     <Compile Include="DanhSachKhamBenhDTO.cs" />
     <Compile Include="DonViTinhDTO.cs" />
     <Compile Include="HoaDonDTO.cs" />
+    <Compile Include="LapDonThuocDTO.cs" />
     <Compile Include="LapPhieuKhamDTO.cs" />
     <Compile Include="LichSuDTO.cs" />
+    <Compile Include="LoaiBenhDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />
     <Compile Include="PhieuKhamDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

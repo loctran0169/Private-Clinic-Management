@@ -68,11 +68,11 @@
             // 
             // load
             // 
-            this.load.Location = new System.Drawing.Point(25, 97);
+            this.load.Location = new System.Drawing.Point(28, 97);
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(75, 31);
             this.load.TabIndex = 21;
-            this.load.Text = "Load";
+            this.load.Text = "Load dữ liệu";
             this.load.UseVisualStyleBackColor = true;
             this.load.Click += new System.EventHandler(this.load_Click);
             // 

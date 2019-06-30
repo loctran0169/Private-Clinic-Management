@@ -132,7 +132,7 @@ namespace QLPKDAL
         public bool xoa()
             {
                 string query = string.Empty;
-                query += "DELETE FROM LichSuDangNhap ";
+                query += "DELETE FROM LICHSUDANGNHAP ";
                 using (MySqlConnection con = new MySqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
                 {
 

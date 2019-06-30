@@ -238,18 +238,32 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            int indexrow;
+            indexrow = e.RowIndex;
+            if (indexrow != -1)
             {
-                DataGridViewRow row = this.dtgv.Rows[e.RowIndex];
-
-                txtMaDonViTinh.Text = row.Cells[0].Value + string.Empty;
-                txtTenDonViTinh.Text = row.Cells[1].Value + string.Empty;                
+                HienThiThongTin();
             }
         }
 
         private void load_Click(object sender, EventArgs e)
         {
             ReloadDb();
+            HienThiThongTin();
+        }
+
+        private void HienThiThongTin()
+        {
+            if (dtgv.RowCount > 0)
+
+            {
+                int r = dtgv.CurrentRow.Index;
+                DataGridViewRow row = dtgv.Rows[r];
+
+                txtMaDonViTinh.Text = row.Cells[0].Value + string.Empty;
+                txtTenDonViTinh.Text = row.Cells[1].Value + string.Empty;
+            }
+
         }
     }
 }

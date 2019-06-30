@@ -81,7 +81,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(364, 127);
+            this.btnLuu.Location = new System.Drawing.Point(447, 126);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 35);
             this.btnLuu.TabIndex = 25;
@@ -91,7 +91,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(484, 127);
+            this.btnHuy.Location = new System.Drawing.Point(567, 126);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 35);
             this.btnHuy.TabIndex = 24;
@@ -148,7 +148,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(484, 127);
+            this.btnXoa.Location = new System.Drawing.Point(567, 126);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 35);
             this.btnXoa.TabIndex = 18;
@@ -158,7 +158,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(364, 127);
+            this.btnSua.Location = new System.Drawing.Point(447, 126);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 35);
             this.btnSua.TabIndex = 17;
@@ -168,7 +168,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(256, 127);
+            this.btnThem.Location = new System.Drawing.Point(339, 126);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 35);
             this.btnThem.TabIndex = 16;
@@ -365,7 +365,7 @@
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(75, 34);
             this.load.TabIndex = 28;
-            this.load.Text = "Load";
+            this.load.Text = "Load dữ liệu";
             this.load.UseVisualStyleBackColor = true;
             this.load.Click += new System.EventHandler(this.load_Click);
             // 

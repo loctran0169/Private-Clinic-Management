@@ -102,11 +102,11 @@ namespace QLPKDAL
                                 ds.SDT1 = reader["SDT"].ToString();
 
 
-                                //DateTime str = (DateTime)reader["NGAYKHAM"];
+                                
                                 string str = reader["NGAYKHAM"].ToString();
-                                if(str=="")                                 
-                                                                                                                                          
-                                listDanhSachKhamBenh.Add(ds);
+                                if (str != "")
+                                    ds.NgayKham1 = (DateTime)reader["NGAYKHAM"];                                                                                        
+                                    listDanhSachKhamBenh.Add(ds);
                             }
                         }
 

@@ -69,6 +69,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             radioButton2.Enabled = false;
             bt_them.Visible = bt_sua.Visible = bt_xoa.Visible = true;
             bt_huy.Visible = bt_lưu.Visible = false;
+            dtgv_benhnhan.Enabled = true;
         }
         private void ChiSua()
         {
@@ -80,6 +81,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             radioButton2.Enabled = true;
             bt_them.Visible = bt_sua.Visible = bt_xoa.Visible = false;
             bt_huy.Visible = bt_lưu.Visible = true;
+            dtgv_benhnhan.Enabled = false;
         }
         private void empty()
         {
@@ -274,6 +276,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                     MessageBox.Show("Thêm bệnh nhân thành công");
                     dtgv_benhnhan.Enabled = true;
                     ChiDoc();
+                    empty();
                 }
                 else
                 {
@@ -303,7 +306,9 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 else
                 {
                     MessageBox.Show("Sữa bệnh nhân thành công");
-                    dtgv_benhnhan.Enabled = false;
+                    dtgv_benhnhan.Enabled = true;
+                    ChiDoc();
+                    empty();
                 }             
             }
             Reload();

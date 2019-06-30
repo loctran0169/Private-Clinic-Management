@@ -256,10 +256,11 @@ namespace QLPKDAL
             try
             {
                 kn.Open();
-                string sql = "select mathuoc,tenthuoc,DONVITINH.MaDV,nsx,hsd,DonGia from DONVITINH, THUOC where DONVITINH.Madv = THUOC.MaDV";
+                string sql = "select mathuoc,tenthuoc,t.MaDV,nsx,HSD,DonGia from DONVITINH dv join THUOC t on dv.Madv = t.MaDV";
                 MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
                 dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
-
+                kn.Close();
+                dt.Dispose();
             }
             catch (Exception e)
             {

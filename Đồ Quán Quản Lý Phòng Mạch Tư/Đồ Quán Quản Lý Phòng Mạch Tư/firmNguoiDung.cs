@@ -288,9 +288,20 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void dataGridViewNguoiDung_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            int indexrow;
+            indexrow = e.RowIndex;
+            if (indexrow != -1)
             {
-                DataGridViewRow row = this.dataGridViewNguoiDung.Rows[e.RowIndex];
+                HienThiThongTin();
+            }
+        }
+        private void HienThiThongTin()
+        {
+            if (dataGridViewNguoiDung.RowCount > 0)
+
+            {
+                int r = dataGridViewNguoiDung.CurrentRow.Index;
+                DataGridViewRow row = dataGridViewNguoiDung.Rows[r];
 
                 txtMaUS.Text = row.Cells[0].Value + string.Empty;
                 txtTaiKhoan.Text = row.Cells[1].Value + string.Empty;
@@ -299,12 +310,13 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 //cboMaQuyenHan.Text = row.Cells[4].Value + string.Empty;
                 cboMaQuyenHan.SelectedItem = row.Cells[4].Value + string.Empty;
             }
+
         }
 
         private void load_Click(object sender, EventArgs e)
         {
             dataGridViewNguoiDung.DataSource = usBUS.loadDuLieuUsers();
-            empty();
+            HienThiThongTin();
         }
     }
 }

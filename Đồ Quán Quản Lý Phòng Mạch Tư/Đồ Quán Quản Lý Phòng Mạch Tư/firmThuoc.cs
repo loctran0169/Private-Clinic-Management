@@ -187,8 +187,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 tb_mathuoc.Text = row.Cells[0].Value.ToString();
                 tb_tenthuoc.Text = row.Cells[1].Value.ToString();
                 cbb_donvi.Text = row.Cells[2].Value.ToString();
-                nsx.Value = (DateTime)(row.Cells[3].Value);
-                hsd.Value = (DateTime)(row.Cells[4].Value);
+                nsx.Text = row.Cells[3].Value.ToString();
+                hsd.Text = row.Cells[4].Value.ToString();
                 tb_dongia.Text = row.Cells[5].Value.ToString();
             }
 
@@ -276,7 +276,24 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void load_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bus.loadDuLieuThuoc();
+            ReloadDb();
+            HienThiThongTinThuoc();
+        }
+        public void ReloadDb()
+        {
+            try
+            {
+                DataTable dt = bus.loadDuLieuThuoc();
+                if (dt.Rows.Count > 0)
+                    MessageBox.Show("Load Thành công");
+                else
+                    MessageBox.Show("Không có thông tin cách dùng");
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }
