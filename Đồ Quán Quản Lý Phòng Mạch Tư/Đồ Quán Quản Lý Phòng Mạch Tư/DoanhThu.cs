@@ -23,7 +23,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             set
             {
                 control = value;
-                pccReport.PrintableComponent = control;
+                //pccReport.PrintableComponent = control;
             }
         }
     }

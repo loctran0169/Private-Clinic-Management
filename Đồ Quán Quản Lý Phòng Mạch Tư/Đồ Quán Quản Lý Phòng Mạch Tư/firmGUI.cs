@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using QLPKDTO;
+using QLPKBUS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
     {
         private UsersDTO us = new UsersDTO();
         private LichSuDTO lsDTO = new LichSuDTO();
+        private LichSuBUS lsBUS= new LichSuBUS();
         public firmGUI(UsersDTO user)
         {
             us.MaUS = user.MaUS;
@@ -28,6 +30,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             //gán thông tin để tạo lịch sử đăng nhập
             lsDTO.MaUS = us.MaUS;
             lsDTO.ThoiGianDN = DateTime.Now;
+            //thêm lịch sử đăng nhập cho tài khoản mỗi khi đăng nhập
+            lsBUS.them(lsDTO);
 
             InitializeComponent();
             //Status bar
@@ -395,6 +399,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 this.barBtnNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 this.barBtnVaiTro.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 this.barBtnNhatKy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                this.ribbonPageSaoLuu.Visible = false;
                 this.ribbonPageNhanVien.Visible = false;
                 this.ribbonPageDanhMuc.Visible = false;
             }
