@@ -27,7 +27,10 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtTaiKhoan.Text) || string.IsNullOrEmpty(txtMatKhau.Text))
+            {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }
             try
             {
                 UserDTO us = new UserDTO();
