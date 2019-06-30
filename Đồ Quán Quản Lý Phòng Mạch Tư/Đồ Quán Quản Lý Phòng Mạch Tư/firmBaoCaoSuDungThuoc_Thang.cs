@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
 using MySql.Data.MySqlClient;
 using System;
@@ -16,6 +17,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
     public partial class firmBaoCaoSuDungThuoc_Thang : Form
     {
+        DataTable dt = new DataTable();
         public firmBaoCaoSuDungThuoc_Thang()
         {
             InitializeComponent();
@@ -23,24 +25,22 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable dt = loadDuLieu(dtpk.Value.Month);
-            dataGridView1.DataSource = dt;
+            dt = loadDuLieu(dtpk.Value.Month);
+            gcthuoc.DataSource = dt;
             if (dt.Rows.Count == 0)
                 MessageBox.Show("Không có thông tin trong tháng này");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataTable dt = loadDuLieu(dtpk.Value.Month);
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("Không có thông tin trong tháng này");
                 return;
             }
-            GridControl ct = new GridControl();
-            ct.DataSource = dt;
+            gvthuoc.BestFitColumns();
             rpSuDungThuoc rp = new rpSuDungThuoc();
-            rp.GridControl = ct;
+            rp.GridControl = gcthuoc;
             rp.setThang(dtpk.Value);
             ReportPrintTool printTool = new ReportPrintTool(rp);
             printTool.ShowPreviewDialog();
