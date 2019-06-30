@@ -89,7 +89,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             else
             {
                 MessageBox.Show("Load tham số thành công");
-
+                bt_sua.Visible = true;
             }
             loadData_Vao_GridView(listthamso);
         }
@@ -103,6 +103,24 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             textBox_TenTS.Text = row.Cells[1].Value.ToString();
             textBox_GiaTri.Text = row.Cells[2].Value.ToString();
 
+        }
+
+        private void bt_sua_Click_1(object sender, EventArgs e)
+        {
+            textBox_TenTS.ReadOnly = false;
+            textBox_GiaTri.ReadOnly = false;
+            bt_Huy.Visible = true;
+            bt_luu.Visible = true;
+            bt_sua.Visible = false;
+        }
+
+        private void bt_Huy_Click(object sender, EventArgs e)
+        {
+            bt_sua.Visible = true;
+            textBox_TenTS.ReadOnly = true;
+            textBox_GiaTri.ReadOnly = true;
+            bt_luu.Visible = false;
+            bt_Huy.Visible = false;
         }
     }
 }

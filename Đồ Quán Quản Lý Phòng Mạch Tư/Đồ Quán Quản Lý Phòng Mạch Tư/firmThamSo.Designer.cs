@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_load = new System.Windows.Forms.Button();
             this.textBox_MaTS = new System.Windows.Forms.TextBox();
             this.textBox_TenTS = new System.Windows.Forms.TextBox();
             this.textBox_GiaTri = new System.Windows.Forms.TextBox();
-            this.bt_sua = new System.Windows.Forms.Button();
+            this.bt_luu = new System.Windows.Forms.Button();
             this.label_GiaTri = new System.Windows.Forms.Label();
             this.label_TenTS = new System.Windows.Forms.Label();
             this.label_MaTS = new System.Windows.Forms.Label();
@@ -40,18 +41,21 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_load = new System.Windows.Forms.Button();
+            this.bt_sua = new System.Windows.Forms.Button();
+            this.bt_Huy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.bt_Huy);
+            this.panel1.Controls.Add(this.bt_sua);
             this.panel1.Controls.Add(this.bt_load);
             this.panel1.Controls.Add(this.textBox_MaTS);
             this.panel1.Controls.Add(this.textBox_TenTS);
             this.panel1.Controls.Add(this.textBox_GiaTri);
-            this.panel1.Controls.Add(this.bt_sua);
+            this.panel1.Controls.Add(this.bt_luu);
             this.panel1.Controls.Add(this.label_GiaTri);
             this.panel1.Controls.Add(this.label_TenTS);
             this.panel1.Controls.Add(this.label_MaTS);
@@ -61,10 +65,21 @@
             this.panel1.Size = new System.Drawing.Size(800, 142);
             this.panel1.TabIndex = 0;
             // 
+            // bt_load
+            // 
+            this.bt_load.Location = new System.Drawing.Point(185, 96);
+            this.bt_load.Name = "bt_load";
+            this.bt_load.Size = new System.Drawing.Size(152, 32);
+            this.bt_load.TabIndex = 0;
+            this.bt_load.Text = "Load Dữ Liệu";
+            this.bt_load.UseVisualStyleBackColor = true;
+            this.bt_load.Click += new System.EventHandler(this.bt_load_Click);
+            // 
             // textBox_MaTS
             // 
             this.textBox_MaTS.Location = new System.Drawing.Point(185, 30);
             this.textBox_MaTS.Name = "textBox_MaTS";
+            this.textBox_MaTS.ReadOnly = true;
             this.textBox_MaTS.Size = new System.Drawing.Size(152, 20);
             this.textBox_MaTS.TabIndex = 2;
             // 
@@ -72,6 +87,7 @@
             // 
             this.textBox_TenTS.Location = new System.Drawing.Point(447, 30);
             this.textBox_TenTS.Name = "textBox_TenTS";
+            this.textBox_TenTS.ReadOnly = true;
             this.textBox_TenTS.Size = new System.Drawing.Size(261, 20);
             this.textBox_TenTS.TabIndex = 3;
             // 
@@ -79,18 +95,20 @@
             // 
             this.textBox_GiaTri.Location = new System.Drawing.Point(185, 70);
             this.textBox_GiaTri.Name = "textBox_GiaTri";
+            this.textBox_GiaTri.ReadOnly = true;
             this.textBox_GiaTri.Size = new System.Drawing.Size(152, 20);
             this.textBox_GiaTri.TabIndex = 4;
             // 
-            // bt_sua
+            // bt_luu
             // 
-            this.bt_sua.Location = new System.Drawing.Point(633, 63);
-            this.bt_sua.Name = "bt_sua";
-            this.bt_sua.Size = new System.Drawing.Size(75, 32);
-            this.bt_sua.TabIndex = 1;
-            this.bt_sua.Text = "Sửa";
-            this.bt_sua.UseVisualStyleBackColor = true;
-            this.bt_sua.Click += new System.EventHandler(this.bt_sua_Click);
+            this.bt_luu.Location = new System.Drawing.Point(633, 70);
+            this.bt_luu.Name = "bt_luu";
+            this.bt_luu.Size = new System.Drawing.Size(75, 32);
+            this.bt_luu.TabIndex = 1;
+            this.bt_luu.Text = "Lưu";
+            this.bt_luu.UseVisualStyleBackColor = true;
+            this.bt_luu.Visible = false;
+            this.bt_luu.Click += new System.EventHandler(this.bt_sua_Click);
             // 
             // label_GiaTri
             // 
@@ -149,15 +167,27 @@
             this.Column3.HeaderText = "Giá Trị";
             this.Column3.Name = "Column3";
             // 
-            // bt_load
+            // bt_sua
             // 
-            this.bt_load.Location = new System.Drawing.Point(447, 63);
-            this.bt_load.Name = "bt_load";
-            this.bt_load.Size = new System.Drawing.Size(75, 32);
-            this.bt_load.TabIndex = 0;
-            this.bt_load.Text = "Load";
-            this.bt_load.UseVisualStyleBackColor = true;
-            this.bt_load.Click += new System.EventHandler(this.bt_load_Click);
+            this.bt_sua.Location = new System.Drawing.Point(447, 70);
+            this.bt_sua.Name = "bt_sua";
+            this.bt_sua.Size = new System.Drawing.Size(75, 32);
+            this.bt_sua.TabIndex = 13;
+            this.bt_sua.Text = "Sửa";
+            this.bt_sua.UseVisualStyleBackColor = true;
+            this.bt_sua.Visible = false;
+            this.bt_sua.Click += new System.EventHandler(this.bt_sua_Click_1);
+            // 
+            // bt_Huy
+            // 
+            this.bt_Huy.Location = new System.Drawing.Point(542, 70);
+            this.bt_Huy.Name = "bt_Huy";
+            this.bt_Huy.Size = new System.Drawing.Size(75, 32);
+            this.bt_Huy.TabIndex = 14;
+            this.bt_Huy.Text = "Hủy";
+            this.bt_Huy.UseVisualStyleBackColor = true;
+            this.bt_Huy.Visible = false;
+            this.bt_Huy.Click += new System.EventHandler(this.bt_Huy_Click);
             // 
             // firmThamSo
             // 
@@ -182,7 +212,7 @@
         private System.Windows.Forms.TextBox textBox_MaTS;
         private System.Windows.Forms.TextBox textBox_TenTS;
         private System.Windows.Forms.TextBox textBox_GiaTri;
-        private System.Windows.Forms.Button bt_sua;
+        private System.Windows.Forms.Button bt_luu;
         private System.Windows.Forms.Label label_GiaTri;
         private System.Windows.Forms.Label label_TenTS;
         private System.Windows.Forms.Label label_MaTS;
@@ -191,5 +221,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button bt_load;
+        private System.Windows.Forms.Button bt_Huy;
+        private System.Windows.Forms.Button bt_sua;
     }
 }
