@@ -16,6 +16,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
     public partial class firmBaoCaoThang : Form
     {
+        DataTable dt = new DataTable();
         public firmBaoCaoThang()
         {
             InitializeComponent();
@@ -23,24 +24,23 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable dt=loadDuLieu(dtpk.Value.Month);
-            dataGridView1.DataSource = dt;
+            dt=loadDuLieu(dtpk.Value.Month);
+            gcDoanhThu.DataSource = dt;
             if (dt.Rows.Count==0)
                 MessageBox.Show("Không có thông tin trong tháng này");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataTable dt = loadDuLieu(dtpk.Value.Month);
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("Không có thông tin trong tháng này");
                 return;
             }
-            GridControl ct = new GridControl();
-            ct.DataSource = dt;
+            gvdoanhthu.BestFitColumns();
+
             rpDoanhThu rp = new rpDoanhThu();
-            rp.GridControl = ct;
+            rp.GridControl = gcDoanhThu;
             rp.setThang(dtpk.Value);
             ReportPrintTool printTool = new ReportPrintTool(rp);
             printTool.ShowPreviewDialog();
@@ -53,7 +53,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             try
             {
 
-                string sql = "SELECT NgayLap,COUNT(*) as   'SoLuong', sum(tongtien) as 'DoanhThu',sum(tongtien)*100/(SELECT sum(tongtien) FROM HOADON where month(HOADON.NgayLap) = @month) as 'TyLe'FROM HOADON where month(HOADON.NgayLap) = @month group by NgayLap";
+                string sql = "SELECT NgayLap,COUNT(*) as   'SoLuongBenhNhan', sum(tongtien) as 'DoanhThu',sum(tongtien)*100/(SELECT sum(tongtien) FROM HOADON where month(HOADON.NgayLap) = @month) as 'TyLe'FROM HOADON where month(HOADON.NgayLap) = @month group by NgayLap";
                 MySqlCommand cmd = new MySqlCommand(sql, kn);
                 cmd.Parameters.AddWithValue("@month", month);
                 kn.Open();

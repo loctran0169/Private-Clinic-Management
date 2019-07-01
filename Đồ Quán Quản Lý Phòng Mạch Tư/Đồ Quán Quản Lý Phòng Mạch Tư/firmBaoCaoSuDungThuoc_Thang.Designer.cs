@@ -33,13 +33,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLanDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gcthuoc = new DevExpress.XtraGrid.GridControl();
+            this.gvthuoc = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcthuoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvthuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,57 +94,73 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // gcthuoc
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenThuoc,
-            this.TenDonVi,
-            this.SoLuong,
-            this.SoLanDung});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 400);
-            this.dataGridView1.TabIndex = 16;
+            this.gcthuoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcthuoc.Location = new System.Drawing.Point(0, 50);
+            this.gcthuoc.MainView = this.gvthuoc;
+            this.gcthuoc.Name = "gcthuoc";
+            this.gcthuoc.Size = new System.Drawing.Size(800, 400);
+            this.gcthuoc.TabIndex = 1;
+            this.gcthuoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvthuoc});
             // 
-            // TenThuoc
+            // gvthuoc
             // 
-            this.TenThuoc.DataPropertyName = "TenThuoc";
-            this.TenThuoc.HeaderText = "Tên Thuốc";
-            this.TenThuoc.Name = "TenThuoc";
+            this.gvthuoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn5,
+            this.gridColumn6});
+            this.gvthuoc.GridControl = this.gcthuoc;
+            this.gvthuoc.Name = "gvthuoc";
+            this.gvthuoc.OptionsView.ShowGroupPanel = false;
             // 
-            // TenDonVi
+            // gridColumn1
             // 
-            this.TenDonVi.DataPropertyName = "TenDonVi";
-            this.TenDonVi.HeaderText = "Tên Đơn Vị";
-            this.TenDonVi.Name = "TenDonVi";
+            this.gridColumn1.Caption = "Tên Thuốc";
+            this.gridColumn1.FieldName = "TenThuoc";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
-            // SoLuong
+            // gridColumn2
             // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
+            this.gridColumn2.Caption = "Tên Đơn Vị";
+            this.gridColumn2.FieldName = "TenDonVi";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
-            // SoLanDung
+            // gridColumn5
             // 
-            this.SoLanDung.DataPropertyName = "SoLanDung";
-            this.SoLanDung.HeaderText = "Số Lần Dùng";
-            this.SoLanDung.Name = "SoLanDung";
+            this.gridColumn5.Caption = "Số Lượng";
+            this.gridColumn5.FieldName = "SoLuong";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 2;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Số Lần Dùng";
+            this.gridColumn6.FieldName = "SoLanDung";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 3;
             // 
             // firmBaoCaoSuDungThuoc_Thang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gcthuoc);
             this.Controls.Add(this.panel1);
             this.Name = "firmBaoCaoSuDungThuoc_Thang";
             this.Text = "Báo Cáo Sử Dụng Thuốc Theo Tháng";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcthuoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvthuoc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,14 +168,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dtpk;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDonVi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLanDung;
+        private DevExpress.XtraGrid.GridControl gcthuoc;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvthuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

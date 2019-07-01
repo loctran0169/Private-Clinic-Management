@@ -213,9 +213,9 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             bnbus = new BenhNhanBUS();
             List<BenhNhanDTO> listbenhnhan = bnbus.select();
             if (listbenhnhan == null)
-                MessageBox.Show("Load danh sách bệnh nhân thất bại. Vui lòng kiểm tra đường truyền");
+                MessageBox.Show("Load  thất bại. Vui lòng kiểm tra đường truyền");
             else
-                MessageBox.Show("Load bệnh nhân thành công");
+                MessageBox.Show("Load thành công");
             loadBenhNhan(listbenhnhan);
         }
 
