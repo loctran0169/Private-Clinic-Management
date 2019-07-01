@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBenh)).BeginInit();
             this.SuspendLayout();
@@ -69,11 +69,21 @@
             this.panel1.Size = new System.Drawing.Size(800, 142);
             this.panel1.TabIndex = 1;
             // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(360, 70);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 32);
+            this.btnLoad.TabIndex = 19;
+            this.btnLoad.Text = "Load dữ liệu";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // btnLuu
             // 
             this.btnLuu.Location = new System.Drawing.Point(536, 70);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.Size = new System.Drawing.Size(80, 32);
             this.btnLuu.TabIndex = 9;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -83,7 +93,7 @@
             // 
             this.btnHuy.Location = new System.Drawing.Point(628, 70);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.Size = new System.Drawing.Size(75, 32);
             this.btnHuy.TabIndex = 10;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
@@ -206,16 +216,6 @@
             this.Column3.HeaderText = "Triệu Chứng";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(360, 70);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 32);
-            this.btnLoad.TabIndex = 19;
-            this.btnLoad.Text = "Load dữ liệu";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // firmBenh
             // 

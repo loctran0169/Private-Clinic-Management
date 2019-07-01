@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using QLPKDTO;
 using QLPKDAL;
 using QLPKBUS;
+using System.Threading;
+
 namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
     public partial class firmQuyenHan : Form
@@ -23,9 +25,9 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void frmQuyenHan_Load(object sender, EventArgs e)
         {
-            qhBUS = new QuyenHanBUS();
-            dataGridViewQuyenHan.DataSource = qhBUS.loadDuLieuQuyenHan();
-            HienThiThongTinQuyenHan();
+                qhBUS = new QuyenHanBUS();
+                dataGridViewQuyenHan.DataSource = qhBUS.loadDuLieuQuyenHan();
+                HienThiThongTinQuyenHan();
         }
 
         private void HienThiThongTinQuyenHan()
