@@ -116,7 +116,7 @@
             this.Controls.Add(this.btnDangNhap);
             this.Name = "firmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "firmDangNhap";
+            this.Text = "Phần mềm quản lí phòng khám";
             this.Load += new System.EventHandler(this.firmDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

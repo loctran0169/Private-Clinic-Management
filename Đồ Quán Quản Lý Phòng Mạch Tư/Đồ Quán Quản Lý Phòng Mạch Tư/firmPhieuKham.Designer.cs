@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_xoa = new System.Windows.Forms.Button();
             this.bt_Huy = new System.Windows.Forms.Button();
             this.bt_sua = new System.Windows.Forms.Button();
             this.tB_HoTen = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_xoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,17 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Phiếu Khám";
+            // 
+            // bt_xoa
+            // 
+            this.bt_xoa.Location = new System.Drawing.Point(444, 115);
+            this.bt_xoa.Name = "bt_xoa";
+            this.bt_xoa.Size = new System.Drawing.Size(75, 29);
+            this.bt_xoa.TabIndex = 19;
+            this.bt_xoa.Text = "Xóa";
+            this.bt_xoa.UseVisualStyleBackColor = true;
+            this.bt_xoa.Visible = false;
+            this.bt_xoa.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // bt_Huy
             // 
@@ -257,17 +268,6 @@
             // 
             this.Column7.HeaderText = "Loại Bệnh";
             this.Column7.Name = "Column7";
-            // 
-            // bt_xoa
-            // 
-            this.bt_xoa.Location = new System.Drawing.Point(444, 115);
-            this.bt_xoa.Name = "bt_xoa";
-            this.bt_xoa.Size = new System.Drawing.Size(75, 29);
-            this.bt_xoa.TabIndex = 19;
-            this.bt_xoa.Text = "Xóa";
-            this.bt_xoa.UseVisualStyleBackColor = true;
-            this.bt_xoa.Visible = false;
-            this.bt_xoa.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // firmPhieuKham
             // 

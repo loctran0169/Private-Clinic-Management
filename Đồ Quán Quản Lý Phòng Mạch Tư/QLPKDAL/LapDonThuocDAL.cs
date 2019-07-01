@@ -40,53 +40,171 @@ namespace QLPKDAL
             }
             return k;
         }
-        //public DataTable loadata()
-        //{
-        //    DataTable k = new DataTable();
-        //    MySqlConnection kn = new MySqlConnection(connectionString);
-        //    try
-        //    {
-        //        kn.Open();
-        //        string query = string.Empty;
-        //        query += "SELECT BN.HOTEN,TrieuChung,TenLoaiBenh,DT.MaThuoc,TenThuoc,SoLuong,TenDonVi,DonGia,CachDung ";
 
-        //        query += "FROM DONTHUOC DT ";
+        public DataTable loadThuoctoCombobox()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+            try
+            {
+                kn.Open();
+                string sql = "SELECT MATHUOC,TENTHUOC FROM THUOC";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
+                dt.Dispose();
 
-        //        query += "JOIN PHIEUKHAM PK ON DT.MAPK=PK.MAPK ";
+            }
+            catch (Exception e)
+            {
 
-        //        query += "JOIN CACHDUNG CD ON DT.MACACHDUNG=CD.MACD ";
-        //        query += "JOIN THUOC T ON T.MATHUOC= DT.MATHUOC ";
-        //        query += "JOIN DONVITINH DVT ON DVT.MaDV=T.MaDV ";
-        //        query += "JOIN BENHNHAN BN on BN.MABN=PK.MABN ";
-        //        query += "JOIN BENH B ON PK.MALB=B.MALB ";
-        //        query += "WHERE BN.MABN=" + s;
-        //        MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
-        //        dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
-        //        kn.Close();
-        //        dt.Dispose();
+            }
+            return k;
+        }
+        public DataTable loadCDctoCombobox()
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+            try
+            {
+                kn.Open();
+                string sql = "SELECT * FROM CACHDUNG";
+                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
+                dt.Dispose();
 
-        //    }
-        //    catch (Exception e)
-        //    {
+            }
+            catch (Exception e)
+            {
 
-        //    }
-        //    return k;
-        //}
+            }
+            return k;
+        }
+
+        public bool them(LapDonThuocDTO dt)
+        {
+            string query = string.Empty;
+            query += "insert DONTHUOC set MAPK=@MAPK,MATHUOC=@MATHUOC,SOLUONG=@SOLUONG,MACACHDUNG=@MACACHDUNG";
+
+
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            {
+
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@MAPK",dt.MaPK1 );
+                    cmd.Parameters.AddWithValue("@MATHUOC", dt.MaThuoc1);
+                    cmd.Parameters.AddWithValue("@SOLUONG", dt.SoLuong1);
+                    cmd.Parameters.AddWithValue("@MACACHDUNG", dt.MaCD1);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        public bool sua(LapDonThuocDTO dt)
+        {
+            string query = string.Empty;
+            query += "update DONTHUOC set MATHUOC=@MATHUOC,SOLUONG=@SOLUONG,MACACHDUNG=@MACACHDUNG where MAPK=@MAPK and MATHUOC=@MATHUOC";
+
+
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            {
+
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@MAPK", dt.MaPK1);
+                    cmd.Parameters.AddWithValue("@MATHUOC", dt.MaThuoc1);
+                    cmd.Parameters.AddWithValue("@SOLUONG", dt.SoLuong1);
+                    cmd.Parameters.AddWithValue("@MACACHDUNG", dt.MaCD1);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        public bool xoa(LapDonThuocDTO dt)
+        {
+            string query = string.Empty;
+            query += "delete from DONTHUOC where mathuoc=@MATHUOC and mapk=@MAPK";
+
+
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            {
+
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    cmd.Parameters.AddWithValue("@MAPK", dt.MaPK1);
+                    cmd.Parameters.AddWithValue("@MATHUOC", dt.MaThuoc1);
+                   
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public List<LapDonThuocDTO> select(string s)
         {
             string query = string.Empty;
-            query += "SELECT BN.HOTEN,TrieuChung,TenLoaiBenh,DT.MaThuoc,TenThuoc,SoLuong,TenDonVi,DonGia,CachDung ";
+            query += "SELECT BN.HOTEN,TrieuChung,TenLoaiBenh,DT.MaThuoc,TenThuoc,SoLuong,TenDonVi,DonGia,DT.MACACHDUNG,CachDung ";
 
             query += "FROM DONTHUOC DT ";
 
-            query += "JOIN PHIEUKHAM PK ON DT.MAPK=PK.MAPK ";
+            query += "RIGHT JOIN PHIEUKHAM PK ON DT.MAPK=PK.MAPK ";
 
-            query += "JOIN CACHDUNG CD ON DT.MACACHDUNG=CD.MACD ";
-            query += "JOIN THUOC T ON T.MATHUOC= DT.MATHUOC ";
-            query += "JOIN DONVITINH DVT ON DVT.MaDV=T.MaDV ";
-            query += "JOIN BENHNHAN BN on BN.MABN=PK.MABN ";
-            query += "JOIN BENH B ON PK.MALB=B.MALB ";
-            query += "WHERE BN.MABN="+s;
+            query += "LEFT JOIN CACHDUNG CD ON DT.MACACHDUNG=CD.MACD ";
+            query += "LEFT JOIN THUOC T ON T.MATHUOC= DT.MATHUOC ";
+            query += "LEFT JOIN DONVITINH DVT ON DVT.MaDV=T.MaDV ";
+            query += " JOIN BENHNHAN BN on BN.MABN=PK.MABN ";
+            query += " JOIN BENH B ON PK.MALB=B.MALB ";
+            query += "WHERE DT.MAPK=\""+s+"\"";
 
 
             List<LapDonThuocDTO> list = new List<LapDonThuocDTO>();
@@ -115,6 +233,7 @@ namespace QLPKDAL
                                 dt.SoLuong1 =int.Parse(reader["Soluong"].ToString());
                                 dt.TenDonvi1 = reader["TenDonVi"].ToString();
                                 dt.DonGia1 = int.Parse(reader["DonGia"].ToString());
+                                dt.MaCD1 = reader["MaCachDung"].ToString();
                                 dt.CachDung1 = reader["CachDung"].ToString();
                                 dt.TenBN1 = reader["HoTen"].ToString();
                                 dt.TrieuChung1 = reader["TrieuChung"].ToString();
