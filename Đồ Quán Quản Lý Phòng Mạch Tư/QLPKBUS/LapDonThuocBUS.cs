@@ -27,5 +27,28 @@ namespace QLPKBUS
         {
             return dtdal.select(s);
         }
+        public bool them(LapDonThuocDTO dt)
+        {
+            bool re = dtdal.them(dt);
+            return re;
+        }
+        public bool sua(LapDonThuocDTO dt)
+        {
+            bool re = dtdal.sua(dt);
+            return re;
+        }
+        public bool xoa(LapDonThuocDTO dt)
+        {
+            bool re = dtdal.xoa(dt);
+            return re;
+        }
+        public DataTable loadThuoctoCombobox()
+        {
+            return dtdal.loadThuoctoCombobox();
+        }
+        public DataTable loadCDtoCombobox()
+        {
+            return dtdal.loadCDctoCombobox();
+        }
     }
 }

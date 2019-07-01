@@ -156,8 +156,6 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             DataTable dt = new DataTable();
             nvbus = new NhanVienBUS();
             dt = nvbus.loadToDataTable();
-
-
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 comboBox_TenBS.Items.Add("(" + dt.Rows[i][0] + ")\t" + dt.Rows[i][1].ToString());
@@ -236,7 +234,5 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             comboBox_LoaiBenh.Text = row.Cells[5].Value.ToString();
 
         }
-
-        
     }
 }
