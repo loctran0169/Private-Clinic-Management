@@ -370,6 +370,9 @@
     <EmbeddedResource Include="rpDoanhThu.resx">
       <DependentUpon>rpDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rpHoaDon.resx">
+      <DependentUpon>rpHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rpSuDungThuoc.resx">
       <DependentUpon>rpSuDungThuoc.cs</DependentUpon>
     </EmbeddedResource>

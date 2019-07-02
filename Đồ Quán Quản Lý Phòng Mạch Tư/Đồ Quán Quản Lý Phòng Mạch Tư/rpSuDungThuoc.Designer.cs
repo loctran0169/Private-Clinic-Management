@@ -32,11 +32,11 @@
             this.date = new DevExpress.XtraReports.UI.XRLabel();
             this.print = new DevExpress.XtraReports.UI.PrintableComponentContainer();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.thang = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.thang = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -75,6 +75,28 @@
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // thang
+            // 
+            this.thang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thang.LocationFloat = new DevExpress.Utils.PointFloat(210.4167F, 67.00001F);
+            this.thang.Multiline = true;
+            this.thang.Name = "thang";
+            this.thang.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.thang.SizeF = new System.Drawing.SizeF(179.1667F, 23F);
+            this.thang.StylePriority.UseFont = false;
+            this.thang.Text = "Tháng:";
+            // 
+            // xrLabel4
+            // 
+            this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(489.3333F, 36.12501F);
+            this.xrLabel4.Multiline = true;
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(166.6667F, 43.4583F);
+            this.xrLabel4.StylePriority.UseFont = false;
+            this.xrLabel4.Text = "Địa chỉ: Số 306 Đại lộ Bình Dương,Tp. Thủ Dầu Một, Bình Dương";
+            // 
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,28 +122,6 @@
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // xrLabel4
-            // 
-            this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(489.3333F, 36.12501F);
-            this.xrLabel4.Multiline = true;
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(166.6667F, 43.4583F);
-            this.xrLabel4.StylePriority.UseFont = false;
-            this.xrLabel4.Text = "Địa chỉ: Số 306 Đại lộ Bình Dương,Tp. Thủ Dầu Một, Bình Dương";
-            // 
-            // thang
-            // 
-            this.thang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thang.LocationFloat = new DevExpress.Utils.PointFloat(210.4167F, 67.00001F);
-            this.thang.Multiline = true;
-            this.thang.Name = "thang";
-            this.thang.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.thang.SizeF = new System.Drawing.SizeF(179.1667F, 23F);
-            this.thang.StylePriority.UseFont = false;
-            this.thang.Text = "Tháng:";
             // 
             // rpSuDungThuoc
             // 
