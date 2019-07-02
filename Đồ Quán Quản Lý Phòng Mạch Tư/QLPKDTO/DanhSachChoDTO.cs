@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLPKDTO
 {
-    public class DanhSachKhamBenhDTO
+    public class DanhSachChoDTO
     {
 
         private string MaBN;
@@ -17,7 +17,7 @@ namespace QLPKDTO
         private string SDT;
         private DateTime NgayKham;
 
-       public DanhSachKhamBenhDTO()
+       public DanhSachChoDTO()
         {
 
         }

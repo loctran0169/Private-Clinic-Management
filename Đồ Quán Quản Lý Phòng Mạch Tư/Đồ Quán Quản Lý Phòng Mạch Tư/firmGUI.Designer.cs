@@ -183,7 +183,7 @@
             // 
             // barButtonItem7
             // 
-            this.barButtonItem7.Caption = "Lập Danh Sách Khám Bệnh";
+            this.barButtonItem7.Caption = "Danh Sách Chờ";
             this.barButtonItem7.Id = 12;
             this.barButtonItem7.ImageOptions.Image = global::Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư.Properties.Resources.danh_sách_khám_bệnh;
             this.barButtonItem7.Name = "barButtonItem7";

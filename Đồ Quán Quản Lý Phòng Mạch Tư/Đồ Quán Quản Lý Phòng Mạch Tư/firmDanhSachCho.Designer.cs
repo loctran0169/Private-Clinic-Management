@@ -1,6 +1,6 @@
 ﻿namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
-    partial class firmLapDanhSachKhamBenh
+    partial class firmDanhSachCho
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bt_them = new System.Windows.Forms.Button();
-            this.bt_Huy = new System.Windows.Forms.Button();
-            this.bt_luu = new System.Windows.Forms.Button();
             this.bt_load = new System.Windows.Forms.Button();
-            this.tb_maBN = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,63 +39,25 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.bt_them);
-            this.panel1.Controls.Add(this.bt_Huy);
-            this.panel1.Controls.Add(this.bt_luu);
-            this.panel1.Controls.Add(this.bt_load);
-            this.panel1.Controls.Add(this.tb_maBN);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.bt_load);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 181);
+            this.panel1.Size = new System.Drawing.Size(800, 125);
             this.panel1.TabIndex = 15;
-            // 
-            // bt_them
-            // 
-            this.bt_them.Location = new System.Drawing.Point(513, 116);
-            this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(75, 34);
-            this.bt_them.TabIndex = 36;
-            this.bt_them.Text = "Thêm";
-            this.bt_them.UseVisualStyleBackColor = true;
-            this.bt_them.Visible = false;
-            this.bt_them.Click += new System.EventHandler(this.bt_them_Click_1);
-            // 
-            // bt_Huy
-            // 
-            this.bt_Huy.Location = new System.Drawing.Point(594, 116);
-            this.bt_Huy.Name = "bt_Huy";
-            this.bt_Huy.Size = new System.Drawing.Size(75, 34);
-            this.bt_Huy.TabIndex = 35;
-            this.bt_Huy.Text = "Hủy";
-            this.bt_Huy.UseVisualStyleBackColor = true;
-            this.bt_Huy.Visible = false;
-            this.bt_Huy.Click += new System.EventHandler(this.bt_Huy_Click);
-            // 
-            // bt_luu
-            // 
-            this.bt_luu.Location = new System.Drawing.Point(675, 116);
-            this.bt_luu.Name = "bt_luu";
-            this.bt_luu.Size = new System.Drawing.Size(75, 34);
-            this.bt_luu.TabIndex = 34;
-            this.bt_luu.Text = "Lưu";
-            this.bt_luu.UseVisualStyleBackColor = true;
-            this.bt_luu.Visible = false;
-            this.bt_luu.Click += new System.EventHandler(this.bt_them_Click);
             // 
             // bt_load
             // 
-            this.bt_load.Location = new System.Drawing.Point(397, 116);
+            this.bt_load.Location = new System.Drawing.Point(0, 90);
             this.bt_load.Name = "bt_load";
             this.bt_load.Size = new System.Drawing.Size(94, 34);
             this.bt_load.TabIndex = 33;
@@ -110,49 +65,15 @@
             this.bt_load.UseVisualStyleBackColor = true;
             this.bt_load.Click += new System.EventHandler(this.bt_load_Click);
             // 
-            // tb_maBN
-            // 
-            this.tb_maBN.Location = new System.Drawing.Point(173, 124);
-            this.tb_maBN.Name = "tb_maBN";
-            this.tb_maBN.Size = new System.Drawing.Size(100, 20);
-            this.tb_maBN.TabIndex = 32;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Mã bệnh nhân";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(173, 155);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 29;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 155);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Ngày khám";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(292, 38);
+            this.label1.Location = new System.Drawing.Point(239, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 24);
+            this.label1.Size = new System.Drawing.Size(323, 24);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Lập Danh Sách Khám Bệnh";
+            this.label1.Text = "DANH SÁCH CHỜ KHÁM BỆNH";
             // 
             // dataGridView1
             // 
@@ -167,11 +88,10 @@
             this.Column6,
             this.Column7});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 181);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 125);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 269);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 325);
             this.dataGridView1.TabIndex = 16;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Column1
             // 
@@ -208,15 +128,24 @@
             this.Column7.HeaderText = "Ngày Khám";
             this.Column7.Name = "Column7";
             // 
-            // firmLapDanhSachKhamBenh
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(159, 95);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 34;
+            // 
+            // firmDanhSachCho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Name = "firmLapDanhSachKhamBenh";
+            this.Name = "firmDanhSachCho";
             this.Text = "Lập Danh Sách Phiếu Khám";
+            this.Load += new System.EventHandler(this.firmDanhSachCho_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -226,12 +155,8 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bt_load;
-        private System.Windows.Forms.TextBox tb_maBN;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -239,9 +164,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button bt_luu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Button bt_them;
-        private System.Windows.Forms.Button bt_Huy;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

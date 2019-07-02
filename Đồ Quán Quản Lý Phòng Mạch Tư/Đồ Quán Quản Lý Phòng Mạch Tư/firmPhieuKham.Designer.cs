@@ -45,18 +45,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tB_them = new System.Windows.Forms.Button();
+            this.tB_mabn = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tB_mabn);
+            this.groupBox1.Controls.Add(this.tB_them);
             this.groupBox1.Controls.Add(this.bt_xoa);
             this.groupBox1.Controls.Add(this.bt_Huy);
             this.groupBox1.Controls.Add(this.bt_sua);
@@ -82,7 +80,7 @@
             // 
             // bt_xoa
             // 
-            this.bt_xoa.Location = new System.Drawing.Point(444, 115);
+            this.bt_xoa.Location = new System.Drawing.Point(611, 115);
             this.bt_xoa.Name = "bt_xoa";
             this.bt_xoa.Size = new System.Drawing.Size(75, 29);
             this.bt_xoa.TabIndex = 19;
@@ -104,7 +102,7 @@
             // 
             // bt_sua
             // 
-            this.bt_sua.Location = new System.Drawing.Point(530, 115);
+            this.bt_sua.Location = new System.Drawing.Point(697, 115);
             this.bt_sua.Name = "bt_sua";
             this.bt_sua.Size = new System.Drawing.Size(75, 29);
             this.bt_sua.TabIndex = 17;
@@ -123,7 +121,7 @@
             // 
             // bt_Load
             // 
-            this.bt_Load.Location = new System.Drawing.Point(148, 115);
+            this.bt_Load.Location = new System.Drawing.Point(6, 127);
             this.bt_Load.Name = "bt_Load";
             this.bt_Load.Size = new System.Drawing.Size(75, 29);
             this.bt_Load.TabIndex = 15;
@@ -165,7 +163,7 @@
             this.comboBox_TenBS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TenBS.Enabled = false;
             this.comboBox_TenBS.FormattingEnabled = true;
-            this.comboBox_TenBS.Location = new System.Drawing.Point(148, 77);
+            this.comboBox_TenBS.Location = new System.Drawing.Point(148, 103);
             this.comboBox_TenBS.Name = "comboBox_TenBS";
             this.comboBox_TenBS.Size = new System.Drawing.Size(240, 21);
             this.comboBox_TenBS.TabIndex = 8;
@@ -208,7 +206,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 80);
+            this.label2.Location = new System.Drawing.Point(16, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 1;
@@ -227,49 +225,32 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column7});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 162);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 288);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Column1
+            // tB_them
             // 
-            this.Column1.HeaderText = "Mã Phiếu Khám";
-            this.Column1.Name = "Column1";
+            this.tB_them.Location = new System.Drawing.Point(530, 115);
+            this.tB_them.Name = "tB_them";
+            this.tB_them.Size = new System.Drawing.Size(75, 29);
+            this.tB_them.TabIndex = 20;
+            this.tB_them.Text = "Thêm";
+            this.tB_them.UseVisualStyleBackColor = true;
+            this.tB_them.Visible = false;
+            this.tB_them.Click += new System.EventHandler(this.tB_them_Click);
             // 
-            // Column2
+            // tB_mabn
             // 
-            this.Column2.HeaderText = "Họ Và Tên Bệnh Nhân";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Bác Sĩ Khám";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Ngày Khám";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Triệu Chứng";
-            this.Column5.Name = "Column5";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Loại Bệnh";
-            this.Column7.Name = "Column7";
+            this.tB_mabn.Location = new System.Drawing.Point(148, 77);
+            this.tB_mabn.Name = "tB_mabn";
+            this.tB_mabn.ReadOnly = true;
+            this.tB_mabn.Size = new System.Drawing.Size(86, 20);
+            this.tB_mabn.TabIndex = 21;
             // 
             // firmPhieuKham
             // 
@@ -304,12 +285,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Button bt_xoa;
+        private System.Windows.Forms.Button tB_them;
+        private System.Windows.Forms.TextBox tB_mabn;
     }
 }

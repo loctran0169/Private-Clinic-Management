@@ -180,11 +180,11 @@
     <Compile Include="firmKhoiPhuc.Designer.cs">
       <DependentUpon>firmKhoiPhuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="firmLapDanhSachKhamBenh.cs">
+    <Compile Include="firmDanhSachCho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="firmLapDanhSachKhamBenh.Designer.cs">
-      <DependentUpon>firmLapDanhSachKhamBenh.cs</DependentUpon>
+    <Compile Include="firmDanhSachCho.Designer.cs">
+      <DependentUpon>firmDanhSachCho.cs</DependentUpon>
     </Compile>
     <Compile Include="firmLapDonThuoc.cs">
       <SubType>Form</SubType>
@@ -317,8 +317,8 @@
     <EmbeddedResource Include="firmKhoiPhuc.resx">
       <DependentUpon>firmKhoiPhuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="firmLapDanhSachKhamBenh.resx">
-      <DependentUpon>firmLapDanhSachKhamBenh.cs</DependentUpon>
+    <EmbeddedResource Include="firmDanhSachCho.resx">
+      <DependentUpon>firmDanhSachCho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="firmLapDonThuoc.resx">
       <DependentUpon>firmLapDonThuoc.cs</DependentUpon>

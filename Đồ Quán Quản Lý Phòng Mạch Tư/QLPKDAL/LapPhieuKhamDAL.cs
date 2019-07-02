@@ -19,12 +19,13 @@ namespace QLPKDAL
         {
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
+        
         public List<LapPhieuKhamDTO> select()
         {
             string query = string.Empty;
-            query += "SELECT MAPK,PK.MABN,BN.HOTEN tenbn,PK.MANV,NV.HOTEN tennv,PK.MALB,TRIEUCHUNG ,TENLOAIBENH,NGAYKHAM ";
+            query += "SELECT MAPK,BN.MABN,BN.HOTEN tenbn,PK.MANV,NV.HOTEN tennv,PK.MALB,TRIEUCHUNG ,TENLOAIBENH,NGAYKHAM ";
             query += "FROM PHIEUKHAM PK  ";
-            query += "RIGHT JOIN BENHNHAN BN ON PK.MABN=BN.MABN ";
+            query += "right JOIN BENHNHAN BN ON PK.MABN=BN.MABN ";
             query += "LEFT JOIN NHANVIEN NV ON PK.MANV=NV.MANV ";
             query += "LEFT JOIN BENH B ON PK.MALB=B.MALB ";
 
@@ -49,8 +50,8 @@ namespace QLPKDAL
                         {
                             while (reader.Read())
                             {
-                                if (reader["NGAYKHAM"].ToString() != "")
-                                {
+                                
+                                
                                     LapPhieuKhamDTO ds = new LapPhieuKhamDTO();
                                     ds.MaPK1 = reader["MAPK"].ToString();
                                     ds.MaBN1 = reader["MABN"].ToString();
@@ -60,10 +61,11 @@ namespace QLPKDAL
                                     ds.MaLB1 = reader["MALB"].ToString();
                                     ds.TenLB1 = reader["TENLOAIBENH"].ToString();
                                     ds.TrieuChung1 = reader["TRIEUCHUNG"].ToString();
+                                    if (reader["NGAYKHAM"].ToString() != "")
                                     ds.NgayKham1 = (DateTime)reader["NGAYKHAM"];
 
                                     listPhieuKham.Add(ds);
-                                }
+                                
                             }
                         }
 
@@ -83,7 +85,7 @@ namespace QLPKDAL
         public bool sua(LapPhieuKhamDTO pk)
         {
             string query = string.Empty;
-            query += "update PHIEUKHAM set malb=@malb,manv=@manv where mapk=@mapk";
+            query += "update PHIEUKHAM set malb=@malb,manv=@manv,ngaykham=@ngaykham where mapk=@mapk";
 
 
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
@@ -98,6 +100,7 @@ namespace QLPKDAL
                     cmd.Parameters.AddWithValue("@malb", pk.MaLB1);
                     cmd.Parameters.AddWithValue("@manv", pk.MaBS1);
                     cmd.Parameters.AddWithValue("@mapk", pk.MaPK1);
+                    cmd.Parameters.AddWithValue("@ngaykham", pk.NgayKham1);
                     try
                     {
                         con.Open();

@@ -14,15 +14,15 @@ using System.Windows.Forms;
 
 namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 {
-    public partial class firmLapDanhSachKhamBenh : Form
+    public partial class firmDanhSachCho : Form
     {
-        public firmLapDanhSachKhamBenh()
+        public firmDanhSachCho()
         {
             InitializeComponent();
         }
-        private DanhSachKhamBenhBUS dsbus;
+        private DanhSachChoBUS dsbus;
         private PhieuKhamBUS pkbus;
-        private void loadDanhSach(List<DanhSachKhamBenhDTO> listdanhsach)
+        private void loadDanhSach(List<DanhSachChoDTO> listdanhsach)
         {
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = null;
@@ -71,7 +71,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             NgayKham.DataPropertyName = "NgayKham1";
             dataGridView1.Columns.Add(NgayKham);
 
-            var bindingList = new BindingList<DanhSachKhamBenhDTO>(listdanhsach);
+            var bindingList = new BindingList<DanhSachChoDTO>(listdanhsach);
             var source = new BindingSource(bindingList, null);
             dataGridView1.DataSource = source;
 
@@ -84,27 +84,21 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void bt_load_Click(object sender, EventArgs e)
         {
-            dsbus = new DanhSachKhamBenhBUS();
-            List<DanhSachKhamBenhDTO> listdanhsach = dsbus.select();
+            dsbus = new DanhSachChoBUS();
+            string s = dateTimePicker1.Value.Year.ToString()+"-"+dateTimePicker1.Value.Month.ToString() + "-"+ dateTimePicker1.Value.Day.ToString() + "-";
+            List<DanhSachChoDTO> listdanhsach = dsbus.select(s);
             if (listdanhsach == null)
                 MessageBox.Show("Load danh sách bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu");
             else
             {
                 MessageBox.Show("Load bệnh nhân thành công");
-                bt_them.Visible = true;
+                
             }
 
             loadDanhSach(listdanhsach);
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = new DataGridViewRow();
-            row = dataGridView1.Rows[e.RowIndex];
-
-            tb_maBN.Text = row.Cells[0].Value.ToString();
-            
-        }
+        
         private string TaoMaTuDong(string key)
         {
             DataTable dt = new DataTable();
@@ -149,49 +143,23 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void bt_them_Click(object sender, EventArgs e)
         {
-
-            if (tb_maBN.Text != "")
-            {
-                PhieuKhamDTO pk = new PhieuKhamDTO();
-                pk.MaPK1 = TaoMaTuDong("PK");
-                pk.MaBN1 = tb_maBN.Text;
-                pk.NgayKham1 = dateTimePicker1.Value.Date;
-                pk.MaLB1 = "";
-                pk.MaNV1 = "";
-
-
-                PhieuKhamBUS pkbus = new PhieuKhamBUS();
-                bool kq = pkbus.them(pk);
-                if (kq == true)
-                {
-                    MessageBox.Show("Thêm bệnh nhân thành công");
-                    dsbus = new DanhSachKhamBenhBUS();
-                    List<DanhSachKhamBenhDTO> listdanhsach = dsbus.select();                   
-
-                    loadDanhSach(listdanhsach);
-                }
-                else
-                {
-                    MessageBox.Show("Thêm bệnh nhân thất bại");
-
-                }
-            }
+            
         }
 
         private void bt_them_Click_1(object sender, EventArgs e)
         {
-            dateTimePicker1.Enabled = true;
-            bt_Huy.Visible = true;
-            bt_luu.Visible = true;
-            bt_them.Visible = false;
+            
         }
 
         private void bt_Huy_Click(object sender, EventArgs e)
         {
-            bt_them.Visible = true;
-            dateTimePicker1.Enabled = false;
-            bt_luu.Visible = false;
-            bt_Huy.Visible = false;
+            
+        }
+
+        private void firmDanhSachCho_Load(object sender, EventArgs e)
+        {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy-MM-dd";
         }
     }
 }
