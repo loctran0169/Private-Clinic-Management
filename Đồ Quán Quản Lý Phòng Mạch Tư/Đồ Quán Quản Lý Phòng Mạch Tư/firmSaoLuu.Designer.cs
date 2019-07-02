@@ -59,6 +59,7 @@
             // 
             // cbb_server
             // 
+            this.cbb_server.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_server.FormattingEnabled = true;
             this.cbb_server.Items.AddRange(new object[] {
             "mysql-1325-0.cloudclusters.net"});
@@ -101,6 +102,7 @@
             // 
             this.tb_thumuc.Location = new System.Drawing.Point(118, 65);
             this.tb_thumuc.Name = "tb_thumuc";
+            this.tb_thumuc.ReadOnly = true;
             this.tb_thumuc.Size = new System.Drawing.Size(241, 20);
             this.tb_thumuc.TabIndex = 5;
             // 

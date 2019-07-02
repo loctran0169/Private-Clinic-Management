@@ -87,11 +87,10 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 {
                     MessageBox.Show("Sao lưu thất bại");
                 }
-                Load();
             });
             thread.Start();   
-        }
 
+        }
         private void brower_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dlg = new FolderBrowserDialog();
@@ -102,9 +101,9 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             }
             else
                 return;
-            Load();
+            load();
         }
-        public void Load()
+        public void load()
         {
            string[] filePahts = Directory.GetFiles(tb_thumuc.Text,"*.bak");
             List<string> list = new List<string>(filePahts);
