@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_pk = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.bt_tim = new System.Windows.Forms.Button();
             this.bt_xem = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,15 +46,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.tb_pk = new System.Windows.Forms.TextBox();
+            this.gchd = new DevExpress.XtraGrid.GridControl();
+            this.gvhd = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gchd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvhd)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -81,6 +83,24 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Hóa Đơn";
+            // 
+            // tb_pk
+            // 
+            this.tb_pk.Location = new System.Drawing.Point(172, 49);
+            this.tb_pk.Name = "tb_pk";
+            this.tb_pk.Size = new System.Drawing.Size(124, 20);
+            this.tb_pk.TabIndex = 21;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(172, 106);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(85, 17);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Thanh Toán";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // bt_tim
             // 
@@ -119,9 +139,11 @@
             this.bt_in.TabIndex = 15;
             this.bt_in.Text = "In Hóa Đơn";
             this.bt_in.UseVisualStyleBackColor = true;
+            this.bt_in.Click += new System.EventHandler(this.bt_in_Click);
             // 
             // tb_hoten
             // 
+            this.tb_hoten.Enabled = false;
             this.tb_hoten.Location = new System.Drawing.Point(172, 76);
             this.tb_hoten.Name = "tb_hoten";
             this.tb_hoten.Size = new System.Drawing.Size(192, 20);
@@ -129,6 +151,7 @@
             // 
             // tb_mahd
             // 
+            this.tb_mahd.Enabled = false;
             this.tb_mahd.Location = new System.Drawing.Point(172, 24);
             this.tb_mahd.Name = "tb_mahd";
             this.tb_mahd.Size = new System.Drawing.Size(192, 20);
@@ -136,6 +159,7 @@
             // 
             // tb_tongtien
             // 
+            this.tb_tongtien.Enabled = false;
             this.tb_tongtien.Location = new System.Drawing.Point(513, 72);
             this.tb_tongtien.Name = "tb_tongtien";
             this.tb_tongtien.Size = new System.Drawing.Size(200, 20);
@@ -143,6 +167,7 @@
             // 
             // tb_tienthuoc
             // 
+            this.tb_tienthuoc.Enabled = false;
             this.tb_tienthuoc.Location = new System.Drawing.Point(513, 46);
             this.tb_tienthuoc.Name = "tb_tienthuoc";
             this.tb_tienthuoc.Size = new System.Drawing.Size(200, 20);
@@ -150,6 +175,7 @@
             // 
             // tb_tienkham
             // 
+            this.tb_tienkham.Enabled = false;
             this.tb_tienkham.Location = new System.Drawing.Point(513, 20);
             this.tb_tienkham.Name = "tb_tienkham";
             this.tb_tienkham.Size = new System.Drawing.Size(200, 20);
@@ -209,75 +235,74 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Mã Hóa Đơn";
             // 
-            // dataGridView1
+            // gchd
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenThuoc,
-            this.SoLuong,
-            this.DonGia,
-            this.CachDung});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 188);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 262);
-            this.dataGridView1.TabIndex = 3;
+            this.gchd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gchd.Location = new System.Drawing.Point(0, 188);
+            this.gchd.MainView = this.gvhd;
+            this.gchd.Name = "gchd";
+            this.gchd.Size = new System.Drawing.Size(800, 262);
+            this.gchd.TabIndex = 2;
+            this.gchd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvhd});
             // 
-            // TenThuoc
+            // gvhd
             // 
-            this.TenThuoc.DataPropertyName = "TenThuoc";
-            this.TenThuoc.HeaderText = "Tên Thuốc";
-            this.TenThuoc.Name = "TenThuoc";
+            this.gvhd.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
+            this.gvhd.GridControl = this.gchd;
+            this.gvhd.Name = "gvhd";
+            this.gvhd.OptionsView.ShowGroupPanel = false;
             // 
-            // SoLuong
+            // gridColumn1
             // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
+            this.gridColumn1.Caption = "Tên Thuốc";
+            this.gridColumn1.FieldName = "TenThuoc";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
-            // DonGia
+            // gridColumn2
             // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
+            this.gridColumn2.Caption = "Số Lượng";
+            this.gridColumn2.FieldName = "SoLuong";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
-            // CachDung
+            // gridColumn3
             // 
-            this.CachDung.DataPropertyName = "CachDung";
-            this.CachDung.HeaderText = "Cách Dùng";
-            this.CachDung.Name = "CachDung";
+            this.gridColumn3.Caption = "Đơn Giá";
+            this.gridColumn3.FieldName = "DonGia";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
             // 
-            // checkBox1
+            // gridColumn4
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(172, 106);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 17);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Thanh Toán";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // tb_pk
-            // 
-            this.tb_pk.Location = new System.Drawing.Point(172, 49);
-            this.tb_pk.Name = "tb_pk";
-            this.tb_pk.Size = new System.Drawing.Size(124, 20);
-            this.tb_pk.TabIndex = 21;
+            this.gridColumn4.Caption = "Cách Dùng";
+            this.gridColumn4.FieldName = "CachDung";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
             // 
             // firmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gchd);
             this.Controls.Add(this.groupBox1);
             this.Name = "firmHoaDon";
             this.Text = "Hóa Đơn";
             this.Load += new System.EventHandler(this.firmHoaDon_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gchd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvhd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -298,14 +323,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button bt_in;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button bt_xem;
         private System.Windows.Forms.Button bt_tim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CachDung;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox tb_pk;
+        private DevExpress.XtraGrid.GridControl gchd;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvhd;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

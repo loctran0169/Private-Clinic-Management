@@ -78,6 +78,7 @@
             // 
             // cbb_server
             // 
+            this.cbb_server.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_server.FormattingEnabled = true;
             this.cbb_server.Items.AddRange(new object[] {
             "mysql-1325-0.cloudclusters.net"});
@@ -104,6 +105,7 @@
             // 
             this.tb_path.Location = new System.Drawing.Point(124, 137);
             this.tb_path.Name = "tb_path";
+            this.tb_path.ReadOnly = true;
             this.tb_path.Size = new System.Drawing.Size(197, 20);
             this.tb_path.TabIndex = 9;
             // 

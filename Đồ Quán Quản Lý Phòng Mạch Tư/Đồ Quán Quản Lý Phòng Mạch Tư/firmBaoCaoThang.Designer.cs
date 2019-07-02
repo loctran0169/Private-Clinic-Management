@@ -154,8 +154,6 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Tỷ Lệ (%)";
-            this.gridColumn7.DisplayFormat.FormatString = "###,###";
-            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "TyLe";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;

@@ -272,6 +272,12 @@
     <Compile Include="rpDoanhThu.Designer.cs">
       <DependentUpon>rpDoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="rpHoaDon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rpHoaDon.Designer.cs">
+      <DependentUpon>rpHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="rpSuDungThuoc.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -363,6 +369,9 @@
     </Compile>
     <EmbeddedResource Include="rpDoanhThu.resx">
       <DependentUpon>rpDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpHoaDon.resx">
+      <DependentUpon>rpHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rpSuDungThuoc.resx">
       <DependentUpon>rpSuDungThuoc.cs</DependentUpon>
