@@ -43,11 +43,15 @@
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.name = new DevExpress.XtraReports.UI.XRLabel();
+            this.ngaykham = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.ngaykham,
+            this.name,
             this.xrLabel3,
             this.xrLabel1,
             this.xrLabel4,
@@ -74,7 +78,7 @@
             // 
             // print
             // 
-            this.print.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 262.9167F);
+            this.print.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 248.3333F);
             this.print.Name = "print";
             this.print.SizeF = new System.Drawing.SizeF(617.0833F, 75F);
             // 
@@ -95,7 +99,7 @@
             this.xrLabel6,
             this.xrLabel5,
             this.date});
-            this.xrPanel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 394.5833F);
+            this.xrPanel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 379.9999F);
             this.xrPanel1.Name = "xrPanel1";
             this.xrPanel1.SizeF = new System.Drawing.SizeF(617.0833F, 179.5834F);
             // 
@@ -137,7 +141,7 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 337.9167F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 323.3333F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -146,7 +150,7 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(459.375F, 10.00001F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(444.7917F, 61.04167F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -156,7 +160,7 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(141.9167F, 10.00001F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(127.3333F, 61.04167F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -167,13 +171,31 @@
             // xrLabel4
             // 
             this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(459.375F, 36.12501F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(444.7917F, 87.16667F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel4.SizeF = new System.Drawing.SizeF(166.6667F, 43.4583F);
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.Text = "Địa chỉ: Số 306 Đại lộ Bình Dương,Tp. Thủ Dầu Một, Bình Dương";
+            // 
+            // name
+            // 
+            this.name.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 178.0834F);
+            this.name.Multiline = true;
+            this.name.Name = "name";
+            this.name.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.name.SizeF = new System.Drawing.SizeF(350.2499F, 23F);
+            this.name.Text = "Họ Tên bệnh nhân:";
+            // 
+            // ngaykham
+            // 
+            this.ngaykham.LocationFloat = new DevExpress.Utils.PointFloat(393.1249F, 178.0834F);
+            this.ngaykham.Multiline = true;
+            this.ngaykham.Name = "ngaykham";
+            this.ngaykham.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.ngaykham.SizeF = new System.Drawing.SizeF(233.9584F, 23F);
+            this.ngaykham.Text = "Ngày Khám:";
             // 
             // rpHoaDon
             // 
@@ -203,5 +225,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
+        private DevExpress.XtraReports.UI.XRLabel ngaykham;
+        private DevExpress.XtraReports.UI.XRLabel name;
     }
 }

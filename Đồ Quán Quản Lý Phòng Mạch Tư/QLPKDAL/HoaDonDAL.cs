@@ -45,7 +45,7 @@ namespace QLPKDAL
             try
             {
                 string query = string.Empty;
-                query += "SELECT bn.HoTen,sum(SoLuong*DonGia) as 'TienThuoc' ";
+                query += "SELECT bn.HoTen,sum(SoLuong*DonGia) as 'TienThuoc', NgayKham ";
                 query += "FROM DONTHUOC dt, PHIEUKHAM pk, THUOC t,BENHNHAN bn ";
                 query += "where pk.MaPK=@pk and pk.MaPK=dt.MaPK and t.MaThuoc=dt.MaThuoc and bn.MaBN=pk.MaBN ";
                 //query += "and not exists (select* from HOADON hd where pk.MaPK = hd.MaPK) ";

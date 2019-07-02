@@ -153,6 +153,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
             rpHoaDon rp = new rpHoaDon();
             rp.GridControl = gchd;
+            rp.setName(tb_hoten.Text);
+            rp.setNgayKham((DateTime)pk.Rows[0][2]);
             ReportPrintTool printTool = new ReportPrintTool(rp);
             printTool.ShowPreviewDialog();
 

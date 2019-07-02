@@ -26,6 +26,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 print.PrintableComponent = control;
             }
         }
+        public void setName(string t) { name.Text = "Họ Tên Bệnh nhân: " + t; }
+        public void setNgayKham(DateTime t) { ngaykham.Text = "Ngày khám: " + t.ToString("dd-MM-yyyy"); }
         private void date_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             date.Text = string.Format("Bình Dương, Ngày {0} tháng {1} năm {2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
