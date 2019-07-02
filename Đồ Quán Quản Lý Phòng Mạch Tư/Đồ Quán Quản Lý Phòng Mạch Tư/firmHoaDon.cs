@@ -1,4 +1,5 @@
-﻿using QLPKBUS;
+﻿using DevExpress.XtraReports.UI;
+using QLPKBUS;
 using QLPKDTO;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
     public partial class firmHoaDon : Form
     {
         HoaDonBUS bus = new HoaDonBUS();
-        DataTable gv = new DataTable();
+        DataTable dt_gv = new DataTable();
         DataTable pk = new DataTable();
         public firmHoaDon()
         {
@@ -89,8 +90,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                     checkBox1.Checked = true;
                 }
                 tb_tongtien.Text = (int.Parse(tb_tienkham.Text) +int.Parse(tb_tienthuoc.Text)).ToString();
-                gv = bus.loadDuLieu(tb_pk.Text);
-                dataGridView1.DataSource = gv;
+                dt_gv = bus.loadDuLieu(tb_pk.Text);
+                gchd.DataSource = dt_gv;
             }
             catch(Exception ex)
             {
@@ -139,6 +140,22 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 return ma = "HD0" + coso;
             else
                 return ma = "HD" + coso;
+        }
+
+        private void bt_in_Click(object sender, EventArgs e)
+        {
+            if (dt_gv.Rows.Count == 0)
+            {
+                MessageBox.Show("Chưa có thông tin");
+                return;
+            }
+            gvhd.BestFitColumns();
+
+            rpHoaDon rp = new rpHoaDon();
+            rp.GridControl = gchd;
+            ReportPrintTool printTool = new ReportPrintTool(rp);
+            printTool.ShowPreviewDialog();
+
         }
     }
 }
