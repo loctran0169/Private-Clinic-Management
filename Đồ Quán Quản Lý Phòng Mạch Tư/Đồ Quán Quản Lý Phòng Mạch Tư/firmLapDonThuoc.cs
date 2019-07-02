@@ -44,7 +44,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             dt1 = dtbus1.loadThuoctoCombobox();
 
            
-            for(int i=0;i<dt.Rows.Count;i++)
+            for(int i=0;i<dt1.Rows.Count;i++)
             {
                 comboBox_Loaithuoc.Items.Add("(" + dt1.Rows[i][0] + ")\t" + dt1.Rows[i][1].ToString());
 
@@ -53,7 +53,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             DataTable dt2 = new DataTable();
             dtbus2 = new LapDonThuocBUS();
             dt2 = dtbus2.loadCDtoCombobox();
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < dt2.Rows.Count; i++)
             {
                 comboBox_cachdung.Items.Add("(" + dt2.Rows[i][0] + ")\t" + dt2.Rows[i][1].ToString());
 
