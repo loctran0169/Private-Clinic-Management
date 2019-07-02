@@ -17,11 +17,9 @@ namespace QLPKBUS
             lsDAL = new LichSuDAL();
         }
 
-        public DataTable loadDuLieuloadDuLieuLichSuDangNhap()
+        public DataTable loadDuLieuloadDuLieuLichSuDangNhap(DateTime dt)
         {
-            DataTable k = new DataTable();
-            k = lsDAL.loadDuLieuLichSuDangNhap();
-            return k;
+            return lsDAL.loadDuLieuLichSuDangNhap(dt);
 
         }
         public bool them(LichSuDTO lsDTO)

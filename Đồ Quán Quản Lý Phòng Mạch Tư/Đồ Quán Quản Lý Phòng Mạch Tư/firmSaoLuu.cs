@@ -10,6 +10,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,7 +41,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 conn = new MySqlConnection();
                 conn.ConnectionString = connString;
                 conn.Open();
-                MessageBox.Show("Kết nối database thành công");
+                this.Focus();
+                MessageBox.Show("Kết nối database thành công");              
                 flag = 1;
             }
             catch (MySqlException ex)
@@ -61,28 +63,33 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 MessageBox.Show("Chưa kết nối database");
                 return;
             }
-            try
+            Thread thread = new Thread((obj) =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connString))
+                try
                 {
-                    using (MySqlCommand cmd = new MySqlCommand())
+                    using (MySqlConnection conn = new MySqlConnection(connString))
                     {
-                        using (MySqlBackup mb = new MySqlBackup(cmd))
+                        using (MySqlCommand cmd = new MySqlCommand())
                         {
-                            cmd.Connection = conn;
-                            conn.Open();
-                            string file = tb_thumuc.Text + "\\" + conn.Database.ToString() + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak";
-                            mb.ExportToFile(file);
-                            conn.Close();
+                            using (MySqlBackup mb = new MySqlBackup(cmd))
+                            {
+                                cmd.Connection = conn;
+                                conn.Open();
+                                string file = tb_thumuc.Text + "\\" + conn.Database.ToString() + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak";
+                                mb.ExportToFile(file);
+                                MessageBox.Show("Sao Lưu thành công");
+                                conn.Close();
+                            }
                         }
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Sao lưu thất bại");
-            }
-            Load();
+                catch
+                {
+                    MessageBox.Show("Sao lưu thất bại");
+                }
+                Load();
+            });
+            thread.Start();   
         }
 
         private void brower_Click(object sender, EventArgs e)

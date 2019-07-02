@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,31 +22,6 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         public firmKhoiPhuc()
         {
             InitializeComponent();
-        }
-        public void Check()
-        {
-            if (string.IsNullOrEmpty(cbb_server.Text))
-            {
-                MessageBox.Show("Chưa chọn database");
-                return;
-            }
-            else if (string.IsNullOrEmpty(tb_tk.Text))
-            {
-                MessageBox.Show("Chưa nhập tài khoản database");
-                tb_tk.Focus();
-                return;
-            }
-            else if (string.IsNullOrEmpty(tb_dbname.Text))
-            {
-                MessageBox.Show("Chưa nhập tên database");
-                tb_dbname.Focus();
-                return;
-            }
-            else if (string.IsNullOrEmpty(tb_path.Text))
-            {
-                MessageBox.Show("Chưa chọn file database");
-                return;
-            }
         }
         private void bt_restore_Click(object sender, EventArgs e)
         {
@@ -66,49 +42,41 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 MessageBox.Show("Chưa nhập mật khẩu");
                 tb_mk.Focus();
                 return;
-            }
-            else if (string.IsNullOrEmpty(tb_port.Text))
-            {
-                MessageBox.Show("Chưa nhập port");
-                tb_port.Focus();
-                return;
-            }
-            else if (string.IsNullOrEmpty(tb_dbname.Text))
-            {
-                MessageBox.Show("Chưa nhập tên Database");
-                tb_dbname.Focus();
-                return;
-            }
+            }          
             else if (string.IsNullOrEmpty(tb_path.Text))
             {
                 MessageBox.Show("Chưa chọn thư mục");
                 return;
             }
-            try
+            Thread t1 = new Thread((obj) =>
             {
-                //connString= "SERVER="+cbb_server.Text+";PORT="+tb_port.Text+";DATABASE="+tb_dbname.Text+";UID="+tb_tk.Text+";PASSWORD="+tb_mk.Text+";Charset = utf8";
-                //connString= "Data Source = localhost; Initial Catalog = QLPK; User ID = root; Password = angel1999";
-                connString = "SERVER=mysql-1325-0.cloudclusters.net;PORT=10001;DATABASE=QLKP;UID=loctran0169;PASSWORD=angel1999;Charset = utf8";
-                using (MySqlConnection conn = new MySqlConnection(connString))
+                try
                 {
-                    using (MySqlCommand cmd = new MySqlCommand())
+                    connString = "SERVER=" + cbb_server.Text + ";PORT=10001;DATABASE=QLKP;UID=" + tb_tk.Text + ";PASSWORD=" + tb_mk.Text + ";Charset = utf8";
+                    //connString= "Data Source = localhost; Initial Catalog = QLPK; User ID = root; Password = angel1999";
+                    //connString = "SERVER=mysql-1325-0.cloudclusters.net;PORT=10001;DATABASE=QLKP;UID=loctran0169;PASSWORD=angel1999;Charset = utf8";
+                    using (MySqlConnection conn = new MySqlConnection(connString))
                     {
-                        using (MySqlBackup mb = new MySqlBackup(cmd))
+                        using (MySqlCommand cmd = new MySqlCommand())
                         {
-                            cmd.Connection = conn;
-                            conn.Open();
-                            mb.ImportFromFile(file);
-                            MessageBox.Show("Khôi phục thành công");
-                            conn.Close();
+                            using (MySqlBackup mb = new MySqlBackup(cmd))
+                            {
+                                cmd.Connection = conn;
+                                conn.Open();
+                                mb.ImportFromFile(file);
+                                MessageBox.Show("Khôi phục thành công");
+                                conn.Close();
+                            }
                         }
                     }
                 }
-            }
-            catch(Exception ex)
-            {
-                string x = ex.Message;
-                MessageBox.Show("Khôi phục thất bại");
-            }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+                    MessageBox.Show("Kiểm tra tài khoản DataBase hoặc kết nối");
+                }
+            });
+            t1.Start();          
         }
 
         private void button1_Click(object sender, EventArgs e)

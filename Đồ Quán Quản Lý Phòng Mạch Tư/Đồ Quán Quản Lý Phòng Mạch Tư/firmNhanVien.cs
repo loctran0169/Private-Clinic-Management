@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,8 +29,9 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         {
             KhoaButton();
             nvBUS = new NhanVienBUS();
-            dataGridViewNhanVien.DataSource = nvBUS.loadDuLieuNhanVien();
+            
         }
+
         private void MoKhoaButton()
         {
             txtHoVaTen.Enabled = true;

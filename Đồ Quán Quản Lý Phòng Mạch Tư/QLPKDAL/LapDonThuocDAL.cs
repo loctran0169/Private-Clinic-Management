@@ -193,13 +193,13 @@ namespace QLPKDAL
         public List<LapDonThuocDTO> select(string s)
         {
             string query = string.Empty;
-            query += "SELECT BN.HOTEN,TrieuChung,TenLoaiBenh,DT.MaThuoc,TenThuoc,SoLuong,TenDonVi,DonGia,DT.MACACHDUNG,CachDung ";
+            query += "SELECT BN.HOTEN,TrieuChung,TenLoaiBenh,DT.MaThuoc,TenThuoc,SoLuong,TenDonVi,DonGia,DT.MACD,CachDung ";
 
             query += "FROM DONTHUOC DT ";
 
             query += "RIGHT JOIN PHIEUKHAM PK ON DT.MAPK=PK.MAPK ";
 
-            query += "LEFT JOIN CACHDUNG CD ON DT.MACACHDUNG=CD.MACD ";
+            query += "LEFT JOIN CACHDUNG CD ON DT.MACD=CD.MACD ";
             query += "LEFT JOIN THUOC T ON T.MATHUOC= DT.MATHUOC ";
             query += "LEFT JOIN DONVITINH DVT ON DVT.MaDV=T.MaDV ";
             query += " JOIN BENHNHAN BN on BN.MABN=PK.MABN ";
@@ -233,7 +233,7 @@ namespace QLPKDAL
                                 dt.SoLuong1 =int.Parse(reader["Soluong"].ToString());
                                 dt.TenDonvi1 = reader["TenDonVi"].ToString();
                                 dt.DonGia1 = int.Parse(reader["DonGia"].ToString());
-                                dt.MaCD1 = reader["MaCachDung"].ToString();
+                                dt.MaCD1 = reader["MACD"].ToString();
                                 dt.CachDung1 = reader["CachDung"].ToString();
                                 dt.TenBN1 = reader["HoTen"].ToString();
                                 dt.TrieuChung1 = reader["TrieuChung"].ToString();

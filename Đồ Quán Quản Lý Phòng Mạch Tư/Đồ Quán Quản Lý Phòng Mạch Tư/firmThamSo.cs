@@ -10,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -85,20 +86,20 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void bt_load_Click(object sender, EventArgs e)
         {
-            
-            tsbus = new ThamSoBUS();
-            List<ThamSoDTO> listthamso = new List<ThamSoDTO>();
-            listthamso = tsbus.select();
+                tsbus = new ThamSoBUS();
+                List<ThamSoDTO> listthamso = new List<ThamSoDTO>();
+                listthamso = tsbus.select();
 
-            if (listthamso == null)
-                MessageBox.Show("Load danh sách tham số thất bại. Vui lòng kiểm tra lại dũ liệu");
-            else
-            {
-                MessageBox.Show("Load tham số thành công");
-                bt_sua.Visible = true;
-            }
-            loadData_Vao_GridView(listthamso);
-            HienThiThongTinThuoc();
+                if (listthamso == null)
+                    MessageBox.Show("Load danh sách tham số thất bại. Vui lòng kiểm tra lại dũ liệu");
+                else
+                {
+                    MessageBox.Show("Load tham số thành công");
+                    bt_sua.Visible = true;
+                }
+                loadData_Vao_GridView(listthamso);
+                HienThiThongTinThuoc();
+            
         }
 
         private void HienThiThongTinThuoc()
