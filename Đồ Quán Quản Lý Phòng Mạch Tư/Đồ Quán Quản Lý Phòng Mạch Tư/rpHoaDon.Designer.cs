@@ -78,9 +78,9 @@
             // 
             // print
             // 
-            this.print.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 248.3333F);
+            this.print.LocationFloat = new DevExpress.Utils.PointFloat(0F, 248.3333F);
             this.print.Name = "print";
-            this.print.SizeF = new System.Drawing.SizeF(617.0833F, 75F);
+            this.print.SizeF = new System.Drawing.SizeF(650F, 74.99998F);
             // 
             // date
             // 
