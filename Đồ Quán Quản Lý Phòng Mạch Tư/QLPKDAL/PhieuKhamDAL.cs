@@ -25,7 +25,7 @@ namespace QLPKDAL
         {
 
             string query = string.Empty;
-            query += "INSERT INTO PHIEUKHAM VALUES (@mapk,@mabn,@manv,@malb,@ngaykham,@ngaykhamlai)";
+            query += "INSERT INTO PHIEUKHAM VALUES (@mapk,@mabn,@manv,@malb,@ngaykham)";
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
 
@@ -39,7 +39,7 @@ namespace QLPKDAL
                     cmd.Parameters.AddWithValue("@manv", pk.MaNV1);
                     cmd.Parameters.AddWithValue("@malb", pk.MaLB1);
                     cmd.Parameters.AddWithValue("@ngaykham", pk.NgayKham1);
-                    cmd.Parameters.AddWithValue("@ngaykhamlai", pk.NgayKhamLai1);
+                    
                     try
                     {
                         con.Open();

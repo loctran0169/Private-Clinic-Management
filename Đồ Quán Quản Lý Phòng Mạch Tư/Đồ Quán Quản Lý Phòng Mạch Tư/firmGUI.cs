@@ -172,10 +172,10 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(firmLapDanhSachKhamBenh));
+            Form frm = kiemtraform(typeof(firmDanhSachCho));
             if (frm == null)
             {
-                firmLapDanhSachKhamBenh forms = new firmLapDanhSachKhamBenh();
+                firmDanhSachCho forms = new firmDanhSachCho();
                 forms.MdiParent = this;
                 forms.Show();
             }
