@@ -87,7 +87,10 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 us.TaiKhoan = txtTaiKhoan.Text;
                 us.MatKhau = txtMatKhau.Text;
                 if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1")
+                {
                     MessageBox.Show("Tài khoản mật khẩu bị từ chối");
+                    return;
+                }
                 UsersBUS bus = new UsersBUS();
                 DataTable k = bus.dangNhap(us);
                 if (k.Rows.Count > 0)
