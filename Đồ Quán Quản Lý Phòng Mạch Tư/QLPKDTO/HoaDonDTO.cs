@@ -10,13 +10,13 @@ namespace QLPKDTO
     {
         private string MaHD;
         private string MaPK;
-        private DateTime NgayLapHD;
+        private DateTime NgayLap;
         private int TienThuoc;
         private int TongTien;
 
         public string MaHD1 { get => MaHD; set => MaHD = value; }
         public string MaPK1 { get => MaPK; set => MaPK = value; }
-        public DateTime NgayLapHD1 { get => NgayLapHD; set => NgayLapHD = value; }
+        public DateTime NgayLap1 { get => NgayLap; set => NgayLap = value; }
         public int TienThuoc1 { get => TienThuoc; set => TienThuoc = value; }
         public int TongTien1 { get => TongTien; set => TongTien = value; }
 

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_pk = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.bt_tim = new System.Windows.Forms.Button();
             this.bt_xem = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -49,8 +51,6 @@
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.tb_pk = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,24 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Hóa Đơn";
+            // 
+            // tb_pk
+            // 
+            this.tb_pk.Location = new System.Drawing.Point(172, 49);
+            this.tb_pk.Name = "tb_pk";
+            this.tb_pk.Size = new System.Drawing.Size(124, 20);
+            this.tb_pk.TabIndex = 21;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(172, 106);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(85, 17);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Thanh Toán";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // bt_tim
             // 
@@ -122,6 +140,7 @@
             // 
             // tb_hoten
             // 
+            this.tb_hoten.Enabled = false;
             this.tb_hoten.Location = new System.Drawing.Point(172, 76);
             this.tb_hoten.Name = "tb_hoten";
             this.tb_hoten.Size = new System.Drawing.Size(192, 20);
@@ -129,6 +148,7 @@
             // 
             // tb_mahd
             // 
+            this.tb_mahd.Enabled = false;
             this.tb_mahd.Location = new System.Drawing.Point(172, 24);
             this.tb_mahd.Name = "tb_mahd";
             this.tb_mahd.Size = new System.Drawing.Size(192, 20);
@@ -136,6 +156,7 @@
             // 
             // tb_tongtien
             // 
+            this.tb_tongtien.Enabled = false;
             this.tb_tongtien.Location = new System.Drawing.Point(513, 72);
             this.tb_tongtien.Name = "tb_tongtien";
             this.tb_tongtien.Size = new System.Drawing.Size(200, 20);
@@ -143,6 +164,7 @@
             // 
             // tb_tienthuoc
             // 
+            this.tb_tienthuoc.Enabled = false;
             this.tb_tienthuoc.Location = new System.Drawing.Point(513, 46);
             this.tb_tienthuoc.Name = "tb_tienthuoc";
             this.tb_tienthuoc.Size = new System.Drawing.Size(200, 20);
@@ -150,6 +172,7 @@
             // 
             // tb_tienkham
             // 
+            this.tb_tienkham.Enabled = false;
             this.tb_tienkham.Location = new System.Drawing.Point(513, 20);
             this.tb_tienkham.Name = "tb_tienkham";
             this.tb_tienkham.Size = new System.Drawing.Size(200, 20);
@@ -247,23 +270,6 @@
             this.CachDung.DataPropertyName = "CachDung";
             this.CachDung.HeaderText = "Cách Dùng";
             this.CachDung.Name = "CachDung";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(172, 106);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 17);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Thanh Toán";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // tb_pk
-            // 
-            this.tb_pk.Location = new System.Drawing.Point(172, 49);
-            this.tb_pk.Name = "tb_pk";
-            this.tb_pk.Size = new System.Drawing.Size(124, 20);
-            this.tb_pk.TabIndex = 21;
             // 
             // firmHoaDon
             // 

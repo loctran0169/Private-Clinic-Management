@@ -25,7 +25,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dt = loadDuLieu(dtpk.Value.Month);
+            dt = loadDuLieu(dtpk.Value.Month, dtpk.Value.Year);
             gcthuoc.DataSource = dt;
             if (dt.Rows.Count == 0)
                 MessageBox.Show("Không có thông tin trong tháng này");
@@ -45,16 +45,21 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             ReportPrintTool printTool = new ReportPrintTool(rp);
             printTool.ShowPreviewDialog();
         }
-        public DataTable loadDuLieu(int month)
+        public DataTable loadDuLieu(int month, int year)
         {
 
             DataTable k = new DataTable();
             MySqlConnection kn = new MySqlConnection(ConfigurationManager.AppSettings["ConnectionString"]);
             try
             {
-
-                string sql = "SELECT TenThuoc,dv.TenDonVi ,sum(SoLuong) as   'SoLuong', count(TenThuoc) as 'SoLanDung' FROM CHITIETHOADON ct, HOADON hd, THUOC t,DONVITINH dv where month(hd.NgayLap) = @month and hd.MaHD = ct.MaHD and t.MaThuoc = ct.MaThuoc and dv.MaDV = t.MaDV group by t.MaThuoc";
-                MySqlCommand cmd = new MySqlCommand(sql, kn);
+                string query = null;
+                query += "SELECT TenThuoc,dv.TenDonVi ,sum(SoLuong) as   'SoLuong', count(TenThuoc) as 'SoLanDung'  ";
+                query += "FROM DONTHUOC dt, HOADON hd, THUOC t,DONVITINH dv ";
+                query += "where year(hd.NgayLap) =@year and month(hd.NgayLap) = @month and hd.MaPK=dt.MaPK and t.MaThuoc=dt.MaThuoc and dv.MaDV=t.MaDV ";
+                query += "group by t.MaThuoc";
+                //string sql = "SELECT TenThuoc,dv.TenDonVi ,sum(SoLuong) as   'SoLuong', count(TenThuoc) as 'SoLanDung' FROM CHITIETHOADON ct, HOADON hd, THUOC t,DONVITINH dv where month(hd.NgayLap) = @month and hd.MaHD = ct.MaHD and t.MaThuoc = ct.MaThuoc and dv.MaDV = t.MaDV group by t.MaThuoc";
+                MySqlCommand cmd = new MySqlCommand(query, kn);
+                cmd.Parameters.AddWithValue("@year", year);
                 cmd.Parameters.AddWithValue("@month", month);
                 kn.Open();
                 MySqlDataAdapter dt = new MySqlDataAdapter(cmd);
