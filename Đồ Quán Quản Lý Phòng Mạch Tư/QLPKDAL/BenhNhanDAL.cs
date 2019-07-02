@@ -45,17 +45,17 @@ namespace QLPKDAL
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
-                        return true;
                         con.Dispose();
+                        return true;                      
                     }
                     catch (Exception ex)
                     {
+                        string s = ex.Message;
                         con.Close();
-                        return false;
                     }
                 }
             }
-            return true;
+            return false;
         }
 
         public bool sua(BenhNhanDTO bn)

@@ -156,6 +156,7 @@
             // 
             // cbb_donvi
             // 
+            this.cbb_donvi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_donvi.FormattingEnabled = true;
             this.cbb_donvi.Location = new System.Drawing.Point(153, 101);
             this.cbb_donvi.Name = "cbb_donvi";
@@ -271,6 +272,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(800, 250);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Column1
             // 

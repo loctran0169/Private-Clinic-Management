@@ -40,7 +40,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 dtp_ngaysinh.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(sex))
+            if (radioButton1.Checked==false&&radioButton2.Checked==false)
             {
                 MessageBox.Show("Chưa chọn giới tính");
                 return false;
@@ -150,7 +150,10 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 if (kq == false)
                     MessageBox.Show("Xóa bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu");
                 else
+                {
                     MessageBox.Show("Xóa bệnh nhân thành công");
+                    Reload();
+                }
             }
         }
 
@@ -259,6 +262,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void bt_lưu_Click(object sender, EventArgs e)
         {
+
             if (flag == "them")
             {
                 if (checkData() == false)
@@ -266,7 +270,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 BenhNhanDTO bn = new BenhNhanDTO();
                 bn.MaBN1 = tb_mabn.Text;
                 bn.HoTen1 = tb_hoten.Text;
-                bn.NgaySinh1 = (DateTime)dtp_ngaysinh.Value;
+                bn.NgaySinh1 = dtp_ngaysinh.Value;
                 bn.GioiTinh1 = sex;
                 bn.SDT1 = tb_sdt.Text;
                 bn.DiaChi1 = tb_diachi.Text;

@@ -79,8 +79,15 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         }
         private void bt_Load_Click(object sender, EventArgs e)
         {
+
             loadcomboboxtenbs();
             loadcomboboxloaibenh();
+
+            comboBox_TenBS.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox_TenBS.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            comboBox_LoaiBenh.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox_LoaiBenh.AutoCompleteSource = AutoCompleteSource.ListItems;
             pkbus = new LapPhieuKhamBUS();
             List<LapPhieuKhamDTO> listphieukham = pkbus.select();
             if (listphieukham == null)

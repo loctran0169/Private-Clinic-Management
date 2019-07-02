@@ -152,6 +152,7 @@
             // 
             // comboBox_LoaiBenh
             // 
+            this.comboBox_LoaiBenh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_LoaiBenh.Enabled = false;
             this.comboBox_LoaiBenh.FormattingEnabled = true;
             this.comboBox_LoaiBenh.Location = new System.Drawing.Point(530, 77);
@@ -161,6 +162,7 @@
             // 
             // comboBox_TenBS
             // 
+            this.comboBox_TenBS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TenBS.Enabled = false;
             this.comboBox_TenBS.FormattingEnabled = true;
             this.comboBox_TenBS.Location = new System.Drawing.Point(148, 77);

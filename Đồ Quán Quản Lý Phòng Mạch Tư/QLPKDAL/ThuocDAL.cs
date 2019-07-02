@@ -61,7 +61,7 @@ namespace QLPKDAL
         public bool sua(ThuocDTO bn)
         {
             string query = string.Empty;
-            query += "UPDATE THUOC SET mathuoc = @mathuoc, madv = @madv, nsx = @nsx, hsd = @hsd ,dongia = @dongia,soluongton=@soluongton  WHERE mathuoc = @mathuoc";
+            query += "UPDATE THUOC SET mathuoc = @mathuoc,tenthuoc=@tenthuoc, madv = @madv, nsx = @nsx, hsd = @hsd ,dongia = @dongia  WHERE mathuoc = @mathuoc";
 
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
@@ -77,7 +77,6 @@ namespace QLPKDAL
                     cmd.Parameters.AddWithValue("@nsx", bn.NSX1);
                     cmd.Parameters.AddWithValue("@hsd", bn.HSD1);
                     cmd.Parameters.AddWithValue("@dongia", bn.DonGia1);
-                    cmd.Parameters.AddWithValue("@soluongton", bn.SoLuongTon1);
 
                     try
                     {

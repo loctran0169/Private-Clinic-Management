@@ -165,8 +165,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             cbb_donvi.DataSource = bus.loadDuLieuDonViTinh();
             cbb_donvi.DisplayMember = "TenDonVi";
             cbb_donvi.ValueMember = "MaDV";
-            cbb_donvi.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cbb_donvi.AutoCompleteSource = AutoCompleteSource.ListItems;
+
             KhoaButton();
         }
 
@@ -290,7 +289,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 if (dt.Rows.Count > 0)
                     MessageBox.Show("Load Thành công");
                 else
-                    MessageBox.Show("Không có thông tin cách dùng");
+                    MessageBox.Show("Không có thông tin thuốc");
                 dataGridView1.DataSource = dt;
             }
             catch (Exception ex)

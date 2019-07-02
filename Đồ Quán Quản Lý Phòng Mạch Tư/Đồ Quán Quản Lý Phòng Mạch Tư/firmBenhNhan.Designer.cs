@@ -142,7 +142,7 @@
             // 
             // bt_huy
             // 
-            this.bt_huy.Location = new System.Drawing.Point(649, 129);
+            this.bt_huy.Location = new System.Drawing.Point(649, 104);
             this.bt_huy.Name = "bt_huy";
             this.bt_huy.Size = new System.Drawing.Size(78, 31);
             this.bt_huy.TabIndex = 17;
