@@ -106,7 +106,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         }
         public void Load()
         {
-            string[] filePahts = Directory.GetFiles(tb_thumuc.Text,"*.bak");
+           string[] filePahts = Directory.GetFiles(tb_thumuc.Text,"*.bak");
             List<string> list = new List<string>(filePahts);
             DataTable table = new DataTable();
             table.Columns.Add("path");
