@@ -77,7 +77,7 @@ namespace QLPKDAL
         //    return k;
         //}
 
-        public DataTable loadDuLieuLichSuDangNhap()
+        public DataTable loadDuLieuLichSuDangNhap(DateTime t)
         {
 
             DataTable k = new DataTable();
@@ -86,14 +86,20 @@ namespace QLPKDAL
             try
             {
                 kn.Open();
-                string sql = "select ls.MaUS, MaNV,TaiKhoan, ThoiGianDN from USERS us join LICHSUDANGNHAP ls on us.MaUS = ls.MaUS ORDER BY ThoiGianDN  DESC";
-                MySqlDataAdapter dt = new MySqlDataAdapter(sql, kn);
+                string sql = "select ls.MaUS, MaNV,TaiKhoan, ThoiGianDN from USERS us join LICHSUDANGNHAP ls on us.MaUS = ls.MaUS where year(ls.ThoiGianDN) = @year and month(ls.ThoiGianDN) = @month and day(ls.ThoiGianDN) = @day ORDER BY ThoiGianDN DESC";
+                MySqlCommand cmd = new MySqlCommand(sql, kn);
+                cmd.Parameters.AddWithValue("@year", t.Year);
+                cmd.Parameters.AddWithValue("@month", t.Month);
+                cmd.Parameters.AddWithValue("@day", t.Day);
+                MySqlDataAdapter dt = new MySqlDataAdapter(cmd);
                 dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
                 dt.Dispose();
             }
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối" + e.Message);
+                string a = e.Message;
+                int b = 9;
             }
             return k;
         }

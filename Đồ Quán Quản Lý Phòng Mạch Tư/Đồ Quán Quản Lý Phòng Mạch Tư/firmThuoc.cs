@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -164,6 +165,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             cbb_donvi.DataSource = bus.loadDuLieuDonViTinh();
             cbb_donvi.DisplayMember = "TenDonVi";
             cbb_donvi.ValueMember = "MaDV";
+            cbb_donvi.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbb_donvi.AutoCompleteSource = AutoCompleteSource.ListItems;
             KhoaButton();
         }
 
@@ -276,8 +279,8 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
 
         private void load_Click(object sender, EventArgs e)
         {
-            ReloadDb();
-            HienThiThongTinThuoc();
+                ReloadDb();
+                HienThiThongTinThuoc();
         }
         public void ReloadDb()
         {
