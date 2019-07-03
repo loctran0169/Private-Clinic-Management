@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tB_huy = new System.Windows.Forms.Button();
+            this.tB_xoa = new System.Windows.Forms.Button();
             this.comboBox_mapk = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.tB_sua = new System.Windows.Forms.Button();
@@ -56,9 +58,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tB_load = new System.Windows.Forms.Button();
-            this.tB_xoa = new System.Windows.Forms.Button();
-            this.tB_huy = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +66,6 @@
             // 
             this.groupBox1.Controls.Add(this.tB_huy);
             this.groupBox1.Controls.Add(this.tB_xoa);
-            this.groupBox1.Controls.Add(this.tB_load);
             this.groupBox1.Controls.Add(this.comboBox_mapk);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.tB_sua);
@@ -96,8 +94,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chi Tiết Phiếu Khám";
             // 
+            // tB_huy
+            // 
+            this.tB_huy.Location = new System.Drawing.Point(157, 172);
+            this.tB_huy.Name = "tB_huy";
+            this.tB_huy.Size = new System.Drawing.Size(75, 28);
+            this.tB_huy.TabIndex = 27;
+            this.tB_huy.Text = "Hủy";
+            this.tB_huy.UseVisualStyleBackColor = true;
+            this.tB_huy.Visible = false;
+            this.tB_huy.Click += new System.EventHandler(this.tB_huy_Click);
+            // 
+            // tB_xoa
+            // 
+            this.tB_xoa.Location = new System.Drawing.Point(251, 138);
+            this.tB_xoa.Name = "tB_xoa";
+            this.tB_xoa.Size = new System.Drawing.Size(75, 28);
+            this.tB_xoa.TabIndex = 26;
+            this.tB_xoa.Text = "Xóa";
+            this.tB_xoa.UseVisualStyleBackColor = true;
+            this.tB_xoa.Click += new System.EventHandler(this.tB_xoa_Click);
+            // 
             // comboBox_mapk
             // 
+            this.comboBox_mapk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_mapk.FormattingEnabled = true;
             this.comboBox_mapk.Location = new System.Drawing.Point(166, 21);
             this.comboBox_mapk.Name = "comboBox_mapk";
@@ -153,6 +173,7 @@
             // 
             // comboBox_cachdung
             // 
+            this.comboBox_cachdung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_cachdung.Enabled = false;
             this.comboBox_cachdung.FormattingEnabled = true;
             this.comboBox_cachdung.Location = new System.Drawing.Point(187, 238);
@@ -162,6 +183,7 @@
             // 
             // comboBox_Loaithuoc
             // 
+            this.comboBox_Loaithuoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Loaithuoc.Enabled = false;
             this.comboBox_Loaithuoc.FormattingEnabled = true;
             this.comboBox_Loaithuoc.Location = new System.Drawing.Point(187, 208);
@@ -320,38 +342,6 @@
             this.Column6.HeaderText = "Cách Dùng Thuốc";
             this.Column6.Name = "Column6";
             // 
-            // tB_load
-            // 
-            this.tB_load.Location = new System.Drawing.Point(57, 86);
-            this.tB_load.Name = "tB_load";
-            this.tB_load.Size = new System.Drawing.Size(75, 28);
-            this.tB_load.TabIndex = 25;
-            this.tB_load.Text = "Load dữ liệu";
-            this.tB_load.UseVisualStyleBackColor = true;
-            this.tB_load.Visible = false;
-            this.tB_load.Click += new System.EventHandler(this.tB_load_Click);
-            // 
-            // tB_xoa
-            // 
-            this.tB_xoa.Location = new System.Drawing.Point(251, 138);
-            this.tB_xoa.Name = "tB_xoa";
-            this.tB_xoa.Size = new System.Drawing.Size(75, 28);
-            this.tB_xoa.TabIndex = 26;
-            this.tB_xoa.Text = "Xóa";
-            this.tB_xoa.UseVisualStyleBackColor = true;
-            this.tB_xoa.Click += new System.EventHandler(this.tB_xoa_Click);
-            // 
-            // tB_huy
-            // 
-            this.tB_huy.Location = new System.Drawing.Point(157, 172);
-            this.tB_huy.Name = "tB_huy";
-            this.tB_huy.Size = new System.Drawing.Size(75, 28);
-            this.tB_huy.TabIndex = 27;
-            this.tB_huy.Text = "Hủy";
-            this.tB_huy.UseVisualStyleBackColor = true;
-            this.tB_huy.Visible = false;
-            this.tB_huy.Click += new System.EventHandler(this.tB_huy_Click);
-            // 
             // firmLapDonThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,7 +389,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button tB_load;
         private System.Windows.Forms.Button tB_xoa;
         private System.Windows.Forms.Button tB_huy;
     }

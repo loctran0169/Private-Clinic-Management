@@ -134,10 +134,13 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         private string connectionString;
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tB_load.Visible = true;
+           // tB_load.Visible = true;
             //dtbus = new LapDonThuocBUS();
             //List<LapDonThuocDTO> list = dtbus.select(comboBox_mapk.Text);
             //loadDonThuoc(list);
+            load_dulieu();
+            load_datagridview();
+            //tB_load.Visible = false;
 
 
         }
@@ -294,7 +297,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
         {
             load_dulieu();
             load_datagridview();
-            tB_load.Visible = false;
+            //tB_load.Visible = false;
         }
 
         private void tB_sua_Click(object sender, EventArgs e)
