@@ -53,6 +53,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             txtTenLoaiBenh.Text = null;
             txtTrieuChung.Text = null;
         }
+
         private void HienThiThongTinLoaiBenh()
         {
 
@@ -134,8 +135,6 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
             }
             return kq.ToString();
         }
-
-
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
