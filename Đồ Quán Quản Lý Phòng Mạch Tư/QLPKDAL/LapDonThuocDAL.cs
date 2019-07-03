@@ -122,7 +122,7 @@ namespace QLPKDAL
         public bool sua(LapDonThuocDTO dt)
         {
             string query = string.Empty;
-            query += "update DONTHUOC set MATHUOC=@MATHUOC,SOLUONG=@SOLUONG,MACACHDUNG=@MACACHDUNG where MAPK=@MAPK and MATHUOC=@MATHUOC";
+            query += "update DONTHUOC set MATHUOC=@MATHUOC,SOLUONG=@SOLUONG,MACD=@MACACHDUNG where MAPK=@MAPK and MATHUOC=@MATHUOC";
 
 
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
