@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tB_mabn = new System.Windows.Forms.TextBox();
+            this.tB_them = new System.Windows.Forms.Button();
             this.bt_xoa = new System.Windows.Forms.Button();
             this.bt_Huy = new System.Windows.Forms.Button();
             this.bt_sua = new System.Windows.Forms.Button();
@@ -45,14 +47,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tB_them = new System.Windows.Forms.Button();
-            this.tB_mabn = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.tB_mabn);
             this.groupBox1.Controls.Add(this.tB_them);
             this.groupBox1.Controls.Add(this.bt_xoa);
@@ -77,6 +79,25 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Phiếu Khám";
+            // 
+            // tB_mabn
+            // 
+            this.tB_mabn.Location = new System.Drawing.Point(148, 77);
+            this.tB_mabn.Name = "tB_mabn";
+            this.tB_mabn.ReadOnly = true;
+            this.tB_mabn.Size = new System.Drawing.Size(240, 20);
+            this.tB_mabn.TabIndex = 21;
+            // 
+            // tB_them
+            // 
+            this.tB_them.Location = new System.Drawing.Point(530, 115);
+            this.tB_them.Name = "tB_them";
+            this.tB_them.Size = new System.Drawing.Size(75, 29);
+            this.tB_them.TabIndex = 20;
+            this.tB_them.Text = "Thêm";
+            this.tB_them.UseVisualStyleBackColor = true;
+            this.tB_them.Visible = false;
+            this.tB_them.Click += new System.EventHandler(this.tB_them_Click);
             // 
             // bt_xoa
             // 
@@ -233,24 +254,14 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // tB_them
+            // label5
             // 
-            this.tB_them.Location = new System.Drawing.Point(530, 115);
-            this.tB_them.Name = "tB_them";
-            this.tB_them.Size = new System.Drawing.Size(75, 29);
-            this.tB_them.TabIndex = 20;
-            this.tB_them.Text = "Thêm";
-            this.tB_them.UseVisualStyleBackColor = true;
-            this.tB_them.Visible = false;
-            this.tB_them.Click += new System.EventHandler(this.tB_them_Click);
-            // 
-            // tB_mabn
-            // 
-            this.tB_mabn.Location = new System.Drawing.Point(148, 77);
-            this.tB_mabn.Name = "tB_mabn";
-            this.tB_mabn.ReadOnly = true;
-            this.tB_mabn.Size = new System.Drawing.Size(86, 20);
-            this.tB_mabn.TabIndex = 21;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Mã bệnh nhân";
             // 
             // firmPhieuKham
             // 
@@ -288,5 +299,6 @@
         private System.Windows.Forms.Button bt_xoa;
         private System.Windows.Forms.Button tB_them;
         private System.Windows.Forms.TextBox tB_mabn;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -85,7 +85,7 @@ namespace QLPKDAL
         public bool them(LapDonThuocDTO dt)
         {
             string query = string.Empty;
-            query += "insert DONTHUOC set MAPK=@MAPK,MATHUOC=@MATHUOC,SOLUONG=@SOLUONG,MACACHDUNG=@MACACHDUNG";
+            query += "insert DONTHUOC set MAPK=@MAPK,MATHUOC=@MATHUOC,SOLUONG=@SOLUONG,MACD=@MACD";
 
 
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
@@ -100,7 +100,7 @@ namespace QLPKDAL
                     cmd.Parameters.AddWithValue("@MAPK",dt.MaPK1 );
                     cmd.Parameters.AddWithValue("@MATHUOC", dt.MaThuoc1);
                     cmd.Parameters.AddWithValue("@SOLUONG", dt.SoLuong1);
-                    cmd.Parameters.AddWithValue("@MACACHDUNG", dt.MaCD1);
+                    cmd.Parameters.AddWithValue("@MACD", dt.MaCD1);
                     try
                     {
                         con.Open();
@@ -122,7 +122,7 @@ namespace QLPKDAL
         public bool sua(LapDonThuocDTO dt)
         {
             string query = string.Empty;
-            query += "update DONTHUOC set MATHUOC=@MATHUOC,SOLUONG=@SOLUONG,MACACHDUNG=@MACACHDUNG where MAPK=@MAPK and MATHUOC=@MATHUOC";
+            query += "update DONTHUOC set MATHUOC=@MATHUOC,SOLUONG=@SOLUONG,MACD=@MACACHDUNG where MAPK=@MAPK and MATHUOC=@MATHUOC";
 
 
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
