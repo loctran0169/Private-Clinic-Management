@@ -246,5 +246,31 @@ namespace QLPKDAL
             }
             return k;
         }
+        public DataTable loadDanhSachKhamBenh(DateTime t)
+        {
+            DataTable k = new DataTable();
+            MySqlConnection kn = new MySqlConnection(connectionString);
+            try
+            {
+                kn.Open();
+                string sql = "select pk.mabn, hoten,ngaysinh,gioitinh,diachi,sdt " +
+                    "from BENHNHAN bn, PHIEUKHAM pk " +
+                    "where bn.mabn = pk.mabn and year(pk.Ngaykham)= @year and month(pk.Ngaykham)= @month and day(pk.Ngaykham)= @day";
+                MySqlCommand cm = new MySqlCommand(sql, kn);
+                cm.Parameters.AddWithValue("@year",t.Year);
+                cm.Parameters.AddWithValue("@month", t.Month);
+                cm.Parameters.AddWithValue("@day", t.Day);
+                MySqlDataAdapter dt = new MySqlDataAdapter(cm);
+                dt.Fill(k);//đổ dữ liệu từ DataBase sang bảng
+                kn.Close();
+                dt.Dispose();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return k;
+        }
     }
 }

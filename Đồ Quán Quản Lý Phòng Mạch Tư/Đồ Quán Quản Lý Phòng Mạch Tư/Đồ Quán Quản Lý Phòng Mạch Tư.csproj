@@ -264,6 +264,12 @@
     <Compile Include="firmBenh.designer.cs">
       <DependentUpon>firmBenh.cs</DependentUpon>
     </Compile>
+    <Compile Include="prDanhSachKhamBenh.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="prDanhSachKhamBenh.Designer.cs">
+      <DependentUpon>prDanhSachKhamBenh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rpDoanhThu.cs">
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="firmBenh.resx">
       <DependentUpon>firmBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prDanhSachKhamBenh.resx">
+      <DependentUpon>prDanhSachKhamBenh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

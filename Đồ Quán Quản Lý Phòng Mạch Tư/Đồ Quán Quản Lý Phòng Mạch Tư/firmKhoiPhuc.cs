@@ -17,7 +17,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
     public partial class firmKhoiPhuc : Form
     {
 
-        string connString;
+        string connString = ConfigurationManager.AppSettings["ConnectionString"];
 
         public firmKhoiPhuc()
         {
@@ -54,7 +54,7 @@ namespace Đồ_Quán_Quản_Lý_Phòng_Mạch_Tư
                 try
                 {
                     //connString= "Data Source = localhost; Initial Catalog = QLPK; User ID = root; Password = angel1999;Charset = utf8";
-                    connString = "SERVER=mysql-1325-0.cloudclusters.net;PORT=10001;DATABASE=QLPK;UID=loctran0169;PASSWORD=angel1999;Charset = utf8";
+                    //connString = "SERVER=mysql-1325-0.cloudclusters.net;PORT=10001;DATABASE=QLPK;UID=loctran0169;PASSWORD=angel1999;Charset = utf8";
                     using (MySqlConnection conn = new MySqlConnection(connString))
                     {
                         using (MySqlCommand cmd = new MySqlCommand())

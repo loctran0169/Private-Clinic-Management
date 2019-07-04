@@ -46,5 +46,9 @@ namespace QLPKBUS
         {
             return bndal.loadToDataTable();
         }
+        public DataTable loadDanhSachKhamBenh(DateTime t)
+        {
+            return bndal.loadDanhSachKhamBenh(t);
+        }
     }
 }

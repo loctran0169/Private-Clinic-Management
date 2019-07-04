@@ -28,84 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gcdanhsach = new DevExpress.XtraGrid.GridControl();
+            this.gvdanhsach = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MaBN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HoTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GioiTinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcdanhsach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvdanhsach)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(0, 150);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(800, 378);
-            this.groupBox3.TabIndex = 12;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Danh Sách Bệnh Nhân";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(794, 359);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã Bệnh Nhân";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Họ Và Tên";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Ngày Sinh";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Giới Tính";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Số Điện Thoại";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Địa Chỉ";
-            this.Column6.Name = "Column6";
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label2);
@@ -115,6 +60,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 147);
             this.panel1.TabIndex = 13;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(248, 121);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(135, 23);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Load Danh Sách";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(408, 121);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "In Danh Sách";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(312, 79);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(245, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Ngày khám";
             // 
             // label1
             // 
@@ -126,30 +107,77 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Danh Sách Khám Bệnh";
             // 
-            // label2
+            // gcdanhsach
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(245, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Ngày khám";
+            this.gcdanhsach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcdanhsach.Location = new System.Drawing.Point(0, 147);
+            this.gcdanhsach.MainView = this.gvdanhsach;
+            this.gcdanhsach.Name = "gcdanhsach";
+            this.gcdanhsach.Size = new System.Drawing.Size(800, 381);
+            this.gcdanhsach.TabIndex = 14;
+            this.gcdanhsach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvdanhsach});
             // 
-            // dateTimePicker1
+            // gvdanhsach
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(312, 79);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 29;
+            this.gvdanhsach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MaBN,
+            this.HoTen,
+            this.NgaySinh,
+            this.GioiTinh,
+            this.DiaChi,
+            this.SDT});
+            this.gvdanhsach.GridControl = this.gcdanhsach;
+            this.gvdanhsach.Name = "gvdanhsach";
+            this.gvdanhsach.OptionsView.ShowGroupPanel = false;
             // 
-            // button1
+            // MaBN
             // 
-            this.button1.Location = new System.Drawing.Point(333, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "In Danh Sách";
-            this.button1.UseVisualStyleBackColor = true;
+            this.MaBN.Caption = "Mã Bệnh Nhân";
+            this.MaBN.FieldName = "mabn";
+            this.MaBN.Name = "MaBN";
+            this.MaBN.Visible = true;
+            this.MaBN.VisibleIndex = 0;
+            // 
+            // HoTen
+            // 
+            this.HoTen.Caption = "Họ Tên";
+            this.HoTen.FieldName = "hoten";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Visible = true;
+            this.HoTen.VisibleIndex = 1;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.Caption = "Ngày Sinh";
+            this.NgaySinh.FieldName = "ngaysinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Visible = true;
+            this.NgaySinh.VisibleIndex = 2;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.Caption = "Giới Tính";
+            this.GioiTinh.FieldName = "gioitinh";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Visible = true;
+            this.GioiTinh.VisibleIndex = 3;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.Caption = "Địa Chỉ";
+            this.DiaChi.FieldName = "diachi";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Visible = true;
+            this.DiaChi.VisibleIndex = 4;
+            // 
+            // SDT
+            // 
+            this.SDT.Caption = "SĐT";
+            this.SDT.FieldName = "sdt";
+            this.SDT.Name = "SDT";
+            this.SDT.Visible = true;
+            this.SDT.VisibleIndex = 5;
             // 
             // firmDanhSachKhamBenh
             // 
@@ -157,33 +185,34 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 528);
+            this.Controls.Add(this.gcdanhsach);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox3);
             this.Name = "firmDanhSachKhamBenh";
             this.Text = "Danh Sách Khám Bệnh";
             this.Load += new System.EventHandler(this.firmDanhSachKhamBenh_Load);
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcdanhsach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvdanhsach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private DevExpress.XtraGrid.GridControl gcdanhsach;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvdanhsach;
+        private DevExpress.XtraGrid.Columns.GridColumn MaBN;
+        private DevExpress.XtraGrid.Columns.GridColumn HoTen;
+        private DevExpress.XtraGrid.Columns.GridColumn NgaySinh;
+        private DevExpress.XtraGrid.Columns.GridColumn GioiTinh;
+        private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
+        private DevExpress.XtraGrid.Columns.GridColumn SDT;
     }
 }
