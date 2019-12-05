@@ -1,13 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
-using QLPKDTO;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLPKDAL

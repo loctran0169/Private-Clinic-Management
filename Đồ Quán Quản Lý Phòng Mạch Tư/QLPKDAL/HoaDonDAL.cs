@@ -151,8 +151,7 @@ namespace QLPKDAL
             }
             return k;
         }
-
-         
+      
         public bool them(HoaDonDTO hd)
         {
             string query = string.Empty;

@@ -11,59 +11,6 @@ namespace QLPKBUS
 {
     public class UsersBUS
     {
-
-        //private UsersDAL usDAL;
-        //public UsersBUS()
-        //{
-        //    usDAL = new UsersDAL();
-        //}
-        //public DataTable dangNhap(UsersDTO us)
-        //{
-        //    DataTable k = usDAL.dangNhap(us);
-        //    return k;
-        //}
-        //public DataTable loadDuLieuUsers()
-        //{
-        //    DataTable k = usDAL.loadDuLieuUsers();
-        //    return k;
-        //}
-        //public DataTable loadDuLieuNhanVien()
-        //{
-        //    DataTable k = new DataTable();
-        //    k = usDAL.loadDuLieuNhanVien();
-        //    return k;
-
-        //}
-        //public DataTable loadDuLieuQuyenHan()
-        //{
-        //    DataTable k = new DataTable();
-        //    k = usDAL.loadDuLieuQuyenHan();
-        //    return k;
-
-        //}
-        //public bool doiMatKhau(UsersDTO us)
-        //{
-        //    bool re = usDAL.doiMatKhau(us);
-        //    return re;
-        //}
-        //public bool them(UsersDTO us)
-        //{
-        //    bool re = usDAL.them(us);
-
-        //    return re;
-        //}
-        //public bool sua(UsersDTO us)
-        //{
-        //    bool re = usDAL.sua(us);
-
-        //    return re;
-        //}
-        //public bool xoa(UsersDTO us)
-        //{
-        //    bool re = usDAL.xoa(us);
-
-        //    return re;
-        //}
         private UsersDAL bdal;
         public UsersBUS()
         {

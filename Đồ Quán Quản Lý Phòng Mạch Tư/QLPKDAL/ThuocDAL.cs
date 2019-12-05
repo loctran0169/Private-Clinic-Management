@@ -247,6 +247,7 @@ namespace QLPKDAL
             }
             return k;
         }
+
         public DataTable loadDuLieuThuoc()
         {
             DataTable k = new DataTable();

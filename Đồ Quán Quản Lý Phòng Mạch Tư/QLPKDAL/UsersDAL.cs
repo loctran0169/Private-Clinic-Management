@@ -122,6 +122,7 @@ namespace QLPKDAL
             }
             return true;
         }
+
         public bool xoa(UsersDTO us)
         {
             string query = string.Empty;
@@ -273,6 +274,7 @@ namespace QLPKDAL
             }
             return k;
         }
+
         public DataTable loadDuLieuNhanVien()
         {
             DataTable k = new DataTable();
@@ -311,7 +313,6 @@ namespace QLPKDAL
             }
             return k;
         }
-
         public bool CheckPass(string tk, string mk)
         {
             DataTable k = new DataTable();
@@ -356,8 +357,7 @@ namespace QLPKDAL
             }
             catch (Exception e)
             {
-                string s = e.Message;
-                int b = 5;
+
             }
             return k;
         }

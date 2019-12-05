@@ -117,10 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="xtraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>70</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANIAAAAtCAYAAADbXTWOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFhSURBVHhe7d0hUhxBGIbhlkiOgIzbZDZoLEfIEbgBmTEr
+        cwSOgFwD0+uQSCQSGRmJhBl2UyRFF2xRn3y66qkRf498q2dUl3/X93780Q11vRzqE9AyPkzPuhyuz3bZ
+        vK7Fan24HbZeBP43TjZPy77eLs7r0S6jUqahiOATur7enaxuDqaIrs9e6mpsAj42/Q792p1G81HV3gS8
+        rxvG+zmk5hDYn5AgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBI
+        ECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBBQ5ivOWwNgP91Qf5f5
+        RubWENjP1NBlOVndHMy3Mrc2AO+b21mc16Myr+Ph6us2prG5GXir6+vdt59Xpy8R/V2L1fqw6zcX0z/T
+        n9ZLwFbXj4/T59x62W++bOsp5Rnr5+zNgysCnAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
