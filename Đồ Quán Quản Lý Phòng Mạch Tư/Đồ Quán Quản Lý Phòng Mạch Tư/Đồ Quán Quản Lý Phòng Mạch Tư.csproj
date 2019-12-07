@@ -127,12 +127,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="aaaaaaaaa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="aaaaaaaaa.Designer.cs">
-      <DependentUpon>aaaaaaaaa.cs</DependentUpon>
-    </Compile>
     <Compile Include="firmBaoCaoSuDungThuoc_Thang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,9 +297,6 @@
     <Compile Include="rpSuDungThuoc.Designer.cs">
       <DependentUpon>rpSuDungThuoc.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="aaaaaaaaa.resx">
-      <DependentUpon>aaaaaaaaa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="firmBaoCaoSuDungThuoc_Thang.resx">
       <DependentUpon>firmBaoCaoSuDungThuoc_Thang.cs</DependentUpon>
     </EmbeddedResource>
